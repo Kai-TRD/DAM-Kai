@@ -1,4 +1,4 @@
-package Programacion.Ejercicio_conceptos_básicos.Ejercicio_Basico_Clase_Math;
+package Ejercicio_conceptos_básicos.Ejercicio_Basico_Clase_Math;
 
 public class EjercicioMath4 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Programacion.Ejercicio_conceptos_básicos.Ejercicio_Manejo_de_cadenas;
+package Ejercicio_conceptos_básicos.Ejercicio_Manejo_de_cadenas;
 public class Ejercicio10Cadena {
     public static void main(String[] args) {
         

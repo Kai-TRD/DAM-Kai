@@ -1,4 +1,4 @@
-package Programacion.EjerciciosDeRefuerzo;
+package EjerciciosDeRefuerzo;
 
 import java.util.Scanner;
 
