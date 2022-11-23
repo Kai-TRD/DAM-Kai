@@ -53,8 +53,10 @@ public class Ejercicio26 {
             precioTotalDescuento = precioTotal;
         break;
     }
-System.out.println("Aquí tiene sus entradas. Gracias por su compra.");
+    System.out.println("Aquí tiene sus entradas. Gracias por su compra.");
     System.out.println("Entradas individuales "+precioTotal);
-
+    System.out.println(descuento);
+    System.out.println(precioTotalDescuento);
+    sc.close();
     }
 }

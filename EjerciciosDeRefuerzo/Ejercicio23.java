@@ -35,7 +35,7 @@ public class Ejercicio23 {
         String tipoIva = sc.nextLine();
 
         System.out.println("Introduzca el código promocional (nopro, mitad, meno5 o 5porc): ");
-        String codigoPromocional = sc.nextLine();
+        //String codigoPromocional = sc.nextLine();
 
         System.out.println("=========================================");
 
@@ -66,6 +66,7 @@ public class Ejercicio23 {
 
             System.out.println("Base imponiblre: "+baseImponible);
             System.out.println("IVA ("+porcentajeIva+"): "+importeIva);
+            sc.close();
 
  //           System.out.printf("Base Imponible \t%", baseImponible);
  //     System.out.printf("IVA (%) \t%", porcentajeIva, importeIva);

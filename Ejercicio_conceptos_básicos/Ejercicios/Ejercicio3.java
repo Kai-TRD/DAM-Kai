@@ -1,4 +1,4 @@
-package Programacion.Ejercicio_conceptos_básicos.Ejercicios;
+package Ejercicio_conceptos_básicos.Ejercicios;
 import java.util.Scanner;
 
 public class Ejercicio3 {

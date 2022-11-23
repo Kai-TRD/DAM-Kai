@@ -1,4 +1,4 @@
-package Programacion.Ejercicio_conceptos_básicos.Ejercicios;
+package Ejercicio_conceptos_básicos.Ejercicios;
 public class Ejercicio18 {
     public static void main(String[] args) {
         
