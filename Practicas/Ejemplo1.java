@@ -27,7 +27,8 @@ public class Ejemplo1 {
 
 
 
-
+        System.out.println(cadena + posicion);
+        sc.close();
 
 
     }

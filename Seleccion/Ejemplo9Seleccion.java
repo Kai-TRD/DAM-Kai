@@ -12,19 +12,10 @@ public class Ejemplo9Seleccion {
         float b = sc.nextFloat();
         System.out.println("Dime el valor de c");
         float c = sc.nextFloat();
-
-        
         if (b<0){
-            
         } else if (a==0){
-
-        }
-
-
-
-
-        
-        System.out.println("El valor de x es:");
-
+        }        
+        System.out.println("El valor de x es:"+c);
+        sc.close();
     }
 }

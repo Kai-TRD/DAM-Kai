@@ -22,6 +22,7 @@ public class EquivalenciasTipos {
         System.out.println("Dato Doble= "+datoDouble);
         System.out.println("Dato Doble casting con long= " + datoLong);
         System.out.println("Dato Doble casting con int= "+datoInt);
+        System.out.println("Data short "+ datoShort);
 
     }
 }

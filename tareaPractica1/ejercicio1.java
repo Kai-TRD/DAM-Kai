@@ -46,7 +46,7 @@ public class ejercicio1 {
         //Period cumplirAnos = cumpleanos.until(finDeAno);
         //System.out.println(cumplirAnos.getDays());
 
-        LocalDate fechaProximoCumpleanos = LocalDate.of(LocalDate.now().getYear(), mes, dia);
+        //LocalDate fechaProximoCumpleanos = LocalDate.of(LocalDate.now().getYear(), mes, dia);
 
         //fechaProximoCumpleanos = (fechaProximoCumpleanos.isAfter(LocalDate.now())) ? fechaProximoCumpleanos : fechaProximoCumpleanos    
         System.out.println(ChronoUnit.DAYS.between(LocalDate.now(), cumpleanos));

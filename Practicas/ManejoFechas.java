@@ -88,11 +88,13 @@ public class ManejoFechas {
         int ano = sc.nextInt();
 
         
-        LocalDate miCumpleanos = LocalDate.of(2024, 2, 29);
+        LocalDate miCumpleanos = LocalDate.of(ano, mes, dia);
         System.out.println(miFecha);
     
         LocalDateTime miFormatoCumplenos = LocalDateTime.of(miFecha, miHora); 
         System.out.println(miFormatoCumplenos);
-        
+        System.out.println(miCumpleanos);
+
+        sc.close();        
     }
 }

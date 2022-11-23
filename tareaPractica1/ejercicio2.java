@@ -31,7 +31,7 @@ public class ejercicio2 {
         String nombreDefensor = sc.nextLine();
 
 
-        System.out.println("------------ATACANTE-------------");
+        System.out.println("------------ATACANTE: "+nombreAtacante+"-------------");
         System.out.println("% de aciertos de 2:");
         int porcentajeDeAcierto2 = sc.nextInt();
         System.out.println("% de aciertos de 3:");
@@ -42,7 +42,7 @@ public class ejercicio2 {
         int formaDeAtaque = sc.nextInt();
         
 
-        System.out.println("------------DEFENSOR-------------");
+        System.out.println("------------DEFENSOR: "+nombreDefensor+"-------------");
         System.out.println("El nº de veces que logra hacer que atacante falle (0-10):");
         int bloqueo = sc.nextInt();
 

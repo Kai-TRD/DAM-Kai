@@ -36,19 +36,19 @@ public class tarea2 {
         System.out.println("Indica el nombre del defensor:");
         String nombreDefensor = sc.nextLine();
 
-        System.out.println("-------------------------ATACANTE-------------------------");
+        System.out.println("-------------------------ATACANTE: "+nombreAtacante+"-------------------------");
        
         System.out.println("Indica el % de acierto de 2");
         int acirto2 = sc.nextInt();
         System.out.println("Indica el % de acierto de 3");
         int acierto3 = sc.nextInt();
        
-        System.out.println("-------------------------DEFENSOR-------------------------");
+        System.out.println("-------------------------DEFENSOR: "+nombreDefensor+"-------------------------");
        
         System.out.println("Indica el nº de veces que hace que falle el atacante");
         int fallo = sc.nextInt();
 
-        System.out.println("-------------------------ATACANTE-------------------------");
+        System.out.println("-------------------------ATACANTE: "+nombreAtacante+"-------------------------");
        
         System.out.println("¿Como decide tirar el atacante? (2 o 3)");
         int modo = sc.nextInt();

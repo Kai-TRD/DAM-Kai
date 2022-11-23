@@ -1,5 +1,4 @@
 package Practicas;
-import javax.swing.SpringLayout;
 
 public class ManejoPracticas {
     
@@ -161,7 +160,7 @@ public class ManejoPracticas {
         System.out.println("Es un diguito 'd'" + Character.isDigit('d'));
         System.out.println("Es un diguito '4'" + Character.isDigit('4'));
 
-        boolean esEspacio = Character.isSpaceChar(' ');
+
 
 
 
