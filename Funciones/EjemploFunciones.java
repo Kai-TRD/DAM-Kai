@@ -9,6 +9,6 @@ public class EjemploFunciones {
         }
     }
     public static void main(String[] args) {
-        imprimir5veces("hola");        
+        imprimir5veces("hola");
     }
 }
