@@ -1,4 +1,4 @@
-package Programacion.Seleccion;
+package Seleccion;
 
 public class Ejemplo2Seleccion {
     public static void main(String[] args) {

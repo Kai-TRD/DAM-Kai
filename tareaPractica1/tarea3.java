@@ -1,6 +1,4 @@
-package Programacion.tareaPractica1;
-
-import javax.swing.plaf.basic.BasicBorders.RadioButtonBorder;
+package tareaPractica1;
 
 public class tarea3 {
     public static void main(String[] args) {

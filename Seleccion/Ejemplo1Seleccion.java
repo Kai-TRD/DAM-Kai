@@ -1,5 +1,5 @@
 
-package Programacion.Seleccion;
+package Seleccion;
 
 public class Ejemplo1Seleccion {
     public static void main(String[] args) {

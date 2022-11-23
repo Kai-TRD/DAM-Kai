@@ -1,4 +1,5 @@
-package Programacion.Seleccion;
+package Seleccion;
+
 import java.util.Scanner;
 
 public class Ejemplo6Seleccion {

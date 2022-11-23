@@ -1,5 +1,4 @@
-package Programacion.tareaPractica1;
-
+package tareaPractica1;
 
 import java.time.LocalDate;
 import java.time.Period;

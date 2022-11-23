@@ -1,4 +1,4 @@
-package Programacion.tareaPractica1;
+package tareaPractica1;
 import java.util.Scanner;
 
 
