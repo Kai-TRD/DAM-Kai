@@ -1,4 +1,4 @@
-package Programacion.Bucles;
+package Bucles;
 
 
 public class las10PrimerasTablas {

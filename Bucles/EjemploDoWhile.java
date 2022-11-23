@@ -1,4 +1,4 @@
-package Programacion.Bucles;
+package Bucles;
 
 public class EjemploDoWhile {
     public static void main(String[] args) {
