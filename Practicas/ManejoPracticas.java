@@ -1,4 +1,4 @@
-package Programacion.Practicas;
+package Practicas;
 import javax.swing.SpringLayout;
 
 public class ManejoPracticas {

@@ -1,4 +1,4 @@
-package Programacion.Practicas;
+package Practicas;
 
 
 

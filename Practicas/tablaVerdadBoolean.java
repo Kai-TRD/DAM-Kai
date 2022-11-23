@@ -1,4 +1,4 @@
-package Programacion.Practicas;
+package Practicas;
 public class tablaVerdadBoolean {
     public static void main(String[] args) {
         boolean varVerdadera = true;

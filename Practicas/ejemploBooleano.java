@@ -1,6 +1,4 @@
-package Programacion.Practicas;
-
-
+package Practicas;
 
 public class ejemploBooleano {
     public static void main(String[] args) {

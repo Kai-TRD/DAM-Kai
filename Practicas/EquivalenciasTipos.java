@@ -1,4 +1,4 @@
-package Programacion.Practicas;
+package Practicas;
 public class EquivalenciasTipos {
     public static void main(String[] args) {
         
