@@ -1,5 +1,3 @@
-package Funciones;
-
 public class EjemploFunciones {
 
     static void imprimir5veces(String cadena){

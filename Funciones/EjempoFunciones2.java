@@ -1,5 +1,3 @@
-package Funciones;
-
 public class EjempoFunciones2 {
     
     static void imprimCadena(String cadena, int numero){
