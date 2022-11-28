@@ -1,3 +1,4 @@
+package masEjerciciosDeBucles;
 import java.util.Scanner;
 
 public class ConanElBarbaro {

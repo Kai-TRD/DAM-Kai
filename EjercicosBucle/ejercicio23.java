@@ -1,33 +1,19 @@
+import java.util.Scanner;
+
 public class ejercicio23 {
     public static void main(String[] args) {
-        
-        int sumaTotal = 0;
-        int cantidadNumero = 0;
-        int numeroNuevo = 0;
-        
-        int maximo = 0;
-        int minimo = 0;
-
-        maximo = numeroNuevo;
-        minimo = numeroNuevo;
-
-        int numeroNuevo1 = (int)(Math.random()*1000);
-        
-        
+        Scanner sc = new Scanner(System.in);
+        int numero = 0;
+        int suma = 0;
+        int cantidad = 0;
         do {
-        int numeroNuevo2 = (int)(Math.random()*1000);
-
-        if (cantidadNumero == 0) 
-        {
-            maximo = numeroNuevo1;
-            minimo = numeroNuevo2;
-        }
-        else
-        {
-            maximo = Math.max(maximo, numeroNuevo1);
-            minimo = Math.min(minimo, numeroNuevo2);
-        }
-
-        } while (sumaTotal < 1000);
+            numero = sc.nextInt();
+            suma = suma + numero;
+            cantidad++;
+        }while(numero < 1000);
+        System.out.println("EL totalñ acumulado es: "+suma);
+        System.out.println("La cantidad de numeros introducidos es: "+ cantidad);
+        System.out.println("La media es: "+suma/cantidad);
+        sc.close();
     }
 }
