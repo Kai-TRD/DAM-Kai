@@ -6,6 +6,7 @@ public class ejercicio23 {
         int numero = 0;
         int suma = 0;
         int cantidad = 0;
+        System.out.println("Dime los numeros, cuando supere 1000 se detiene:");
         do {
             numero = sc.nextInt();
             suma = suma + numero;

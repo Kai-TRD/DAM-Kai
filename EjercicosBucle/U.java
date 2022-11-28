@@ -20,7 +20,7 @@ public class U {
         int valor = sc.nextInt();
         sc.close();
 
-        for (int i = 0; i < valor; i++) {
+        for (int i = 0; i < valor-1; i++) {
             System.out.print("*");
             for (int j = 0; j < valor-2; j++) {
                 System.out.print(" ");

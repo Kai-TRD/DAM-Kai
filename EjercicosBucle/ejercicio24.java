@@ -1,11 +1,7 @@
 import java.util.Scanner;
-public class piramide {
+
+public class ejercicio24 {
     public static void main(String[] args) {
-        /*     +
-         *    +++
-         *   +++++
-         *  +++++++
-         */
         Scanner sc = new Scanner(System.in);
         System.out.print("Dime la altura de la piramide: ");
         int altura = sc.nextInt();
@@ -25,7 +21,7 @@ public class piramide {
             }
             ancho = ancho + 2;
             espacio = espacio - 1;
-        System.out.println();
+            System.out.println();
         }
     }
 }

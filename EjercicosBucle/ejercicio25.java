@@ -5,11 +5,15 @@ public class ejercicio25 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Dime un numero: ");
         int numero = sc.nextInt();
-        while(numero > 0){
+        int resto = 0;
+        int invertido = 0;
+        while( numero > 0 ) {
+            resto = numero % 10;
+            invertido = invertido * 10 + resto;
+            numero /= 10;
+         }
+        System.out.println(invertido);
 
-            System.out.println(numero / 10);
-        
-        }
-    sc.close();
+        sc.close();
     }
 }
