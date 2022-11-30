@@ -9,18 +9,23 @@ public class ejemplo {
 
 
 
-
         int numeroTemporal = numero;
-			
+
+        int cuentaNumero = 0;
 
         while(numeroTemporal > 0){
             numeroTemporal = numeroTemporal/10;
+            cuentaNumero++;
         }
+        int cadena = 0;
+        for (int i = 0; i < cuentaNumero; i++) {
+            cantidad = cantidad * 10;
+        }
+        // cadena = cantidad*(cuentaNumero*10);
+        numero = numero + cantidad;
         
-
-        for (int i = cantidad; i > 0; i--) {
-            numero = numero / 10;
-        }
+        
+        
         System.out.println(numero);
     }
 }
