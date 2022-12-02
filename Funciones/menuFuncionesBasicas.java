@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class menuFuncionesBasicas {
@@ -10,8 +11,8 @@ public class menuFuncionesBasicas {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
-        int numero = 0;
-        int cantidad = 0;
+       long numero = 0;
+       long cantidad = 0;
         String enter = "";
 
         boolean salir = false;
@@ -34,6 +35,8 @@ public class menuFuncionesBasicas {
             System.out.println("12-Pegar un numero por delante");
             System.out.println("13-");
             System.out.println("14-Juntar dos numeros");
+            System.out.println("16-Muestra los números capicua que hay entre 1 y 99999");
+            System.out.println("17-Decimal a binario");
             System.out.println("=================================");
         
 
@@ -67,7 +70,7 @@ public class menuFuncionesBasicas {
                 case 5:
                     System.out.print("Dime un numero: ");
                     numero = sc.nextInt();
-                    int numeroDigitos = MathKai.numeroDigitos(numero);
+                   long numeroDigitos = MathKai.numeroDigitos(numero);
                     
                     System.out.println("EL numero tiene " + numeroDigitos + " digitos");
                 break;
@@ -86,7 +89,7 @@ public class menuFuncionesBasicas {
                     numero = sc.nextInt();
                     System.out.print("Dime los digitos que quitar atras: ");
                     cantidad = sc.nextInt();
-                    int quitaPorDetras = MathKai.quitaPorDetras(numero, cantidad);
+                   long quitaPorDetras = MathKai.quitaPorDetras(numero, cantidad);
                     
                     System.out.println("EL numero es: " + quitaPorDetras);
                 break;
@@ -96,7 +99,7 @@ public class menuFuncionesBasicas {
                     numero = sc.nextInt();
                     System.out.print("Dime los digitos que quitar delante: ");
                     cantidad = sc.nextInt();
-                    int quitarPorDelante = MathKai.quitarPorDelante(numero, cantidad);
+                   long quitarPorDelante = MathKai.quitarPorDelante(numero, cantidad);
                     
                     System.out.println("EL numero es: " + quitarPorDelante);
                 break;
@@ -106,7 +109,7 @@ public class menuFuncionesBasicas {
                     numero = sc.nextInt();
                     System.out.print("Dime los digitos que pegar detras: ");
                     cantidad = sc.nextInt();
-                    int pegarPorDetras = MathKai.pegarPorDetras(numero, cantidad);
+                   long pegarPorDetras = MathKai.pegarPorDetras(numero, cantidad);
                     
                     System.out.println("EL numero es: " + pegarPorDetras);
                 break;
@@ -116,7 +119,7 @@ public class menuFuncionesBasicas {
                     numero = sc.nextInt();
                     System.out.print("Dime los digitos que pegar delante: ");
                     cantidad = sc.nextInt();
-                    int pegarPorDelante = MathKai.pegarPorDelante(numero, cantidad);
+                   long pegarPorDelante = MathKai.pegarPorDelante(numero, cantidad);
                     
                     System.out.println("EL numero es: " + pegarPorDelante);
 
@@ -131,13 +134,43 @@ public class menuFuncionesBasicas {
                     numero = sc.nextInt();
                     System.out.print("Dime numero para juntar: ");
                     cantidad = sc.nextInt();
-                    int juntaDosNumeros = MathKai.juntaDosNumeros(numero, cantidad);
+                   long juntaDosNumeros = MathKai.juntaDosNumeros(numero, cantidad);
                     
                     System.out.println("EL numero es: " + juntaDosNumeros);
                 break;
 
+                case 15:
+                break;
+
+                case 16:
+                    System.out.println("Los numeros capicua que hay entre en 1 y el 99999 son: ");
+                    numero = 1;
+                    
+                    while(numero < 100000){
+                        esCapicua = MathKai.esCapicua(numero);
+                        if(esCapicua){
+                            System.out.println(numero);
+                        }
+                        numero++;
+                    }
+                break;
+
+                case 17:
+                    System.out.print("Dime un numero: ");
+                    numero = sc.nextInt();
+                    System.out.println("EL numero es: ");
+
+                    long numeroBinario = MathKai.decimalBinario(numero);
+                    
+                    numero = numeroBinario;
+                    
+                    long invertirdoNumero = MathKai.invertirNumero (numero);
+                    
+                    System.out.println(invertirdoNumero);
+                break;
+
                 default:
-                    System.out.println("Opcion Introducido Invalido");
+                    System.out.println("Opcionlongroducido Invalido");
                 break;
             }
             System.out.println("introduce Enter...");
