@@ -1,4 +1,3 @@
-import java.lang.Thread.State;
 
 public class MathKai {
     
@@ -9,13 +8,13 @@ public class MathKai {
      * @param numero
      * @return
      */
-		static boolean esCapicua (int numero){
+		static boolean esCapicua (long numero){
 			boolean resultado = false;
 
 			//Calculo si es capicua
-			int numeroComparar = numero;
-			int resto = 0;
-			int invertido = 0;
+			long numeroComparar = numero;
+			long resto = 0;
+			long invertido = 0;
 
 			while( numero > 0 ) {
 			resto = numero % 10;
@@ -35,13 +34,13 @@ public class MathKai {
 	 * @param numero
 	 * @return
 	 */
-		static boolean esPrimo (int numero){
+		static boolean esPrimo (long numero){
 		
 				// El 0, 1 y 4 no son primos
 				if (numero == 0 || numero == 1 || numero == 4) {
 				return false;
 				}
-				for (int x = 2; x < numero / 2; x++) {
+				for (long x = 2; x < numero / 2; x++) {
 				// Si es divisible por cualquiera de estos números, no
 				// es primo
 				if (numero % x == 0)
@@ -63,8 +62,8 @@ public class MathKai {
 	 * @param numero
 	 * @return
 	 */
-		static int numeroDigitos (int numero){
-			int cuentaNumero = 0;
+		static long numeroDigitos (long numero){
+			long cuentaNumero = 0;
 
 			while(numero > 0){
 				numero = numero/10;
@@ -80,16 +79,16 @@ public class MathKai {
 	 * @param cantidad
 	 * @return
 	 */
-		static int quitaPorDetras (int numero, int cantidad){
+		static long quitaPorDetras (long numero, long cantidad){
 			
-			int numeroTemporal = numero;
+			long numeroTemporal = numero;
 			
 			while(numeroTemporal > 0){
 				numeroTemporal = numeroTemporal/10;
 			}
 
 	
-			for (int i = cantidad; i > 0; i--) {
+			for (long i = cantidad; i > 0; i--) {
 				numero = numero / 10;
 			}
 			return numero;
@@ -102,9 +101,9 @@ public class MathKai {
 	 * @return
 	 */
 
-		static int quitarPorDelante (int numero, int cantidad){
+		static long quitarPorDelante (long numero, long cantidad){
 
-			int invertido = 0, resto;
+			long invertido = 0, resto;
 
 			while( numero > 0 ) {
 				resto = numero % 10;
@@ -112,14 +111,14 @@ public class MathKai {
 				numero /= 10;
 			 }
 
-			 int numeroTemporal = numero;
+			 long numeroTemporal = numero;
 			
 			 while(numeroTemporal > 0){
 				 numeroTemporal = numeroTemporal/10;
 			 }
  
 	 
-			 for (int i = cantidad; i > 0; i--) {
+			 for (long i = cantidad; i > 0; i--) {
 				 invertido = invertido / 10;
 			 }
 
@@ -140,17 +139,17 @@ public class MathKai {
 	 * @param cantidad
 	 * @return
 	 */
-		static int pegarPorDetras (int numero, int cantidad){
-			int cantidadTemporal = cantidad;
+		static long pegarPorDetras (long numero, long cantidad){
+			long cantidadTemporal = cantidad;
 
-			int cuentaNumero = 0;
+			long cuentaNumero = 0;
 	
 			while(cantidadTemporal > 0){
 				cantidadTemporal = cantidadTemporal/10;
 				cuentaNumero++;
 			}
-			int cadena = 0;
-			for (int i = 0; i < cuentaNumero; i++) {
+			long cadena = 0;
+			for (long i = 0; i < cuentaNumero; i++) {
 				numero = numero * 10;
 			}
 			// cadena = cantidad*(cuentaNumero*10);
@@ -165,17 +164,17 @@ public class MathKai {
 	 * @param cantidad
 	 * @return
 	 */
-		static int pegarPorDelante (int numero, int cantidad){
-			int numeroTemporal = numero;
+		static long pegarPorDelante (long numero, long cantidad){
+			long numeroTemporal = numero;
 
-			int cuentaNumero = 0;
+			long cuentaNumero = 0;
 	
 			while(numeroTemporal > 0){
 				numeroTemporal = numeroTemporal/10;
 				cuentaNumero++;
 			}
-			int cadena = 0;
-			for (int i = 0; i < cuentaNumero; i++) {
+			long cadena = 0;
+			for (long i = 0; i < cuentaNumero; i++) {
 				cantidad = cantidad * 10;
 			}
 			// cadena = cantidad*(cuentaNumero*10);
@@ -194,21 +193,56 @@ public class MathKai {
 	 * @param cantidad
 	 * @return
 	 */	
-		static int juntaDosNumeros (int numero, int cantidad){
-			int cantidadTemporal = cantidad;
+		static long juntaDosNumeros (long numero, long cantidad){
+			long cantidadTemporal = cantidad;
 
-			int cuentaNumero = 0;
+			long cuentaNumero = 0;
 	
 			while(cantidadTemporal > 0){
 				cantidadTemporal = cantidadTemporal/10;
 				cuentaNumero++;
 			}
-			int cadena = 0;
-			for (int i = 0; i < cuentaNumero; i++) {
+			long cadena = 0;
+			for (long i = 0; i < cuentaNumero; i++) {
 				numero = numero * 10;
 			}
 			// cadena = cantidad*(cuentaNumero*10);
 			numero = numero + cantidad;
 			return numero;
 		}
+
+	/**
+	 * 17-Decimal a binario
+	 * @param numero
+	 * @return
+	 */
+		static long decimalBinario (long numero){
+			long binario = 0;
+			while (numero>=1){
+				binario = (numero % 2);
+				numero = numero/2;
+				System.out.print(binario);
+			}
+			System.out.println();
+			return binario;
+		}
+	/**
+	 * Da la vuelta
+	 * @param numero
+	 * @return
+	 */
+		static long invertirNumero (long numero){
+			
+			long resto = 0;
+			long invertido = 0;
+
+			while( numero > 0 ) {
+			resto = numero % 10;
+			invertido = invertido * 10 + resto;
+			numero /= 10;
+			}
+
+			return invertido;
+		}
+
 }
