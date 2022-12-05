@@ -8,6 +8,7 @@ public class menu {
         System.out.println("1.Suma");
         System.out.println("2.Factorial");
         System.out.println("3.Piramide");
+        System.out.println("4.Array cadeba");
         System.out.println("Elige una de las opciones");
         int opcion = sc.nextInt();
 
@@ -37,7 +38,11 @@ public class menu {
                 System.out.println("Hay "+ piramide + " caracteres");
             break;
 
+            case 4:
 
+            String cadena = "la vaca lola esta loca de la cabeza";
+            System.out.println(cadena);
+            break;
 
 
         }
