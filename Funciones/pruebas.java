@@ -17,7 +17,7 @@ public class pruebas {
         System.out.println();
 
         
-        numero = (long)algo;
+        // numero = (long)algo;
         long resto = 0;
         long invertido = 0;
 
