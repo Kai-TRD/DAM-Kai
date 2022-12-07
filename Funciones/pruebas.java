@@ -4,30 +4,47 @@ public class pruebas {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        long numero = sc.nextInt();
-        String algo = "";
-
-        long binario = 0;
-        while (numero>=1){
-            binario = (numero % 2);
-            numero = numero/2;
-            System.out.print(binario);
-            algo = algo+binario;
-        }
-        System.out.println();
-
+        int numero = 0;
+        do {
+            
         
-        // numero = (long)algo;
-        long resto = 0;
-        long invertido = 0;
+        numero = sc.nextInt();
 
-        while( numero > 0 ) {
-        resto = numero % 10;
-        invertido = invertido * 10 + resto;
-        numero /= 10;
+        String empieza = "E1";
+
+        int random = (int)(Math.random()*2);
+
+        if(random > 0){
+            empieza = "E1";
+        } else {
+            empieza = "E2";
         }
 
-        System.out.println(numero);
-        System.out.println(algo);
+        System.out.println(empieza);
+        } while (numero != 9);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// static String salto(){
+//     String empieza = "";
+
+//     int random = (int)(Math.random()*2);
+
+//     if(random > 0){
+//         empieza = "E1";
+//     } else {
+//         empieza = "E2";
+//     }
+//     return empieza;
+// }

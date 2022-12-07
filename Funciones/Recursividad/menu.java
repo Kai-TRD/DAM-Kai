@@ -40,8 +40,9 @@ public class menu {
 
             case 4:
 
-            String cadena = "la vaca lola esta loca de la cabeza";
-            System.out.println(cadena);
+                String cadena = "la vaca lola esta loca de la cabeza";
+                String[] palabras = cadena.split(" ");
+                // System.out.println(recorrerArray);
             break;
 
 

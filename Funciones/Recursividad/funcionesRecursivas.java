@@ -63,4 +63,11 @@ public class funcionesRecursivas {
 
 
 
+        // static String recorrerArray(String[] palabras, int numero){
+        //     if (numero == 0)
+
+        // }
+
+
+
 }
