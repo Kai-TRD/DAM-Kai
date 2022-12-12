@@ -1,4 +1,4 @@
-import java.security.cert.TrustAnchor;
+
 
 public class PartidoBaloncesto {
     
@@ -66,23 +66,6 @@ public class PartidoBaloncesto {
 
     }
 
-
-
-        //Funciones que necesito programar
-        /*
-        salto() --> devuelve E1 si el salto lo gana E1 y E2 si el salto lo gana E2
-        canasta(turno) --> devuelve el valor de la canasta realizada (0, 2 o 3) 
-        actualizarPuntos(valorAcumulado, valorAIncrementar)  
-        canasta(tipoTiro, porcentaje) ---> dado un tipo de tiro y el % de acierto devuelve true si hay canasta y false si no     
-        tipoTiro() --> devuelve el tipo de tiro que va a realizar el equipo (tiro2 o tiro3)
-        tipoTiro(int porcentaje2, int porcentaje3) -> devuelve el tipo de tiro que se produce según los porcentajes indicados
-        rebote(String equipoAtaque) ---> devuelve E1 si el rebote lo gana E1 y E2 si el rebote lo gana E2
-        rebote(int reboteAtaque, int reboteDefensa) ---> indica true si el rebote es de ataque y false si el rebote es de defensa
-              El rebote del equipo atacante es de 0 a maximo y el rebote del equipo que defiende es de 30 al maximo.
-        aleatorio(maximo)--> devuelve un numero aleatorio entre 0 y maximo
-        aleatorio(minimo, maximo) ---> devuelve un número entre mínimo y máximo
-        imprimirResultado(int valor1, int valor2) ---> imprime el resultado actual del partido.
-        */
     
     /**
      * SALTO
@@ -98,7 +81,6 @@ public class PartidoBaloncesto {
             } else {
                 empieza = "E2";
             }
-            
             return empieza;
         }
 
@@ -108,20 +90,83 @@ public class PartidoBaloncesto {
      */
         static int canasta(String turno){
             int punto = 0;
-            int random = (int)(Math.random()*3);
-            
-            if(random == 0){
+            int random = (int)(Math.random()*101);
+
+            if(punto > 70){
                 punto = 0;
+            }else{
+                if(turno.equals("E1")){
+                    if(random > 0 && random < 71){
+                        punto = 2;
+                    }
+                    if(random > 0 && random < 46){
+                        punto = 3;
+                    }
+                } else{
+                    if(random > 0 && random < 76){
+                        punto = 2;
+                    }
+                    if(random > 0 && random < 36){
+                        punto = 3;
+                    }
+                }
+            }
+            return punto;
+        }
+
+    /**
+     * ACTUALIZAR PUNTOS
+     * @param puntosE1
+     * @param valorAtaque
+     * @return
+     */
+        static int actualizarPuntos(int puntosE1, int valorAtaque){
+            int puntosTotal = puntosE1 + valorAtaque;
+            return puntosTotal;
+        }
+    
+    /**
+     * IMPRIMIR RESULTADOS
+     * @param puntosE1
+     * @param puntosE2
+     */
+        static void imprimirResultado(int puntosE1, int puntosE2){
+            System.out.println("---E1: " + puntosE1 + "E1: " + puntosE2 + "---");
+        }
+
+
+        static String siguienteTurno(String turno){
+            String turnoCambiado = "";
+            if(turno.equals("E1")){
+                turnoCambiado = "E2";
             } else
-            if(random == 1){
-                punto = 2;
-            } else
-            if(random == 2){
-                punto = 3;
+            if(turno.equals("E2")){
+                turnoCambiado = "E1";
             }
 
-            return punto;
-            
+            return turnoCambiado;
         }
+
+
+        static void rebote1(){
+            int ataqueE1 = (int)(Math.random()*(E1_REBOTE_ATA+1));
+            int defensE2 = (int)(Math.random()*(E2_REBOTE_DEF+1));
+            int ataqueE2 = (int)(Math.random()*(E2_REBOTE_ATA+1));
+            int defensE1 = (int)(Math.random()*(E1_REBOTE_DEF+1));
+        }
+
+        static String rebote2(String turno, int ataqueE1,int defensaE1,int ataqueE2,int defensaE2){
+            String turnoCopia = turno;
+            if(turno.equals("E1")){
+
+                if(ataqueE1 > defensaE2){turno = "E1";} else {turno = "E2";}
+            } else
+            if(turno.equals("E2")){
+
+                if(ataqueE2 > defensaE1){turno = "E2";} else {turno = "E1";}
+            }
+            return turno;
+        }
+        
 
 }

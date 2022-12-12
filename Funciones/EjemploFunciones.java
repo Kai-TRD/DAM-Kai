@@ -6,8 +6,6 @@ public class EjemploFunciones {
             System.out.println("inicio " + cadena);
         }
     }
-
-
     
     public static void main(String[] args) {
         imprimir5veces("hola");
