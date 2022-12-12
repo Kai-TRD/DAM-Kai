@@ -112,10 +112,10 @@ public class PartidoBaloncesto {
             
             if(random == 0){
                 punto = 0;
-            }
+            } else
             if(random == 1){
                 punto = 2;
-            }
+            } else
             if(random == 2){
                 punto = 3;
             }

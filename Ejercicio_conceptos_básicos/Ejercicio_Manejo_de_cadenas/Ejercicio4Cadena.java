@@ -14,7 +14,7 @@ public class Ejercicio4Cadena {
 
         System.out.println("Dime el caracter nuevo");
         String caracter2 = sc.nextLine();
-
+        
         System.out.println((cadena.replace(caracter1, caracter2)));
 sc.close();
 
