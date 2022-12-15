@@ -1,6 +1,8 @@
 package Arrays;
 
+import java.time.temporal.Temporal;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ejercicioArraySimpleInt {
@@ -52,8 +54,13 @@ public class ejercicioArraySimpleInt {
                 
                 case 6:
                     llenarConAleatorios(tabla);
+                    pausa();
                 break;
 
+                case 7:
+                    desordenalTabla(tabla, array);
+                    pausa();
+                break;
 
                 
                 default:
@@ -89,6 +96,7 @@ public class ejercicioArraySimpleInt {
             System.out.println("4-Borrar elmento");
             System.out.println("5-Llenar");
             System.out.println("6-Llenar la tabla de aleatorios");
+            System.out.println("7-desordenar");
             System.out.println("0-Salir");
             System.out.println("================================");
             int opcion = sc.nextInt();
@@ -173,22 +181,45 @@ public class ejercicioArraySimpleInt {
         static void llenarConAleatorios(int[] tabla){
             for (int i = 0; i < tabla.length; i++) {
                 int aleatorio = (int)(Math.random()*100);
-                tabla[i]=aleatorio;
+                // tabla[i]=aleatorio;
+                tabla[i]=i;
             }
         }
 
 
 
-        static int buscar(int[] tabla){
-            Scanner sc = new Scanner(System.in);
-            int resultado = -1;
-            System.out.println("¿Que valor quieres buscar?");
-            int numeroBuscado = sc.nextInt();
+        // static int buscar(int[] tabla){
+        //     Scanner sc = new Scanner(System.in);
+        //     int resultado = -1;
+        //     System.out.println("¿Que valor quieres buscar?");
+        //     int numeroBuscado = sc.nextInt();
 
-            int indiceBuscado = 0;
-            while()
+        //     int indiceBuscado = 0;
+        //     while()
 
 
-            return resultado;
+        //     return resultado;
+        // }
+
+        static void desordenalTabla(int[] tabla, int array){
+
+            for (int i = tabla.length; i > 0; i--)
+            {
+                int random = (int)(Math.random()*(tabla.length));
+
+                int tablaTemporal = tabla[i];
+                tabla[i] = tabla[random];
+                tabla[random] = tablaTemporal;
+            }
+
+
+
+
+
         }
+
+
+
+
+
 }
