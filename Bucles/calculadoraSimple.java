@@ -6,6 +6,7 @@ public class calculadoraSimple {
         
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
+        
         do {
 
             System.out.println("CALCULADORA");
