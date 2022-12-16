@@ -1,195 +1,239 @@
 package Arrays;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ejercicioArraySimple {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Dime la longitud del Array:");
-        int array = sc.nextInt();
 
-        
-        String[] tabla = new String[array];
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        //Se debe crear una array de numero de 10 posiciones y 
+        //tendré que mostrar un menu con acciones que se deben realizar con el array
+
+        int[] numeros = new int[10];
 
         boolean salir = false;
-        
-        int opcion;
-        
-        do {
-            opcion = menu(array);
+        do
+        {
+            int opcion = menu();
 
-            switch(opcion){
-                
-                case 0:
-                    pausa();
-                    salir = true;
-                break;
-                
+            switch (opcion)
+            {
                 case 1:
-                    limpiarTabla(tabla);
-                    pausa();
-                break;
-
+                    limpiarArray(numeros);
+                    break;
                 case 2:
-                    mostrarTabla(tabla, array);
-                    pausa();
-                break;
-                
+                    sc.nextLine(); //limpio buffer
+                    System.out.println("¿Que número desea insertar?");
+                    int numero = sc.nextInt();
+                    System.out.println("¿en que posicion?");
+                    int posicion = sc.nextInt();
+                    insertar(numeros, numero, posicion);
+                    break;
                 case 3:
-                    imprimirTabla(tabla);
-                    pausa();
-                break;
-                
+                    imprimir(numeros);
+                    break;
                 case 4:
-                    borrarTabla(tabla, array);
-                    pausa();
-                break;
-                
+                    borrar(numeros);
+                    break;
                 case 5:
-                    llenado(tabla);
-                    pausa();
-                break;
-                
+                    llenar(numeros);
+                    break;
                 case 6:
-                    aleatorio(tabla);
-                    pausa();
-                break;
-                
+                    llenarConAleatorios(numeros);
+                    break;
                 case 7:
-                    copiarArray(numero, numeroNuevo);
-                    pausa();
-                break;
-
+                    int posicionBusqueda = buscar(numeros);
+                    System.out.println("EL numero está en la posición: "+ posicionBusqueda);
+                    break;
+                case 8:
+                    ordenar(numeros);
+                    break;
+                case 9:
+                    posicionBusqueda = buscarEnTablaOrdenada(numeros);
+                    System.out.println("EL numero está en la posición: "+ posicionBusqueda);
+                    break;
+                case 10:
+                    desordenarTabla(numeros);
+                case 0:
+                    salir = true;
+                    sc.close();
+                    break;
                 default:
-                    System.out.println("OPcion no valida");
-                    pausa();
-                break;
+                    System.out.println("Opción no Valida");
+                    break;
+
             }
-        } while (salir!= true);
-        sc.close();
+
+        }while(!salir);
     }
 
 
-    /*ENter */
-        static void pausa(){
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Pulsa enter para continuar...");
-            String enter = sc.nextLine();
-            System.out.print("\033[H\033[2J");
-        }
+    static int menu()
+    {
+        System.out.println("---------");
+        System.out.println("1- Limpiar Array");
+        System.out.println("2- Almacenar nuevo número");
+        System.out.println("3- Imprimir Array");
+        System.out.println("4- Borrar Elemento");
+        System.out.println("5- Llenar con valores fijos (10) ");
+
+        System.out.println("6- Llenar con valores aleatorios");
+        System.out.println("7- Buscar un valor- devuelve la posición en la que esta -1 si no está");
+        System.out.println("8- Ordenar");
+        System.out.println("9- Busqueda en tabla ordenada");
+        System.out.println("0- Salir");
+
+        System.out.println("____________________________");
+        System.out.println("Indica una opción...");
+        int opcion = sc.nextInt();
+
+        return opcion;
+    }
 
     /**
-     * Menu
+     * Borra todos los valores del array que se le pasa
+     * @param tabla
+     */
+    static void limpiarArray(int[] tabla)
+    {
+        for(int i = 0; i< tabla.length; i++)
+        {
+            tabla[i] = 0;
+        }
+    }
+
+
+    /**
+     * Inserta en la tabla y en la posicicion indicada el nombre nuevo 
+     * @param tabla
+     * @param nuevoNombre
+     * @param posicion
+     */
+    static void insertar(int[] tabla, int nuevoNumero, int posicion)
+    {
+        if(tabla.length>posicion && posicion >=0)
+        {
+            tabla[posicion] = nuevoNumero;
+        }
+        else
+        {
+            //La posicion que me indican no es posible
+            System.out.println("Posicion no válida, debe indicar un numero entre 0 y " + (tabla.length-1));
+        }
+    }
+
+    static void imprimir(int[] tabla)
+    {
+        // int indice = 0;
+        // for (String nombre : tabla) {
+        //     System.out.println(" [" + indice + "] -> " + nombre );
+        //     indice++;
+        // }
+
+        System.out.println(Arrays.toString(tabla));
+    }
+
+    /**
+     * Borra de un array una posición en concreto
+     * @param tabla
+     */
+    static void borrar(int[] tabla)
+    {
+        System.out.println("¿Qué posición quieres borrar?...");
+        int posicion  = sc.nextInt();
+
+        
+        if(tabla.length> posicion && posicion >=0)
+        {
+            tabla[posicion] = 0;
+            System.out.println("numero borrado correctamente");
+        }
+        else
+        {
+            //hay error de posicion
+            System.out.println("ERROR - posicion fuera de rango");
+        }
+    }
+
+    /**
+     * Lleno la tabla con valores fijos - el valor 10
+     * @param tabla
+     */
+    static void llenar(int[] tabla)
+    {
+        // for (int i = 0; i < tabla.length; i++) {
+        //     tabla [i] = "Posicion " + i;
+        // }
+
+        Arrays.fill(tabla, 10);
+
+    }
+
+    /**
+     * Llena el array que se le pasa con valores aleatorios de 0 a 99
+     * @param tabla
+     */
+    static void llenarConAleatorios(int[] tabla)
+    {
+        for(int aux = 0; aux<tabla.length; aux++)
+        {
+            int aleatorio = (int)(Math.random()*100);
+            tabla[aux] = aleatorio;
+        }
+    }
+
+    /**
+     * Buscar un valor- devuelve la posición en la que esta -1 si no está
+     * @param tabla
      * @return
      */
-        static int menu(int array){
-            Scanner sc = new Scanner(System.in);
-            System.out.println("================================");
-            System.out.println("Cantidad de celdas: "+array);
-            System.out.println("================================");
-            System.out.println("1-Limpiar Array");
-            System.out.println("2-Almacenar nombre en tabla");
-            System.out.println("3-Imprimir Array");
-            System.out.println("4-Borrar elmento");
-            System.out.println("5-Llenar");
-            System.out.println("6-Posición Random");
-            System.out.println("0-Salir");
-            System.out.println("================================");
-            int opcion = sc.nextInt();
-        
-            return opcion;
+    static int buscar(int[] tabla)
+    {
+        int resultado = -1;
+
+        System.out.println("¿Que valor quieres buscar?...");
+        int numeroBuscado = sc.nextInt();
+
+        int indiceBusqueda = 0;
+        while(resultado == -1 &&  indiceBusqueda < tabla.length)
+        {
+            int numeroEnPosicion = tabla[indiceBusqueda];
+            if (numeroBuscado == numeroEnPosicion)
+            {
+                //si lo he encontrado entoces el resultado es la 
+                //posicion de busqueda en la que estoy
+                resultado = indiceBusqueda;
+            }
+            indiceBusqueda++;
         }
+
+        return  resultado;
+    }
+
+    static void ordenar(int[] tabla)
+    {
+        Arrays.sort(tabla);
+    }
+
+    static int buscarEnTablaOrdenada(int[] tabla)
+    {
+        System.out.println("¿Que valor quieres buscar?...");
+        int valorBuscado = sc.nextInt();
+
+        int resultado = Arrays.binarySearch(tabla, valorBuscado);
+
+        return resultado;
+    }
 
     /**
-     * 1-Limpiar tabla
+     * Desordena el array
      * @param tabla
      */
-        static void limpiarTabla(String[] tabla){
-            for (int aux = 0; aux < tabla.length; aux++) {
-                tabla[aux] = null;
-            }
-        }
+    static void desordenarTabla(int[] tabla)
+    {
 
-    /**
-     * 2-Mostrar tabla
-     * @param tabla
-     */
-        static void mostrarTabla(String tabla[],int array){
-            Scanner sc = new Scanner(System.in);
-
-            System.out.println("En que posición?");
-            int posicion = sc.nextInt();
-
-            if(posicion > array || posicion < 0){
-                System.out.println("Error: fuera de rango");
-            } else {
-                System.out.println("Dime el nombre para poner en la tabla:");
-                sc.nextLine();
-                String nombre = sc.nextLine();
-
-                tabla[posicion]=nombre;
-            }
-        }
-
-    /**
-     * 3-Imprimir tabla
-     * @param tabla
-     */
-        static void imprimirTabla(String[] tabla){
-            for (int i = 0; i < tabla.length; i++) {
-                System.out.println("["+i+"]"+"-"+tabla[i]);
-            }
-        }
-
-    /**
-     * 4-Borrar tabla
-     * @param tabla
-     */
-        static void borrarTabla(String[] tabla, int array){
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Dima que posicin borrar:");
-            int posicion = sc.nextInt();
-            if(posicion > 4 && posicion < 0){
-                System.out.println("Error: fuera de rango");
-            } else {
-            tabla[posicion] = null;
-            }
-        }
-
-    /**
-     * 5-Llenado
-     * @param tabla
-     */
-        static void llenado(String[] tabla){
-            for (int aux = 0; aux < tabla.length; aux++) {
-                tabla[aux] = "Posicion "+aux;
-            }
-            System.out.println("Operacion realizada");
-        }
-    /**
-     * Aleatorio
-     * @param tabla
-     */
-        static void aleatorio(String[] tabla){
-            for (int aux = 0; aux < tabla.length; aux++) {
-                int random = (int)(Math.random()*tabla.length);
-                String temporal = tabla[aux];
-                tabla[aux] = tabla[random];
-            }
-        }
-
-        static int[] copiarArray(int[] origuinal, int[] copia){
-
-            copia = new int[origuinal.length]
-            
-            
-            int indice = 0;
-            
-            for (int i : origuinal) {
-                copia[indice]
-            }
-
-            return copia;
-        }
+    }
 
 }
