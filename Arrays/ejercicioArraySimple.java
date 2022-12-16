@@ -19,6 +19,12 @@ public class ejercicioArraySimple {
             opcion = menu(array);
 
             switch(opcion){
+                
+                case 0:
+                    pausa();
+                    salir = true;
+                break;
+                
                 case 1:
                     limpiarTabla(tabla);
                     pausa();
@@ -45,10 +51,15 @@ public class ejercicioArraySimple {
                 break;
                 
                 case 6:
+                    aleatorio(tabla);
                     pausa();
-                    salir = true;
                 break;
                 
+                case 7:
+                    copiarArray(numero, numeroNuevo);
+                    pausa();
+                break;
+
                 default:
                     System.out.println("OPcion no valida");
                     pausa();
@@ -81,7 +92,8 @@ public class ejercicioArraySimple {
             System.out.println("3-Imprimir Array");
             System.out.println("4-Borrar elmento");
             System.out.println("5-Llenar");
-            System.out.println("6-Salir");
+            System.out.println("6-Posición Random");
+            System.out.println("0-Salir");
             System.out.println("================================");
             int opcion = sc.nextInt();
         
@@ -154,4 +166,30 @@ public class ejercicioArraySimple {
             }
             System.out.println("Operacion realizada");
         }
+    /**
+     * Aleatorio
+     * @param tabla
+     */
+        static void aleatorio(String[] tabla){
+            for (int aux = 0; aux < tabla.length; aux++) {
+                int random = (int)(Math.random()*tabla.length);
+                String temporal = tabla[aux];
+                tabla[aux] = tabla[random];
+            }
+        }
+
+        static int[] copiarArray(int[] origuinal, int[] copia){
+
+            copia = new int[origuinal.length]
+            
+            
+            int indice = 0;
+            
+            for (int i : origuinal) {
+                copia[indice]
+            }
+
+            return copia;
+        }
+
 }
