@@ -56,6 +56,8 @@ public class ejercicioArraySimple {
                     break;
                 case 10:
                     desordenarTabla(numeros);
+                break;
+                
                 case 0:
                     salir = true;
                     sc.close();
@@ -73,18 +75,22 @@ public class ejercicioArraySimple {
     static int menu()
     {
         System.out.println("---------");
-        System.out.println("1- Limpiar Array");
-        System.out.println("2- Almacenar nuevo número");
-        System.out.println("3- Imprimir Array");
-        System.out.println("4- Borrar Elemento");
-        System.out.println("5- Llenar con valores fijos (10) ");
-
-        System.out.println("6- Llenar con valores aleatorios");
-        System.out.println("7- Buscar un valor- devuelve la posición en la que esta -1 si no está");
-        System.out.println("8- Ordenar");
-        System.out.println("9- Busqueda en tabla ordenada");
+        System.out.println("1-Limpiar Array");
+        System.out.println("2-Almacenar nuevo número");
+        System.out.println("3-Imprimir Array");
+        System.out.println("4-Borrar Elemento");
+        System.out.println("5-Llenar con valores fijos (10) ");
+        System.out.println("6-Llenar con valores aleatorios");
+        System.out.println("7-Buscar un valor- devuelve la posición en la que esta -1 si no está");
+        System.out.println("8-Ordenar");
+        System.out.println("9-Busqueda en tabla ordenada");
+        System.out.println("10-");
+        System.out.println("11-");
+        System.out.println("12-");
+        System.out.println("13-");
+        System.out.println("14-");
+        System.out.println("15-Insertar en posicion de array completa");
         System.out.println("0- Salir");
-
         System.out.println("____________________________");
         System.out.println("Indica una opción...");
         int opcion = sc.nextInt();
@@ -235,5 +241,33 @@ public class ejercicioArraySimple {
     {
 
     }
+
+
+
+
+
+    // static int[] insertarArrayCompleto(int[] origuinal){
+    //     System.out.println("¿Que numero quieres insertar?...");
+
+    // }
+
+
+
+
+
+
+
+
+    //Necesito un array de longitud +1 que el original
+
+    //hasta llegar a la posición en la que quiero inserrtar el nuevo valor
+    //insero un nuuevo valor
+    //sigo insertando los bañpres antiguos en el nuevo
+
+
+
+
+
+
 
 }
