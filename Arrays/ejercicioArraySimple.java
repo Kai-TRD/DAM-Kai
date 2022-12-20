@@ -12,6 +12,7 @@ public class ejercicioArraySimple {
         //tendré que mostrar un menu con acciones que se deben realizar con el array
 
         int[] numeros = new int[10];
+        int[] copiaNumeros = null;
 
         boolean salir = false;
         do
@@ -22,7 +23,9 @@ public class ejercicioArraySimple {
             {
                 case 1:
                     limpiarArray(numeros);
-                    break;
+                    enter();
+                break;
+                
                 case 2:
                     sc.nextLine(); //limpio buffer
                     System.out.println("¿Que número desea insertar?");
@@ -30,42 +33,88 @@ public class ejercicioArraySimple {
                     System.out.println("¿en que posicion?");
                     int posicion = sc.nextInt();
                     insertar(numeros, numero, posicion);
-                    break;
+                    enter();
+                break;
+                
                 case 3:
                     imprimir(numeros);
-                    break;
+                    enter();
+                break;
+                
                 case 4:
                     borrar(numeros);
-                    break;
+                    enter();
+                break;
+                
                 case 5:
                     llenar(numeros);
-                    break;
+                    enter();
+                break;
+                
                 case 6:
                     llenarConAleatorios(numeros);
-                    break;
+                    enter();
+                break;
+                
                 case 7:
                     int posicionBusqueda = buscar(numeros);
                     System.out.println("EL numero está en la posición: "+ posicionBusqueda);
-                    break;
+                    enter();
+                break;
+                
                 case 8:
                     ordenar(numeros);
-                    break;
+                break;
+                
                 case 9:
                     posicionBusqueda = buscarEnTablaOrdenada(numeros);
                     System.out.println("EL numero está en la posición: "+ posicionBusqueda);
-                    break;
-                case 10:
-                    desordenarTabla(numeros);
+                    enter();
                 break;
                 
+                case 10:
+                    desordenarTabla(numeros);
+                    enter();
+                break;
+                
+                case 11:
+                    copiaNumeros = copiarArray(numeros);
+                    imprimir(copiaNumeros);
+                    enter();
+                break;
+                
+                case 12:
+                    imprimir(copiaNumeros);
+                    enter();
+                break;
+                
+                case 13:
+                    numeros = insertarArrayCompleto(numeros);
+                    enter();
+                break;
+                
+                case 14: 
+                    numeros = eliminarUltimoArrayCompleto(numeros);
+                    enter();
+                break;
+                
+                case 15:
+                    numeros = insertarEnPosicionArrayCompleto(numeros);
+                    enter();
+                break;
+                
+                default:
+                    System.out.println("Opción no Valida");
+                    enter();
+                break;
+
+
+                // salida
                 case 0:
                     salir = true;
                     sc.close();
-                    break;
-                default:
-                    System.out.println("Opción no Valida");
-                    break;
-
+                    enter();
+                break;
             }
 
         }while(!salir);
@@ -75,31 +124,43 @@ public class ejercicioArraySimple {
     static int menu()
     {
         System.out.println("---------");
-        System.out.println("1-Limpiar Array");
-        System.out.println("2-Almacenar nuevo número");
-        System.out.println("3-Imprimir Array");
-        System.out.println("4-Borrar Elemento");
-        System.out.println("5-Llenar con valores fijos (10) ");
-        System.out.println("6-Llenar con valores aleatorios");
-        System.out.println("7-Buscar un valor- devuelve la posición en la que esta -1 si no está");
-        System.out.println("8-Ordenar");
-        System.out.println("9-Busqueda en tabla ordenada");
-        System.out.println("10-");
-        System.out.println("11-");
-        System.out.println("12-");
-        System.out.println("13-");
-        System.out.println("14-");
-        System.out.println("15-Insertar en posicion de array completa");
+        System.out.println("1- Limpiar Array");
+        System.out.println("2- Almacenar nuevo número");
+        System.out.println("3- Imprimir Array");
+        System.out.println("4- Borrar Elemento");
+        System.out.println("5- Llenar con valores fijos (10) ");
+        System.out.println("6- Llenar con valores aleatorios");
+        System.out.println("7- Buscar un valor- devuelve la posición en la que esta -1 si no está");
+        System.out.println("8- Ordenar");
+        System.out.println("9- Busqueda en tabla ordenada");
+        System.out.println("10- Desordenar");
+        System.out.println("11- Copiar en CopiaNumero");
+        System.out.println("12- Imprimir CopiaNumero");
+        System.out.println("-----------------------------------------------");
+        System.out.println("13- Insertar al final en array Completo (no ordenado)");
+        System.out.println("14- Eliminar ultima posicion en Completo (no ordenado");
+        System.out.println("15- Insertar en posicion de Array Completo(no ordenado)");
         System.out.println("0- Salir");
-        System.out.println("____________________________");
-        System.out.println("Indica una opción...");
+        System.out.println("---------------------------------------------------");
+        System.out.println("Indica una opcion...");
         int opcion = sc.nextInt();
 
         return opcion;
     }
 
+
+    /*ENter */
+    static void enter(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Pulsa enter para continuar...");
+        String enter = sc.nextLine();
+        System.out.print("\033[H\033[2J");
+    }
+
+
+
     /**
-     * Borra todos los valores del array que se le pasa
+     * limpiar el array
      * @param tabla
      */
     static void limpiarArray(int[] tabla)
@@ -112,7 +173,7 @@ public class ejercicioArraySimple {
 
 
     /**
-     * Inserta en la tabla y en la posicicion indicada el nombre nuevo 
+     * inserta valor 
      * @param tabla
      * @param nuevoNombre
      * @param posicion
@@ -125,7 +186,6 @@ public class ejercicioArraySimple {
         }
         else
         {
-            //La posicion que me indican no es posible
             System.out.println("Posicion no válida, debe indicar un numero entre 0 y " + (tabla.length-1));
         }
     }
@@ -142,7 +202,7 @@ public class ejercicioArraySimple {
     }
 
     /**
-     * Borra de un array una posición en concreto
+     * borrar valor
      * @param tabla
      */
     static void borrar(int[] tabla)
@@ -158,7 +218,6 @@ public class ejercicioArraySimple {
         }
         else
         {
-            //hay error de posicion
             System.out.println("ERROR - posicion fuera de rango");
         }
     }
@@ -239,35 +298,123 @@ public class ejercicioArraySimple {
      */
     static void desordenarTabla(int[] tabla)
     {
+        //recorrer toda la tabla/array
+        for(int aux = 0; aux< tabla.length; aux++)
+        {
+            //en cada posición genero un numero aleatorio de 0 a longitud-1
+            int nuevaPosicion = (int)(Math.random()*(tabla.length));
 
+            //intercambio la posicion aux por la posición nuevaPosicion
+            int valorNuevaPosicion = tabla[nuevaPosicion];
+            tabla[nuevaPosicion] = tabla[aux];
+            tabla[aux] = valorNuevaPosicion;
+        }
     }
 
 
+    static int[] copiarArray(int[] original)
+    {
+
+        //Forma Manual
+
+        // int[] copia = new int[original.length];
+
+        // int indice = 0;
+        // for (int i : original) {
+        //     copia[indice] = i;
+        //     indice++;
+        // }
+
+        // return copia;
+
+        //Utilizado metodos de la clase Arrays
+        int[] copia = Arrays.copyOf(original, original.length);
+        return copia;
+
+    }
+
+    /**
+     * Crea un nuevo array con una posición mas e inserta al final un nuevo valor
+     * @param original
+     * @return
+     */
+    static int[] insertarArrayCompleto(int[] original)
+    {
+        System.out.println("¿Que número quieres insertar?...");
+        int nuevoNumero = sc.nextInt();
+
+        //creo la copia del array original con una posición más
+        int[] copia = Arrays.copyOf(original, original.length+1);
+
+        //Inserto en la última posición del array copia el nuevo valor
+        copia[copia.length-1] = nuevoNumero;
+
+        return copia;
+    }
+
+    /**
+     * Elimina del array el ultimo elemento y elimina esta posición
+     * @param numeros
+     * @return
+     */
+    static int[] eliminarUltimoArrayCompleto(int[] numeros)
+    {
+        if(numeros.length >0)
+        {
+            int[] copia = Arrays.copyOf(numeros, numeros.length-1);
+            return copia;
+        }
+        else
+        {
+            System.out.println("El array está vacio");
+            return numeros;
+
+        }
+        
+    }
 
 
+    static int[] insertarEnPosicionArrayCompleto(int[] original)
+    {
+        //Este mismo algoritmo lo teneis en los apuntes utilizando el metodo Arrays.arrayCopy
 
-    // static int[] insertarArrayCompleto(int[] origuinal){
-    //     System.out.println("¿Que numero quieres insertar?...");
+        System.out.println("¿que nuevo valor quieres insertar?...");
+        int nuevoNumero = sc.nextInt();
+        System.out.println("¿en que posición?...");
+        int posicionInsercion = sc.nextInt();
 
-    // }
+        //necesito un array de longitud +1 que el original
+        int[] copia = new int[original.length+1];
+        //recorro todo el array original yvoy copiando sus valores 
+        int indiceCopia = 0;
+        for(int aux = 0; aux< original.length; aux++)
+        {
+            //hasta llegar a la posicion en la que quiero insertar el nuevo valor
+            if(aux != posicionInsercion)
+            {
+                copia[indiceCopia] = original[aux];
+                indiceCopia++;
+            }
+            else //estoy en la posicion de copia
+            {
+                //copio el nuevo valor en el nuevo array
+                copia[indiceCopia] = nuevoNumero;
+                indiceCopia++;
+                //y copio el el valor que estaba en esa posición 
+                //en una posicion mas adelantada
+                copia[indiceCopia] = original[aux];
+                indiceCopia++;
+            }
 
+            //inserto en nuevo valor
+            //sigo insertando los valores antiguos en el nuevo
+        }
 
+        return copia;
 
+        
 
-
-
-
-
-    //Necesito un array de longitud +1 que el original
-
-    //hasta llegar a la posición en la que quiero inserrtar el nuevo valor
-    //insero un nuuevo valor
-    //sigo insertando los bañpres antiguos en el nuevo
-
-
-
-
-
+    }
 
 
 }
