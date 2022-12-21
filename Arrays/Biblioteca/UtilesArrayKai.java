@@ -2,8 +2,6 @@ package Arrays.Biblioteca;
 
 import java.util.Scanner;
 
-import Bucles.numeroSecreto;
-
 /*
 1-limpiar() //borra los valores del array. Deque quedar un array vacio
 
@@ -62,6 +60,7 @@ public class UtilesArrayKai {
      */
     static int[] limpiar(){
         int[] array = null;
+        // int[] array = new int[0];
         return array;
     }
     
@@ -122,11 +121,12 @@ public class UtilesArrayKai {
      */
     static void imprimir(int[]  array){
         if(array == null){
-            System.out.println("El array esta vacio, no se puede imprimir...");
+            System.out.println("¡El array esta vacio, no se puede imprimir!");
         } else {
             for (int i = 0; i < array.length; i++) {
-                System.out.println(i+"-"+array[i]);
+                System.out.print("["+array[i]+"]");
             }
+            System.out.println();
         }
     }
 } 

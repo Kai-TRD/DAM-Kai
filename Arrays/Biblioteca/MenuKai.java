@@ -7,17 +7,16 @@ public class MenuKai {
 
         boolean salida = false;
         Scanner sc = new Scanner(System.in);
-        System.out.print("Digame el numero de arrays:");
-        int cantidadArray = sc.nextInt();
-        int[] array = new int[cantidadArray];
 
+        int[] array = new int[10];
+        System.out.println("La cantidad por defecto del array es: "+array.length);
         UtilesArrayKai.enter();
         do {
 
             System.out.println("---Menu Array---");
             System.out.println("1-Limpiar array");
-            System.out.println("2-Llenar el array con nº de elementos indicados con valor 0");
-            System.out.println("3-");
+            System.out.println("2-Llenar el array(longitud personalizada y contenido 0)");
+            System.out.println("3-Llenar el array(longitud y contenido personalizado)");
             System.out.println("4-");
             System.out.println("5-");
             System.out.println("6-");
