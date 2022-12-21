@@ -2,6 +2,8 @@ package Arrays.Biblioteca;
 
 import java.util.Scanner;
 
+import Bucles.numeroSecreto;
+
 /*
 1-limpiar() //borra los valores del array. Deque quedar un array vacio
 
@@ -95,7 +97,21 @@ public class UtilesArrayKai {
 
 
 
+    static int[] eliminarPosicion(int[] array, int posicion){
+        
+        int[] nuevo = new int[array.length-1];
 
+        //copiamos en el nuevo array de 0 a la posición borrado
+        //Argumentos de arraycopy
+            //arg1: array origuinal
+            //arg2: posición dodne empiezo a leer
+            //arg3: array destino
+            //arg4: posición desde la que voy a insertar en el array destino
+            //arg5: elo numero de elementos que voy a copiar del origen al destino
+        System.arraycopy(array, 0, nuevo, 0, posicion);
+        
+        return nuevo;
+    }
 
 
     
