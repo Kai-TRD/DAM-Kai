@@ -1,3 +1,4 @@
+package Arrays;
 public class ejercicioArray4 {
     public static void main(String[] args) {
         

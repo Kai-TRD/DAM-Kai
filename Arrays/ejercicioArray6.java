@@ -1,3 +1,4 @@
+package Arrays;
 import java.net.ContentHandlerFactory;
 
 public class ejercicioArray6 {
