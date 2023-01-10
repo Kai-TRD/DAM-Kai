@@ -26,6 +26,7 @@ public class ejercicioArray7 {
         nValue = sc.nextInt();
         System.out.print("Dime un valor al cual sustituir:");
         int oValue = sc.nextInt();
+        sc.close();
 
         for (int i = 0; i < valores.length; i++) {
             if(valores[i] == oValue){
@@ -58,3 +59,4 @@ public class ejercicioArray7 {
 
         System.out.println();
     }
+}
