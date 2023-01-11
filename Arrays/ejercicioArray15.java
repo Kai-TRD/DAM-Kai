@@ -1,12 +1,5 @@
 package Arrays;
-
-import java.lang.StackWalker.Option;
-import java.lang.Thread.State;
 import java.util.Scanner;
-
-import javax.lang.model.util.ElementScanner6;
-import javax.sound.sampled.SourceDataLine;
-
 public class ejercicioArray15 {
     public static void main(String[] args) {
         
