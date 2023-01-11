@@ -15,7 +15,8 @@ public class ejercicioArray15 {
         }
 
         int option = 0;
-
+        
+        Scanner sc = new Scanner(System.in);
         do {
             
         
@@ -25,6 +26,7 @@ public class ejercicioArray15 {
             System.out.println("├─────────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤");
 
             System.out.print("│Ocupación│");
+
             for (int i = 0; i < ocupacion.length; i++) {
                 System.out.print("  " + ocupacion[i] + "  │");
             }
@@ -32,7 +34,7 @@ public class ejercicioArray15 {
 
             System.out.println("└─────────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘");
 
-            Scanner sc = new Scanner(System.in);
+
             System.out.println("¿Cuántos son? (Introduzca -1 para salir del programa):");
             option = sc.nextInt();
 
@@ -40,7 +42,9 @@ public class ejercicioArray15 {
 
 
         } while (option != -1);
+        
         System.out.println("Gracias. Hasta pronto.");
+        sc.close();
     }
 
 
@@ -52,51 +56,93 @@ public class ejercicioArray15 {
      */
     static void filtro(int[] ocupacion, int option){
 
-        if(option>4){
-            System.out.println("Lo siento, no admitimos grupos de "+option+", haga grupos de 4 personas como máximo e intente de nuevo.");
-        } 
+
         
 
 
 
-        if(option == 4){
-            boolean libre = false;
-            int suma = 0;
-            do {
-                if(suma == 10){
-                    System.out.println("Lo siento, en estos momentos no queda sitio.");
-                    libre = true;
-                }
-                if(ocupacion[suma]==0){
-                    ocupacion[suma] = ocupacion[suma] + option;
-                    System.out.println("Por favor, siéntense en la mesa número "+(suma+1)+".");
-                    libre = true;    
-                }
-                suma++;
-            } while (libre != true);
-        }
 
 
 
 
-        if(option<4)
-        {
-            boolean libre = false;
-            int suma = 0;
-            do {
-                if(ocupacion[suma]+option <= 4){
-                    ocupacion[suma] = ocupacion[suma]+option;
-                    System.out.println("Por favor, siéntense en la mesa número "+(suma+1)+".");
-                    libre = true;    
-                }
-                if(ocupacion[suma] == 10){
-                    System.out.println("Lo siento, en estos momentos no queda sitio.");
-                    libre = true;
-                }
-                suma++;
-            } while (libre != true);
-        }
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // int mesaLlena = 0;
+        // for (int i = 0; i < ocupacion.length; i++) {
+        //     if(ocupacion[i] == 4){
+        //         mesaLlena++;
+        //     }
+        // }
+        //
+        // if(option>4){
+        //     System.out.println("Lo siento, no admitimos grupos de "+option+", haga grupos de 4 personas como máximo e intente de nuevo.");
+        // }
+        //
+        // if(mesaLlena == 10){
+        //     System.out.println("Lo siento, en estos momentos no queda sitio.");
+        // } else {
+        //
+        //     if(option == 4){
+        //         boolean libre = false;
+        //         int suma = 0;
+        //         do {
+        //             if(suma == 10){
+        //                 System.out.println("Lo siento, en estos momentos no queda sitio.");
+        //                 libre = true;
+        //             }
+        //             if(ocupacion[suma]==0){
+        //                 ocupacion[suma] = ocupacion[suma] + option;
+        //                 System.out.println("Por favor, siéntense en la mesa número "+(suma+1)+".");
+        //                 libre = true;    
+        //             }
+        //             suma++;
+        //         } while (libre != true);
+        //     }
+        //
+        //     if(option<4)
+        //     {
+        //         boolean libre = false;
+        //         int suma = 0;
+        //         do {
+        //             if(ocupacion[suma]+option <= 4){
+        //                 ocupacion[suma] = ocupacion[suma]+option;
+        //                 System.out.println("Tendrán que compartir mesa. Por favor, siéntense en la mesa número "+(suma+1)+".");
+        //                 libre = true;    
+        //             }
+        //             if(ocupacion[suma] == 10){
+        //                 System.out.println("Lo siento, en estos momentos no queda sitio.");
+        //                 libre = true;
+        //             }
+        //             suma++;
+        //         } while (libre != true);
+        //     }
+        // }
     }
 
 }
