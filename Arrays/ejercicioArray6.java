@@ -1,5 +1,4 @@
 package Arrays;
-import java.net.ContentHandlerFactory;
 
 public class ejercicioArray6 {
     public static void main(String[] args) {
@@ -29,7 +28,7 @@ public class ejercicioArray6 {
     static void rotar(int[] numero){
         for (int i = 0; i < numero.length; i++) {
             if (i < numero.length-1){
-                numero[i+1] = copia[i]
+                // numero[i+1] = copia[i]
             }
         }
     }

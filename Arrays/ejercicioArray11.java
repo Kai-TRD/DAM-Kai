@@ -7,22 +7,22 @@ import Recursividad.funcionesRecursivas;
 
 public class ejercicioArray11 {
     public static void main(String[] args) {
-        int[] array = new int[20];
-        int[] primo = buscarPrimos(array);
+      //   int[] array = new int[20];
+      //   int[] primo = buscarPrimos(array);
 
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int)(Math.random()*101);
-        }
+      //   for (int i = 0; i < array.length; i++) {
+      //       array[i] = (int)(Math.random()*101);
+      //   }
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
+      //   for (int i = 0; i < array.length; i++) {
+      //       System.out.print(array[i] + " ");
+      //   }
 
-        System.out.println();
+      //   System.out.println();
 
-      }
-      static int{} buscarPrimos(int[] array){
-        funcionesRecursivas.esPrimo()
+      // }
+      // static int{} buscarPrimos(int[] array){
+      //   funcionesRecursivas.esPrimo()
       }
 
 
