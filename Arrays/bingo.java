@@ -81,53 +81,20 @@ public class bingo {
                 int valorRandom = (int)((Math.random()*10)+suma);
                  
                 columnaActual[j] = String.valueOf(valorRandom);
+                
+                System.out.print(columnaActual[j]);
             }
+            
+            // for (int j = 0; j < 3; j++) {
+            //     if(columnaActual[j] == columnaActual[2]){
+
+            //     }
+            // }
+
+            System.out.println();
             contador++;
         }
     }
-
-    // static void imprimir(String[] colum1, String[] colum2, String[] colum3, String[] colum4, String[] colum5, String[] colum6, String[] colum7, String[] colum8, String[] colum9){
-        
-    //     String[] columnaActual = colum1;
-    //     int contador = 1;
-
-    //     for (int i = 0; i < 9; i++) {
-    //         switch (contador) {
-    //             case 1:
-    //                 columnaActual = colum1;
-    //                 break;
-    //             case 2:
-    //                 columnaActual = colum2;
-    //                 break;
-    //             case 3:
-    //                 columnaActual = colum3;
-    //                 break;
-    //             case 4:
-    //                 columnaActual = colum4;
-    //                 break;
-    //             case 5:
-    //                 columnaActual = colum5;
-    //                 break;
-    //             case 6:
-    //                 columnaActual = colum6;
-    //                 break;
-    //             case 7:
-    //                 columnaActual = colum7;
-    //                 break;
-    //             case 8:
-    //                 columnaActual = colum8;
-    //                 break;
-    //             case 9:
-    //                 columnaActual = colum9;
-    //                 break;
-    //         }
-    //         for (int j = 0; j < 3; j++) {
-    //             System.out.print(columnaActual[j]+" - ");    
-    //         }
-    //         System.out.println();
-    //         contador++;
-    //     }
-    // }
 
     static void carton(String[] colum1, String[] colum2, String[] colum3, String[] colum4, String[] colum5, String[] colum6, String[] colum7, String[] colum8, String[] colum9){
 
@@ -183,11 +150,11 @@ public class bingo {
                     suma = 80;
                     break;
             }
-            for (int i = 0; i < 2; i++) {
-                int valorRandom = (int)(Math.random()*3);
+            // for (int i = 0; i < 2; i++) {
+            //     int valorRandom = (int)(Math.random()*3);
                  
-                columnaActual[valorRandom] = "-1";
-            }
+            //     columnaActual[valorRandom] = "-1";
+            // }
             
             contador++;
 

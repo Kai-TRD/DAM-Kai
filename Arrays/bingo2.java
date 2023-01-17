@@ -1,0 +1,162 @@
+package Arrays;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+import javax.net.ssl.TrustManager;
+
+public class bingo2 {
+    
+
+    static Scanner sc = new Scanner(System.in);
+
+    
+
+    public static void main(String[] args) {
+        
+        //Declaracion de variables
+        
+        int[] col0 = new int[3];
+        int[] col1 = new int[3];
+        int[] col2 = new int[3];
+        int[] col3 = new int[3];
+        int[] col4 = new int[3];
+        int[] col5 = new int[3];
+        int[] col6 = new int[3];
+        int[] col7 = new int[3];
+        int[] col8 = new int[3];
+        
+        int[][] carton = {col0, col1, col2, col3, col4, col5, col6, col7, col8};
+        
+
+        // col0,  col1,  col2,  col3.  col4,  col5,  col6,  col7,  col8
+        // [0,0]  [1,0]  [2,0]  [3,0]  [4,0]  [5,0]  [6,0]  [7,0]  [8,0]
+        // [0,1]  [1,1]  [2,1]  [3,1]  [4,1]  [5,1]  [6,1]  [7,1]  [8,1]
+        // [0,2]  [1,2]  [2,2]  [3,2]  [4,2]  [5,2]  [6,2]  [7,2]  [8,2]
+
+
+        int[] numerosGenerados = new int[0];
+
+
+        //variable para controlar si salimos del programa o jugamos otro cartón
+        boolean salir = true;
+
+        do 
+        {
+            //Crear/restaurar carton vacio y vaciado de los numeros generados en eljuego anterior
+            
+            
+            //Coloco los 12 espacios en blanco, distribuidos en 4 por cada fila al azar en las columnas
+            ponerBlancos(carton);
+
+            //introduzco los numeros de cada columna
+            rellenarNumerosCarton(carton);
+
+            // //pinto el cartón ;
+            pintarCarton(carton , numerosGenerados);
+
+            // //pregunto si quiero sacar otra bola o terminar este juego
+            // boolean jugar = false;
+
+            // while(jugar)
+            // {
+
+            //     //saco numero aleatorio - no se debe repetir
+                
+            //     //pinto el carton con numeros sacados
+            //     int numeroAciertos = pintarCarton(carton, numerosGenerados);
+
+
+            //     //Eres ganador??
+            //     if (numeroAciertos >= 15)
+            //     {
+            //         System.out.println("-----------------------------");
+            //         System.out.println("--------  BINGO -------------");
+            //         System.out.println("-----------------------------");
+            //     }
+
+            //     //pregunto si quiero sacar otra bola o terminar este juego
+                
+
+               
+            // }
+
+            // //Pregunto si quiero jugar otro cartón o salir definitivamente del programa
+           
+            
+        } while(!salir);
+    }
+
+    /**
+     * Poner las partes blancas del carton
+     * @param carton
+     */
+    static void ponerBlancos(int[][] carton){
+        int randomPoss = (int)(Math.random()*3);
+        
+        for (int i = 0; i <= 8; i++) {
+            for (int j = 0; j < 3; j++) {
+                carton[randomPoss][j] = -1;
+            }
+        }
+    }
+
+    static void rellenarNumerosCarton(int[][] carton){
+        
+    }
+
+
+    /**
+     * imprimir el carton
+     * @param carton
+     * @param numerosGenerados
+     */
+    static void pintarCarton(int[][] carton, int[] numerosGenerados){ 
+        
+        System.out.println("\t╔═══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗");
+        System.out.print("\t");
+        for (int i = 0; i <= 8; i++) {
+            if(carton[i][0] == -1){
+                System.out.print("║ ████\t║");
+            } else {
+                System.out.print("║  "+carton[i][0]+"\t║");
+            }
+        }
+        System.out.println();
+        System.out.print("\t");
+        System.out.println("╚═══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝");
+        System.out.print("\t");
+        System.out.println("╔═══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗");
+        System.out.print("\t");
+        for (int i = 0; i < 9; i++) {
+            if(carton[i][0] == -1){
+                System.out.print("║ ████\t║");
+            } else {
+                System.out.print("║  "+carton[i][1]+"\t║");
+            }
+        }
+
+        System.out.println();
+        System.out.println("\t╚═══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝");
+        System.out.println("\t╔═══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗");
+        System.out.print("\t");
+        for (int i = 0; i < 9; i++) {
+            if(carton[i][0] == -1){
+                System.out.print("║ ████\t║");
+            } else {
+                System.out.print("║  "+carton[i][2]+"\t║");
+            }
+        }
+        System.out.println();
+        System.out.println("\t╚═══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝");
+        
+    // System.out.println("╔╦═╦═╦═╦═╦═╦═╦═╦═╦═╦╗");
+    // System.out.println("╠╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╣");
+    // System.out.println("╠╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╣");
+    // System.out.println("╠╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╣");
+    // System.out.println("╠╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╣");
+    // System.out.println("╚╩═╩═╩═╩═╩═╩═╩═╩═╩═╩╝");
+    }
+
+
+}
