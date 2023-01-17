@@ -1,5 +1,5 @@
 package Arrays.Biblioteca;
-
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -54,6 +54,8 @@ public class UtilesArrayKai {
         System.out.print("\033[H\033[2J");
     }
 
+
+
     /**
      * Limpia el arrya
      * @param array
@@ -88,14 +90,6 @@ public class UtilesArrayKai {
     }
 
 
-
-
-
-
-
-
-
-
     static int[] eliminarPosicion(int[] array, int posicion){
         
         int[] nuevo = new int[array.length-1];
@@ -112,8 +106,27 @@ public class UtilesArrayKai {
         return nuevo;
     }
 
+    
 
     
+
+    
+    static int[] insertarAlFinal(int[] array, int elemento){
+        int[] copia= array.copyOf(array, array.length++);
+
+        int[] copia=array.copyOf(array, array.length+1);
+        copia[copia.length-1]=elemento;
+        return copia;
+    }
+    
+
+
+
+
+
+
+
+
 
     /**
      * Imprimir array
