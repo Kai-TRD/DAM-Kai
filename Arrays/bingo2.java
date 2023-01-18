@@ -119,21 +119,20 @@ public class bingo2 {
 
         for (int i = 0; i < 9; i++) {
 
-            boolean unico = true;
+
+            int[] lista = {1,2,3,4,5,6,7,8,9,10};
 
             for (int j = 0; j < 3; j++) {
-                do {
-                    int random = (int)(Math.random()*9);
-                    carton[i][j] = random+10*i;
-                    //comprobar que random no esté ya en la columna (i)
+                
+                int random = (int)(Math.random()*9);
 
-                    if(carton[i][j] == carton[i][0]){
-                        unico = false;
-                    }
-                    
-                } while (unico != false);
+                int temp = lista[random];
+
+                // lista.splice(1,1);
 
 
+                carton[i][j] = temp+10*i;
+                //comprobar que random no esté ya en la columna (i)
             }
             Arrays.sort(carton[i]);
         }
