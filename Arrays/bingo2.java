@@ -2,8 +2,9 @@ package Arrays;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
-import javax.net.ssl.TrustManager;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.Arrays;
+import java.util.Arrays;
 
 public class bingo2 {
     
@@ -46,11 +47,11 @@ public class bingo2 {
             //Crear/restaurar carton vacio y vaciado de los numeros generados en eljuego anterior
             
             
-            //Coloco los 12 espacios en blanco, distribuidos en 4 por cada fila al azar en las columnas
-            ponerBlancos(carton);
-
             //introduzco los numeros de cada columna
-            rellenarNumerosCarton(carton);
+            rellenarNumerosCarton(carton); 
+            
+            //Coloco los 12 espacios en blanco, distribuidos en 4 por cada fila al azar en las columnas
+            // ponerBlancos(carton);
 
             // //pinto el cartón ;
             pintarCarton(carton , numerosGenerados);
@@ -92,29 +93,78 @@ public class bingo2 {
      * @param carton
      */
     static void ponerBlancos(int[][] carton){
-        int randomPoss = (int)(Math.random()*3);
-        
-        for (int i = 0; i <= 8; i++) {
-            for (int j = 0; j < 3; j++) {
-                carton[randomPoss][j] = -1;
+
+
+        for (int r = 0; r < 12; r++) {
+
+            int randomPossX = (int)(Math.random()*9);
+            int randomPossY = (int)(Math.random()*3);
+
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 3; j++) {
+                    carton[randomPossX][randomPossY] = -1;
+                }
             }
         }
     }
 
     static void rellenarNumerosCarton(int[][] carton){
-        
-    }
 
+        // col0,  col1,  col2,  col3.  col4,  col5,  col6,  col7,  col8
+        // [0,0]  [1,0]  [2,0]  [3,0]  [4,0]  [5,0]  [6,0]  [7,0]  [8,0]
+        // [0,1]  [1,1]  [2,1]  [3,1]  [4,1]  [5,1]  [6,1]  [7,1]  [8,1]
+        // [0,2]  [1,2]  [2,2]  [3,2]  [4,2]  [5,2]  [6,2]  [7,2]  [8,2]
+
+
+
+        for (int i = 0; i < 9; i++) {
+
+            boolean unico = true;
+
+            for (int j = 0; j < 3; j++) {
+                do {
+                    int random = (int)(Math.random()*9);
+                    carton[i][j] = random+10*i;
+                    //comprobar que random no esté ya en la columna (i)
+
+                    if(carton[i][j] == carton[i][0]){
+                        unico = false;
+                    }
+                    
+                } while (unico != false);
+
+
+            }
+            Arrays.sort(carton[i]);
+        }
+    }
 
     /**
      * imprimir el carton
      * @param carton
      * @param numerosGenerados
      */
-    static void pintarCarton(int[][] carton, int[] numerosGenerados){ 
+    static void pintarCarton(int[][] carton, int[] numerosGenerados){         
+    
+        for (int i = 0; i <= 8; i++) {
+            System.out.print("\t   "+carton[i][0]);
+        }
+        System.out.println();
+        for (int i = 0; i < 9; i++) {
+
+            System.out.print("\t   "+carton[i][1]);
+        }
+        System.out.println();
+        for (int i = 0; i < 9; i++) {
+            System.out.print("\t   "+carton[i][2]);
+        }
+        System.out.println();
+
+
         
         System.out.println("\t╔═══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗");
         System.out.print("\t");
+        
         for (int i = 0; i <= 8; i++) {
             if(carton[i][0] == -1){
                 System.out.print("║ ████\t║");
@@ -122,14 +172,16 @@ public class bingo2 {
                 System.out.print("║  "+carton[i][0]+"\t║");
             }
         }
+
         System.out.println();
         System.out.print("\t");
         System.out.println("╚═══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝");
         System.out.print("\t");
         System.out.println("╔═══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗");
         System.out.print("\t");
+
         for (int i = 0; i < 9; i++) {
-            if(carton[i][0] == -1){
+            if(carton[i][1] == -1){
                 System.out.print("║ ████\t║");
             } else {
                 System.out.print("║  "+carton[i][1]+"\t║");
@@ -140,8 +192,9 @@ public class bingo2 {
         System.out.println("\t╚═══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝");
         System.out.println("\t╔═══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗╔══════╗");
         System.out.print("\t");
+
         for (int i = 0; i < 9; i++) {
-            if(carton[i][0] == -1){
+            if(carton[i][2] == -1){
                 System.out.print("║ ████\t║");
             } else {
                 System.out.print("║  "+carton[i][2]+"\t║");
