@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.Arrays;
@@ -51,7 +52,7 @@ public class bingo2 {
             rellenarNumerosCarton(carton); 
             
             //Coloco los 12 espacios en blanco, distribuidos en 4 por cada fila al azar en las columnas
-            // ponerBlancos(carton);
+            ponerBlancos(carton);
 
             // //pinto el cartón ;
             pintarCarton(carton , numerosGenerados);
@@ -100,9 +101,16 @@ public class bingo2 {
             int randomPossX = (int)(Math.random()*9);
             int randomPossY = (int)(Math.random()*3);
 
+            // for (int i = 0; i < 9; i++) {
+            //     for (int j = 0; j < 3; j++) {
+            //         carton[randomPossX][randomPossY] = -1;
+            //     }
+            // }
+
+
             for (int i = 0; i < 9; i++) {
-                for (int j = 0; j < 3; j++) {
-                    carton[randomPossX][randomPossY] = -1;
+                for (int j = 0; j < 4; j++) {
+                    carton[i][randomPossX] = -1;
                 }
             }
         }
@@ -128,15 +136,21 @@ public class bingo2 {
 
                 int temp = lista[random];
 
-                // lista.splice(1,1);
-
+                // lista.remove(random);
+                System.arraycopy(lista, random + 1, lista, random, lista.length - 1 - random);
 
                 carton[i][j] = temp+10*i;
+
                 //comprobar que random no esté ya en la columna (i)
+                // for (int k = 0; k < lista.length; k++) {
+                //     System.out.print(lista[k]);
+                // }
+                // System.out.println();
             }
             Arrays.sort(carton[i]);
         }
     }
+
 
     /**
      * imprimir el carton
