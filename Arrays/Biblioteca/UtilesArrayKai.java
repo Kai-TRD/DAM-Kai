@@ -111,13 +111,13 @@ public class UtilesArrayKai {
     
 
     
-    static int[] insertarAlFinal(int[] array, int elemento){
-        int[] copia= array.copyOf(array, array.length++);
+    // static int[] insertarAlFinal(int[] array, int elemento){
+    //     int[] copia= array.copyOf(array, array.length++);
 
-        int[] copia=array.copyOf(array, array.length+1);
-        copia[copia.length-1]=elemento;
-        return copia;
-    }
+    //     int[] copia=array.copyOf(array, array.length+1);
+    //     copia[copia.length-1]=elemento;
+    //     return copia;
+    // }
     
 
 
