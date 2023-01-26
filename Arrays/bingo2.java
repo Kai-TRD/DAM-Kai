@@ -101,6 +101,19 @@ public class bingo2 {
             int randomPossX = (int)(Math.random()*9);
             int randomPossY = (int)(Math.random()*3);
 
+
+
+
+
+
+            // PONER 4 EN CADA FILA, COMPROBAR QUE LAS FILAS NO HAYA 2, SI HAY DOS, MOVER A OTRA PARTE
+
+
+
+
+
+
+
             // for (int i = 0; i < 9; i++) {
             //     for (int j = 0; j < 3; j++) {
             //         carton[randomPossX][randomPossY] = -1;
