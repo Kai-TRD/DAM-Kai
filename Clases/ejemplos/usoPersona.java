@@ -1,4 +1,4 @@
-package persona;
+package Clases.ejemplos;
 
 public class usoPersona {
     public static void main(String[] args) {

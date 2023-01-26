@@ -1,4 +1,4 @@
-package persona;
+package Clases.ejemplos;
 
 class Persona {
     //Definir atrivuto de personas

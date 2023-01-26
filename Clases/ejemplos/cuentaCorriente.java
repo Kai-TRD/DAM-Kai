@@ -1,8 +1,8 @@
-package cuentaCorriente;
+package Clases.ejemplos;
 
 import java.util.Scanner;
 
-class cuentaCorriente {
+public class cuentaCorriente {
     String nombre;
     String dni;
     String nombreTitular;

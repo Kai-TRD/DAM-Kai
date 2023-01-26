@@ -1,4 +1,5 @@
-package cuentaCorriente;
+package Clases.ejemplos;
+
 
 public class usoCuentaCorriente {
     public static void main(String[] args) {
