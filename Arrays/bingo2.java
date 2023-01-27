@@ -8,11 +8,8 @@ import java.util.Arrays;
 import java.util.Arrays;
 
 public class bingo2 {
-    
 
     static Scanner sc = new Scanner(System.in);
-
-    
 
     public static void main(String[] args) {
         
@@ -47,7 +44,6 @@ public class bingo2 {
         {
             //Crear/restaurar carton vacio y vaciado de los numeros generados en eljuego anterior
             
-            
             //introduzco los numeros de cada columna
             rellenarNumerosCarton(carton); 
             
@@ -58,30 +54,34 @@ public class bingo2 {
             pintarCarton(carton , numerosGenerados);
 
             // //pregunto si quiero sacar otra bola o terminar este juego
-            // boolean jugar = false;
+            boolean jugar = true;
 
-            // while(jugar)
-            // {
+            while(jugar)
+            {
 
-            //     //saco numero aleatorio - no se debe repetir
-                
-            //     //pinto el carton con numeros sacados
-            //     int numeroAciertos = pintarCarton(carton, numerosGenerados);
+            //saco numero aleatorio - no se debe repetir
+                sacarNumAleatorio(numerosGenerados);
+
+                for (int i = 0; i < numerosGenerados.length; i++) {
+                    System.out.println(numerosGenerados[i]);
+                }
+            //pinto el carton con numeros sacados
+                // int numeroAciertos = pintarCarton(carton , numerosGenerados);
 
 
-            //     //Eres ganador??
-            //     if (numeroAciertos >= 15)
-            //     {
-            //         System.out.println("-----------------------------");
-            //         System.out.println("--------  BINGO -------------");
-            //         System.out.println("-----------------------------");
-            //     }
+            //Eres ganador??
+                    // if (numeroAciertos >= 15)
+                    // {
+                    //     System.out.println("-----------------------------");
+                    //     System.out.println("--------  BINGO -------------");
+                    //     System.out.println("-----------------------------");
+                    // }
 
-            //     //pregunto si quiero sacar otra bola o terminar este juego
+            //pregunto si quiero sacar otra bola o terminar este juego
                 
 
                
-            // }
+            }
 
             // //Pregunto si quiero jugar otro cartón o salir definitivamente del programa
            
@@ -89,46 +89,61 @@ public class bingo2 {
         } while(!salir);
     }
 
+
+
+
+
+    static void sacarNumAleatorio(int[] numerosGenerados){
+        
+        int random = (int)(Math.random()*90)+1;
+
+        
+        int[] newArray = Arrays.copyOf(numerosGenerados, numerosGenerados.length + 1);
+        newArray[newArray.length - 1] = 4;
+
+        // return random;
+    }
+
+
+
+
+
+
+
+
+
     /**
-     * Poner las partes blancas del carton
+     * PONE 4 BLOQUES A VALOR -1 POR CADA FILA
      * @param carton
      */
     static void ponerBlancos(int[][] carton){
+        // PONER 4 EN CADA FILA, COMPROBAR QUE LAS FILAS NO HAYA 2, SI HAY DOS, MOVER A OTRA PARTE
+        // col0,  col1,  col2,  col3.  col4,  col5,  col6,  col7,  col8
+        // [0,0]  [1,0]  [2,0]  [3,0]  [4,0]  [5,0]  [6,0]  [7,0]  [8,0]
+        // [0,1]  [1,1]  [2,1]  [3,1]  [4,1]  [5,1]  [6,1]  [7,1]  [8,1]
+        // [0,2]  [1,2]  [2,2]  [3,2]  [4,2]  [5,2]  [6,2]  [7,2]  [8,2]
+        
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                boolean colocado = false;
+                do {
+                    int random = (int)(Math.random()*9);
+                    if(carton[random][i] == -1){
+                        colocado = false;
+                    } else {
+                        carton[random][i] = -1;
+                        colocado = true;
+                    }
+                    carton[random][i] = -1;                    
+                } while (colocado == false);
 
-
-        for (int r = 0; r < 12; r++) {
-
-            int randomPossX = (int)(Math.random()*9);
-            int randomPossY = (int)(Math.random()*3);
-
-
-
-
-
-
-            // PONER 4 EN CADA FILA, COMPROBAR QUE LAS FILAS NO HAYA 2, SI HAY DOS, MOVER A OTRA PARTE
-
-
-
-
-
-
-
-            // for (int i = 0; i < 9; i++) {
-            //     for (int j = 0; j < 3; j++) {
-            //         carton[randomPossX][randomPossY] = -1;
-            //     }
-            // }
-
-
-            for (int i = 0; i < 9; i++) {
-                for (int j = 0; j < 4; j++) {
-                    carton[i][randomPossX] = -1;
-                }
             }
         }
     }
-
+    /**
+     * RELLENA DE NUMEROA RANDOM EL CARTON
+     * @param carton
+     */
     static void rellenarNumerosCarton(int[][] carton){
 
         // col0,  col1,  col2,  col3.  col4,  col5,  col6,  col7,  col8
