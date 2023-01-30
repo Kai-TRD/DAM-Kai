@@ -8,7 +8,7 @@ public class cuentaCorriente {
     String nombreTitular;
     double saldo = 0;
 
-
+    private Gestor gestor;
     
     // Construcotres
     public cuentaCorriente(String dni, String nombre){
@@ -25,9 +25,17 @@ public class cuentaCorriente {
         this(dni, nombreTitular);
         this.saldo = saldo;
     }
+
+    public cuentaCorriente(String dni, String nombreTitular, double saldo, Gestor gestor){
+        this(dni, nombre, saldo);
+        this.gestor = gestor;
+    }
     //******Metodos******
 
     Scanner sc = new Scanner(System.in);
+
+
+
 
     //Crear cuenta
     public void crearCuenta(String dniNuevo,String nombreNuevo){
@@ -48,4 +56,5 @@ public class cuentaCorriente {
     public void mostrarInformacion(){
         System.out.println(nombre + "\t" + dni + "\t" + saldo);
     }
+    
 }
