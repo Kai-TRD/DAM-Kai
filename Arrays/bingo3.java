@@ -124,6 +124,7 @@ public class bingo3 {
 
             do {
                 System.out.println("Quieres volver a jugar?(s/n):");
+                sc.nextLine();
                 opcion = sc.nextLine();
                 switch (opcion) {
                     case "s":
