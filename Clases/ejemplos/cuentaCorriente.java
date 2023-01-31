@@ -1,5 +1,6 @@
 package Clases.ejemplos;
 
+import java.rmi.server.RemoteStub;
 import java.util.Scanner;
 
 public class cuentaCorriente {
@@ -56,5 +57,19 @@ public class cuentaCorriente {
     public void mostrarInformacion(){
         System.out.println(nombre + "\t" + dni + "\t" + saldo);
     }
+
+    public String obtenerNombreGestor(){
+        String nombreGestor = "Sin asignar";
+
+        // Si existe un gestor y ese gestor tiene nombre entoncves cojo su valor
+        if(this.gestor != null && this.gestor.getnombre() != null){
+            
+            nombreGestor = this.gestor.getnombre();
+        
+        }
+        return nombreGestor;
+
+    }
+
     
 }
