@@ -23,13 +23,24 @@ public class FichaDomino {
         }
     }
 
-    public String voltea(){
-        FichaDomino fichaDomino = new FichaDomino(numDerecha, numIzquierda);
-        return this.FichaDomino = fichaDomino;
+    public FichaDomino voltea(){
+        int ladoAux = this.numIzquierda;
+        this.numIzquierda = numDerecha;
+        this.numDerecha = ladoAux;
+        
+        return this;
+    }
+
+    public boolean encaja(FichaDomino ficha){
+        if( ficha.numDerecha == this.numIzquierda || ficha.numDerecha == this.numDerecha || ficha.numIzquierda == this.numIzquierda || ficha.numIzquierda == this.numDerecha){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public String toString(){
-        return "["+ numIzquierda +"|"+ numDerecha +"]";
+        return "["+ this.numIzquierda +"|"+ this.numDerecha +"]";
     }
 }
