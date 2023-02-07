@@ -2,9 +2,6 @@ package ClasesT6.Usos;
 
 import java.util.Scanner;
 
-import javax.annotation.processing.SupportedOptions;
-import javax.swing.plaf.basic.BasicScrollPaneUI.ViewportChangeHandler;
-
 import ClasesT6.Ejemplos.Zona;
 
 public class ExpoCocheVegaMIjas {
