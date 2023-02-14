@@ -23,7 +23,7 @@ public class caja {
         PersonaBanco persona5 = new PersonaBanco("Orca", "sacar", 900);
         PersonaBanco persona6 = new PersonaBanco("Palvati", "sacar", 20);
     
-        
+
         ponerEnFila(cola, persona1);
         ponerEnFila(cola, persona2);
         ponerEnFila(cola, persona3);
@@ -38,7 +38,7 @@ public class caja {
         // cola[4] = persona5;
         // cola[5] = persona6;
 
-        for (int i = 0; i < cola.length; i++) {
+        for (int i = 0; i < 7; i++) {
             System.out.println(cola[i]);
         }
     
@@ -46,10 +46,9 @@ public class caja {
     }
 
     public static void ponerEnFila(PersonaBanco[] cola, PersonaBanco persona){
-
-        PersonaBanco a = persona;
-        PersonaBanco[] temp = Arrays.copyOf(cola, cola.length + 1);
-        cola = temp;
-        cola.push(a);
+        PersonaBanco[] copia = Arrays.copyOf(cola, cola.length+1);
+            copia[copia.length-1] = persona;
+        cola = copia;
+        System.out.println(cola.length);
     }
 }
