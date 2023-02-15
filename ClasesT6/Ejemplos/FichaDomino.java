@@ -1,46 +1,44 @@
 package ClasesT6.Ejemplos;
 
 public class FichaDomino {
-    
-    // Atributos
-    private int numIzquierda;
-    private int numDerecha;
 
+    //Atributos
+    private int lado1;
+    private int lado2;
 
-    // Constructor
-    public FichaDomino(int numIzquierda, int numDerecha){
-        if(numIzquierda == 0){
-            
-        } else {
-            this.numIzquierda = numIzquierda;
-        }
-
-
-        if(numDerecha == 0){
-
-        } else {
-            this.numDerecha = numDerecha;
-        }
+    //Constructores
+    public FichaDomino(int lado1, int lado2)
+    {
+        this.lado1 = lado1;
+        this.lado2 = lado2;
     }
 
-    public FichaDomino voltea(){
-        int ladoAux = this.numIzquierda;
-        this.numIzquierda = numDerecha;
-        this.numDerecha = ladoAux;
-        
+    //Metodos
+    public FichaDomino voltea()
+    {
+        int ladoAuxiliar = this.lado1;
+        this.lado1 = this.lado2;
+        this.lado2 = ladoAuxiliar;
+
         return this;
     }
 
-    public boolean encaja(FichaDomino ficha){
-        if( ficha.numDerecha == this.numIzquierda || ficha.numDerecha == this.numDerecha || ficha.numIzquierda == this.numIzquierda || ficha.numIzquierda == this.numDerecha){
-            return true;
-        } else {
-            return false;
+    public boolean encaja(FichaDomino fichaDomino)
+    {
+        boolean encajan = false;
+
+        if (this.lado1 == fichaDomino.lado1 || this.lado1 == fichaDomino.lado2 ||
+                this.lado2 == fichaDomino.lado1 || this.lado2 == fichaDomino.lado2)
+        {
+            encajan = true;
         }
+
+        return encajan;
     }
 
     @Override
-    public String toString(){
-        return "["+ this.numIzquierda +"|"+ this.numDerecha +"]";
+    public String toString()
+    {
+        return "["+this.lado1+"|"+this.lado2+"]";
     }
 }

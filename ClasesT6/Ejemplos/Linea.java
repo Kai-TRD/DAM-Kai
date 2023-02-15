@@ -1,20 +1,26 @@
 package ClasesT6.Ejemplos;
 
-
-
 public class Linea {
-    // Atributo
-    private Punto punto1;
-    private Punto punto2;
 
-    // Constructor
-    public Linea(Punto punto1, Punto punto2){
-        this.punto1 = punto1;
-        this.punto2 = punto2;        
+    //Atributos 
+    private Punto inicio;
+    private Punto fin;
+
+    //Constructor
+    public Linea(Punto p1, Punto p2)
+    {
+        this.inicio = p1;
+        this.fin = p2;
     }
 
     @Override
-    public String toString(){
-        return "Línea formada por los puntos " + punto1 + " y " + punto2;
+    public String toString()
+    {
+        //Línea formada por los puntos (4.21, 7.3) y (-2.0, 1.66)
+        // return "Línea formada por los puntos (" + inicio.getX() + ", " + inicio.getY() + 
+        //         " y (" + fin.getX() + ", " + fin.getY()+")";
+
+        return "Línea formada por los puntos " + this.inicio + " y " + this.fin;
     }
+    
 }

@@ -1,31 +1,28 @@
-package ClasesT6.Ejemplos;
+package Prog_DAM_22.ClasesT6.Ejemplos;
 
 public class Terminal {
     
-    public String numero;
-    int tiempo;
+    //Atributos de la clase
+    String numero;
+    int tiempoConversacion;
 
-
-
-    public Terminal(String numero){
-        this.numero = numero;
+    //Constructores
+    public Terminal(String numero)
+    {
+      this.numero = numero;
+      tiempoConversacion = 0;
     }
 
-    public Terminal(String numero,int llama){
-        this.numero = numero;
-        this.tiempo = llama;
-    }
-
-
-
-    public void llama(Terminal t, int tiempo){
-        this.tiempo += tiempo;
-        t.tiempo += tiempo;
+    //Metodos
+    public void llama(Terminal terminaldestino, int duracion)
+    {
+      this.tiempoConversacion += duracion;
+      terminaldestino.tiempoConversacion += duracion;    
     }
 
     @Override
-    public String toString(){
-        return "No "+ numero +" - "+ tiempo +"s de conversación";
+    public String toString()
+    {
+      return "Nº " + this.numero + " - " +  this.tiempoConversacion + " segundos de conversación ";  
     }
-
 }

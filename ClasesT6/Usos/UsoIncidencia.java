@@ -2,7 +2,8 @@ package ClasesT6.Usos;
 
 import ClasesT6.Ejemplos.Incidencia;
 
-public class usoIncidencia {
+public class UsoIncidencia {
+    
     public static void main(String[] args) {
         Incidencia inc1 = new Incidencia(105, "No tiene acceso a internet");
         Incidencia inc2 = new Incidencia(14, "No arranca");
@@ -17,5 +18,6 @@ public class usoIncidencia {
         System.out.println(inc4);
         System.out.println(inc5);
         System.out.println("Incidencias pendientes: " + Incidencia.getPendientes());
+        System.out.println("Incidencias totales: " + Incidencia.getTotalDeIncidencias());
     }
 }

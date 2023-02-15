@@ -1,56 +1,63 @@
 package ClasesT6.Ejemplos;
 
 public class Incidencia {
-    
-    enum EstadoIncidencia{Pendiente, Resuelta};
 
-    // Atributos
-    private int codIncidencia;
-    private String descripcion;
-    private int numIncidenciaCreadas;
-    // private EstadoIncidencia estado;
-    private String solucion;
-    private static int Pendientes; 
+    enum EstadoIncidencia { Pendiente, Resuelta};
+
+    //Atributos de la clase Incidencia
     private int codigo;
-    public static int getPendientes() {
-        return Pendientes;
+    private EstadoIncidencia estado;
+    private int puesto;
+    private String descripcionError;
+    private String descripcionSolucion;
+
+    private static int numeroIncidenciasCreadas;
+    private static int numeroIncidenciasPendientes;
+
+    //Contructor
+    public Incidencia(int puesto, String descripcion)
+    {
+        this.puesto = puesto;
+        this.descripcionError = descripcion;
+        this.estado = EstadoIncidencia.Pendiente;
+
+        numeroIncidenciasCreadas++;
+        numeroIncidenciasPendientes++;
+        this.codigo = numeroIncidenciasCreadas;
+    }
+    
+
+    //Metodos
+    public void resuelve(String descripcionsolucion)
+    {
+        if (this.estado == EstadoIncidencia.Pendiente)
+        {
+            this.descripcionSolucion = descripcionsolucion;
+            this.estado = EstadoIncidencia.Resuelta;
+            numeroIncidenciasPendientes--;
+        }
+        else
+        {
+            System.out.println("Esta incidencia ya está resuelta");
+        }
     }
 
-
-    // Constructores
-    public Incidencia(int codIncidencia, String descripcion){
-        this.codIncidencia = codIncidencia; 
-        this.descripcion = descripcion;
-        // this.estado = EstadoIncidencia.Pendiente;
-        this.solucion = "Pendientes";
-        // this.Pendientes += 1;
-        numIncidenciaCreadas++;
-        this.codigo = numIncidenciaCreadas;
+    @Override
+    public String toString()
+    {
+        return "Incidencia " + this.codigo + " - " + "Puesto "+ this.puesto 
+                + " - " + this.descripcionError + " - " + this.estado 
+                +(this.estado == EstadoIncidencia.Resuelta ? " - " + this.descripcionSolucion : "");
     }
 
+    public static int getPendientes()
+    {
+        return numeroIncidenciasPendientes;
+    }
 
-
-
-
-public void resuelve(String solucion){
-    // this.estado = EstadoIncidencia.Resuelta;
-    this.solucion = solucion;
-    // this.Pendientes -= 1;
-}
-
-
-@Override
-public String toString(){    
-    return "Incidencia " + codigo + " - Puesto: "+ this.codIncidencia +" - "+ this.descripcion +" - " + this.solucion;
-}
-
-
-
-
-
-
-
-
-
+    public static int getTotalDeIncidencias()
+    {
+        return numeroIncidenciasCreadas;
+    }
 
 }

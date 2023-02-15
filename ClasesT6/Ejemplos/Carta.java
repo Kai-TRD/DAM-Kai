@@ -2,14 +2,38 @@ package ClasesT6.Ejemplos;
 
 public class Carta {
     
-    public enum Palo{ORO, BASTO, ESPADA, COPA};
+    public enum Palo {ORO, COPA, ESPADA, BASTO};
 
-    // Valores
+    //Atributos
     private Palo palo;
     private int numero;
 
+    //Constrcutor
+    public Carta(Palo palo, int numero)
+    {
+        this.palo = palo;
+        this.numero = numero;
+    }
+    //Metodos
 
-    // Contructor
+    /**
+     * Devuelve true si la carta que hace la invocacion es menor 
+     * a la que se le pasa por parametros
+     * @param c
+     * @return
+     */
+    public boolean esMenor(Carta c)
+    {
+        boolean resultado = false;
+
+        if (this.numero < c.getNumero())
+        {
+            resultado = true;
+        }
+
+        return resultado;
+    }
+
     public Palo getPalo() {
         return palo;
     }
@@ -26,29 +50,12 @@ public class Carta {
         this.numero = numero;
     }
 
-    public Carta(Palo palo, int numero){
-        this.palo = palo;
-        this.numero = numero;
+    @Override
+    public  String toString()
+    {
+        return this.numero + " de " + this.palo.toString();
     }
 
-
-
-    // Metodos
     
-    /**
-     * Devuelve true si la carta que hace la invocacion es menor
-     * a la que se le pasa por parametros
-     * @param c
-     * @return
-     */
-    public boolean esMayor(Carta c){
-        boolean resultado = false;
-        if(this.numero < c.numero){
-            resultado = true;
-        } else {
-            resultado = false;
-        }
-        return resultado;
-    }
-
+    
 }
