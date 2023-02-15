@@ -1,4 +1,4 @@
-package Prog_DAM_22.ClasesT6.Ejemplos;
+package ClasesT6.Ejemplos;
 
 public class Terminal {
     

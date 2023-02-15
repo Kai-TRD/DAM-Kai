@@ -1,4 +1,4 @@
-package ClasesT6.Ejemplos;
+package ClasesT6.Usos;
 
 /*
 * 5. Crea el programa GESTISIMAL (GESTIón SIMplifcada de Almacén) para llevar
