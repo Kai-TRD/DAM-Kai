@@ -31,7 +31,7 @@ public class Tren {
     }
 
     public void enganchaVagon(int cargaActual, int cargaMaxima, String tipoMercancia) {
-        if (vagones[5] == vagones[2]) {
+        if (contador >= 5) {
             System.out.println("NO SE PUEDE ENGANCHAR, MAXIMA CAPACIDAD");
         } else {
             

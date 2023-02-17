@@ -2,6 +2,7 @@ package clasesHerencia.Hora;
 
 import java.util.Scanner;
 import clasesHerencia.Hora.Hora;
+import clasesHerencia.Hora.HoraExacta;
 
 public class usoHora {
     public static void main(String[] args) {
@@ -66,7 +67,7 @@ public class usoHora {
         HoraExacta re3 = new HoraExacta(10,20,30);
  
  
-        System.out.println(re1.equals(re1));
+        System.out.println(re1.equals(re2));
         System.out.println(re1.equals(re3));
  
  

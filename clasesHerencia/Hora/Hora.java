@@ -4,8 +4,6 @@ public class Hora {
     private int hora;
     private int minuto;
 
-    private int segundo;
-
     public Hora(int hora, int minuto){
         this.hora = hora;
         this.minuto = minuto;
@@ -16,28 +14,32 @@ public class Hora {
     }
 
     public boolean setHora(int hora) {
+        boolean pone;
         if(hora >= 0 && hora <= 23){
-            return true;
+            pone = true;
+            this.hora = hora;
         } else {
-            return false;
+            pone = false;
         }
+        return pone;
     }
     public boolean setMinuto(int minuto) {
-        if(minuto >= 0 && minuto <= 60){
-            return true;
+        boolean pone;
+        if(minuto >= 0 && minuto <= 23){
+            pone = true;
+            this.minuto = minuto;
         } else {
-            return false;
+            pone = false;
         }
+        return pone;
     }
 
     @Override
     public String toString(){
+
         return this.hora + ":" + this.minuto;
     }
 
 
 }
 
-public class HoraExacta extends Hora{
-    
-}
