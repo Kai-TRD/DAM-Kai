@@ -1,17 +1,10 @@
 package clasesHerencia;
+
 public class EjemploHerencia1 {
-    
+
 }
 
-
-
-
-
-
-
-
-public class Padre 
-{
+public class Padre {
     private int a;
     int b;
     protected int c;
@@ -19,7 +12,6 @@ public class Padre
 
 }
 
-public class Hijo extends Padre
-{
-    
+public class Hijo extends Padre {
+
 }
