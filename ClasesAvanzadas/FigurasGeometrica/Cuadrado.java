@@ -1,6 +1,6 @@
 package ClasesAvanzadas.FigurasGeometrica;
 
-public class Cuadrado extends FiguraGeometrica{
+public class Cuadrado extends FiguraGeometrica {
 
     private double ancho;
     private double alto;
@@ -13,7 +13,7 @@ public class Cuadrado extends FiguraGeometrica{
 
     @Override
     public double perimetro(double ancho, double alto) {
-        double perimetro = ancho*4;
+        double perimetro = ancho * 4;
 
         return perimetro;
     }
@@ -29,12 +29,12 @@ public class Cuadrado extends FiguraGeometrica{
         for (int j = 0; j < this.alto; j++) {
             System.out.print("*");
         }
-        
+
         System.out.println();
-        
-        for (int i = 0; i < this.alto-2; i++) {
+
+        for (int i = 0; i < this.alto - 2; i++) {
             System.out.print("*");
-            for (int j = 0; j < this.alto-2; j++) {
+            for (int j = 0; j < this.alto - 2; j++) {
                 System.out.print(" ");
             }
             System.out.println("*");
@@ -47,9 +47,8 @@ public class Cuadrado extends FiguraGeometrica{
         System.out.println();
     }
 
-
     @Override
-    public String toString(){
+    public String toString() {
         String cadena = "";
         cadena += "------Cuadrado------";
         cadena += "\nColor: " + this.color;
@@ -58,7 +57,5 @@ public class Cuadrado extends FiguraGeometrica{
         cadena += "\n--------------------";
         return cadena;
     }
-
-
 
 }

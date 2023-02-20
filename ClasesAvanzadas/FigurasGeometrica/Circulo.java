@@ -1,6 +1,6 @@
 package ClasesAvanzadas.FigurasGeometrica;
 
-public class Circulo extends FiguraGeometrica{
+public class Circulo extends FiguraGeometrica {
 
     private double radio;
 
@@ -11,19 +11,18 @@ public class Circulo extends FiguraGeometrica{
 
     @Override
     public double perimetro(double radio, double ancho) {
-        double perimetro = 2*Math.PI*radio;
-        return perimetro;   
+        double perimetro = 2 * Math.PI * radio;
+        return perimetro;
     }
 
     @Override
     public double area(double radio, double ancho) {
-        double area = Math.PI*(radio*radio);
+        double area = Math.PI * (radio * radio);
         return area;
     }
 
-
     @Override
-    public String toString(){
+    public String toString() {
         String cadena = "";
         cadena += "------Circulo------";
         cadena += "\nColor: " + this.color;

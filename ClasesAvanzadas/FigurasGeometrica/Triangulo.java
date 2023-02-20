@@ -1,6 +1,6 @@
 package ClasesAvanzadas.FigurasGeometrica;
 
-public class Triangulo extends FiguraGeometrica{
+public class Triangulo extends FiguraGeometrica {
 
     private double ancho;
     private double alto;
@@ -13,20 +13,19 @@ public class Triangulo extends FiguraGeometrica{
 
     @Override
     public double perimetro(double ancho, double alto) {
-        double perimetro = ancho*3;
+        double perimetro = ancho * 3;
 
         return perimetro;
     }
 
     @Override
     public double area(double ancho, double alto) {
-        double area = (ancho + alto)/2;
+        double area = (ancho + alto) / 2;
         return area;
     }
 
-
     @Override
-    public String toString(){
+    public String toString() {
         String cadena = "";
         cadena += "------Triangulo------";
         cadena += "\nColor: " + this.color;

@@ -1,6 +1,6 @@
 package ClasesAvanzadas.FigurasGeometrica;
 
-public class Rectangulo extends FiguraGeometrica{
+public class Rectangulo extends FiguraGeometrica {
 
     private double ancho;
     private double alto;
@@ -13,7 +13,7 @@ public class Rectangulo extends FiguraGeometrica{
 
     @Override
     public double perimetro(double ancho, double alto) {
-        double perimetro = ancho*2 + alto+2;
+        double perimetro = ancho * 2 + alto + 2;
 
         return perimetro;
     }
@@ -24,9 +24,8 @@ public class Rectangulo extends FiguraGeometrica{
         return area;
     }
 
-
     @Override
-    public String toString(){
+    public String toString() {
         String cadena = "";
         cadena += "------Rectangulo------";
         cadena += "\nColor: " + this.color;
