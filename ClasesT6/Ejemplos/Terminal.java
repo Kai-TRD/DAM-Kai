@@ -4,7 +4,7 @@ public class Terminal {
     
     //Atributos de la clase
     String numero;
-    int tiempoConversacion;
+    protected int tiempoConversacion;
 
     //Constructores
     public Terminal(String numero)
