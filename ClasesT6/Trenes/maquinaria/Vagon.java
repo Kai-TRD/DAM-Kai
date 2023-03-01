@@ -63,9 +63,10 @@ public class Vagon {
 
         if (this.cargaActual > this.cargaMaxima) {
             this.poderEnganchar = false;
-            System.out.println("VAGON SUPERA CAPACIDAD MAXIMA!");
-        } else {
             this.poderEnganchar = true;
+
+        } else {
+            System.out.println("VAGON SUPERA CAPACIDAD MAXIMA!");
         }
     }
 }
