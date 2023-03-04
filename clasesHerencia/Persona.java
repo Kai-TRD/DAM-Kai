@@ -4,7 +4,7 @@ public class Persona
 {
     String nombre;
     protected int edad;
-    private double estatura;
+    protected double estatura;
 
     public Persona(String nombre, int edad, double estatura)
     {

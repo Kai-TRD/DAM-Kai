@@ -1,6 +1,9 @@
-package ClasesT6.Trenes.frioMijas;
+package clasesHerencia.frioMijas;
 
-import ClasesT6.Trenes.frioMijas.RecursosHumanos.Jefe;
+import clasesHerencia.frioMijas.RecursosHumanos.Empleado;
+import clasesHerencia.frioMijas.RecursosHumanos.Jefe;
+import clasesHerencia.frioMijas.RecursosMateriales.Sede;
+
 
 public class FrioMijas {
 
@@ -34,21 +37,21 @@ public class FrioMijas {
         sede2.addEmpleado(empleado6);
         sede2.addEmpleado(empleado7);
 
-        //Cambiamos contraseñas
-        System.out.println(jefe1);
-        jefe1.generaPassword(5);
-        System.out.println("Nueva contraseña para jefe1");
-        System.out.println(jefe1);
+        // //Cambiamos contraseñas
+        // System.out.println(jefe1);
+        // jefe1.generaPassword(5);
+        // System.out.println("Nueva contraseña para jefe1");
+        // System.out.println(jefe1);
 
-        System.out.println(jefe2);
-        jefe2.generaPassword();
-        System.out.println("Nueva contraseña para jefe2");
-        System.out.println(jefe2);
+        // System.out.println(jefe2);
+        // jefe2.generaPassword();
+        // System.out.println("Nueva contraseña para jefe2");
+        // System.out.println(jefe2);
 
-        //Mostrar la información completa de cada una de las sedes + jefe + empleados
-        System.out.println(sede1);
+        // //Mostrar la información completa de cada una de las sedes + jefe + empleados
+        // System.out.println(sede1);
         
-        System.out.println(sede2);
+        // System.out.println(sede2);
 
         /*
          * HACER *
