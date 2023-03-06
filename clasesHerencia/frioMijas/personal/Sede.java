@@ -1,6 +1,5 @@
 package clasesHerencia.frioMijas.personal;
 
-import java.nio.file.DirectoryNotEmptyException;
 import java.util.Arrays;
 
 public class Sede {
@@ -8,7 +7,6 @@ public class Sede {
     private String ciudad;
     private String direccion;
     private int codigoSede;
-    private Jefe jefeDeSede;
     private Empleado[] empleado;
 
     public Sede(String ciudad, String direccion, int codigoSede){
@@ -33,7 +31,6 @@ public class Sede {
         this.empleado = new Empleado[0];
     }
     public void setJefe(Jefe jefe2) {
-        this.jefeDeSede = jefe2;
     }
 
     public void addEmpleado(Empleado elemento) {
