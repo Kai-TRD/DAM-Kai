@@ -57,7 +57,7 @@ public class FrioMijas {
          * HACER *
          * Mostrar si la contraseña de los jefes es no Fuerte
          */
-
+        
          /*
           * HACER
           * Generar contraseña de 10 elementos que sea fuerte para cada uno de los jefes
