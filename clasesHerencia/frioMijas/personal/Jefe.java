@@ -1,5 +1,7 @@
 package clasesHerencia.frioMijas.personal;
 
+import java.util.Random;
+
 public class Jefe extends Trabajadores {
 
     private String password;
