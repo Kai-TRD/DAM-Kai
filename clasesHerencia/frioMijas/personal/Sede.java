@@ -1,9 +1,6 @@
-package clasesHerencia.frioMijas.RecursosMateriales;
+package clasesHerencia.frioMijas.personal;
 
 import java.util.Arrays;
-
-import clasesHerencia.frioMijas.RecursosHumanos.Empleado;
-import clasesHerencia.frioMijas.RecursosHumanos.Jefe;
 
 public class Sede {
 
@@ -29,13 +26,10 @@ public class Sede {
         this.jefeDeSede = jefe2;
     }
 
-    public void addEmpleado(Empleado empleado1) {
-        insertarAlFinal(empleado, empleado1);
-    }
 
-    static Empleado[] insertarAlFinal(Empleado[] empleado, Empleado elemento){
+
+    public void addEmpleado(Empleado elemento){
         Empleado[] copia=Arrays.copyOf(empleado, empleado.length+1);
-        copia[copia.length-1]=elemento;
-        return copia;
+        copia[copia.length]=elemento;
     }
 }

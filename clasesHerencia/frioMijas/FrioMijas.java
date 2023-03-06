@@ -1,8 +1,8 @@
 package clasesHerencia.frioMijas;
 
-import clasesHerencia.frioMijas.RecursosHumanos.Empleado;
-import clasesHerencia.frioMijas.RecursosHumanos.Jefe;
-import clasesHerencia.frioMijas.RecursosMateriales.Sede;
+import clasesHerencia.frioMijas.personal.Empleado;
+import clasesHerencia.frioMijas.personal.Jefe;
+import clasesHerencia.frioMijas.personal.Sede;
 
 
 public class FrioMijas {

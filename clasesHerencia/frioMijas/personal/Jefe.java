@@ -1,4 +1,4 @@
-package clasesHerencia.frioMijas.RecursosHumanos;
+package clasesHerencia.frioMijas.personal;
 
 public class Jefe extends Trabajadores {
 
