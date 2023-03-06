@@ -19,6 +19,7 @@ public class FrioMijas {
 
         Empleado empleado1 = new Empleado("Daniel", "ape1", 35, 1000, "88000008W" );
         Empleado empleado2 = new Empleado("Juan", "ape2", 35, 1200, "21000008E" );
+
         Empleado empleado3 = new Empleado("Maria", "ape3", 55, 1700, "99000008R" );
         Empleado empleado4 = new Empleado("Pepe", "ape4", 45, 900, "66000008Y" );
         Empleado empleado5 = new Empleado("Pedro", "ape5", 30, 2000, "54000008T" );
@@ -67,7 +68,17 @@ public class FrioMijas {
          * HACER *
          * Empleados de la sede2 con sueldo entre 500 y 1500 
          */
+        System.out.println("*****************************************************************");
+        System.out.println(" \tEmpleados de la sede2 con sueldo entre 500 y 1500");
+        System.out.println("*****************************************************************");
 
+        for (int i = 0; i < sede2.empleado.length; i++) {
+            if (sede2.empleado[i].getSalario() > 499 && sede2.empleado[i].getSalario() < 1501) {
+                System.out.println(sede2.empleado[i].getNombre());
+            } else {
+                System.out.println("-------");
+            }
+        }
         /*
          * HACER *
          * Crea 5 equipos frigorificos diferentes y asignalos a la 2º sede y muéstralos a continuación   

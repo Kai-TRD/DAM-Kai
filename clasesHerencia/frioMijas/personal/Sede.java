@@ -7,7 +7,7 @@ public class Sede {
     private String ciudad;
     private String direccion;
     private int codigoSede;
-    private Empleado[] empleado;
+    public Empleado[] empleado;
 
     public Sede(String ciudad, String direccion, int codigoSede){
         this.ciudad = ciudad;

@@ -16,4 +16,15 @@ public class Trabajadores {
         this.dni = dni;
         this.salario = salario;
     }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    
+
 }
