@@ -14,22 +14,42 @@ public class Sede {
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.codigoSede = codigoSede;
-    }
+        this.empleado = new Empleado[0];
+        }
 
     public Sede(String ciudad, String direccion, int codigoSede, Jefe jefeDeSede){
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.codigoSede = codigoSede;
+        this.empleado = new Empleado[0];
     }
 
+    public Sede(String ciudad, String direccion, int codigoSede, Jefe jefeDeSede, Empleado[] empleado){
+        this.ciudad = ciudad;
+        this.direccion = direccion;
+        this.codigoSede = codigoSede;
+        this.empleado = empleado;
+        this.empleado = new Empleado[0];
+    }
     public void setJefe(Jefe jefe2) {
         this.jefeDeSede = jefe2;
     }
 
-
-
-    public void addEmpleado(Empleado elemento){
+    public void addEmpleado(Empleado elemento) {
         Empleado[] copia=Arrays.copyOf(empleado, empleado.length+1);
-        copia[copia.length]=elemento;
+        copia[copia.length-1]=elemento;
+        this.empleado = copia;
+    }
+
+    @Override
+    public String toString() {
+
+        String jefe  = " ----- Sede ----- ";
+               jefe += " \n -Coudad:" + this.ciudad;
+               jefe += " \n -Direccion:" + this.direccion;
+               jefe += " \n -Cod.Sede:" + this.codigoSede;
+               jefe += " \n -Jefe de sede:" + this.jefeDeSede.getNombre();
+               jefe += " \n -Nº Empleados:" + empleado.length;
+        return jefe;
     }
 }

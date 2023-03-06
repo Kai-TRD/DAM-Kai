@@ -12,6 +12,48 @@ public class Jefe extends Trabajadores {
         super(nombre, edad, apellidos, dni, salario);
         this.password = password;
     }
+
+
+
+    // Generador de Contraseña
+    public void generaPassword(){
+        generaPassword(8);
+    }
+
+    public void generaPassword(int longitud){
+        String[] password = new String[longitud];
+        for (int i = 0; i < longitud; i++) {
+            int letraONumero = (int)(Math.random()*2);
+            switch(letraONumero){
+                case 0:
+                    password[i] = Integer.toString((int)(Math.random()*10));
+                break;
+                case 1:
+                    int minusOMayus = (int)(Math.random()*2);
+                    switch(minusOMayus){
+                        // mayus
+                        case 0:
+                        char tempMayus = (char) (65 + (int)(Math.random()*26));
+                        password[i] = String.valueOf(tempMayus);
+                        break;
+
+                        // minus
+                        case 1:
+                        char tempMinus = (char) (97 + (int)(Math.random()*26));
+                        password[i] = String.valueOf(tempMinus);
+                        break;
+                    }
+                break;
+            }
+        }
+        String entero = "";
+        for (int i = 0; i < password.length; i++) {
+             entero += password[i];
+            }
+        this.password = entero;
+    }
+
+
     @Override
     public String toString() {
 
@@ -21,6 +63,7 @@ public class Jefe extends Trabajadores {
                jefe += " \n -Edad:" + this.edad;
                jefe += " \n -Salario:" + this.salario;
                jefe += " \n -DNI:" + this.dni;
+               jefe += " \n -PassWord:" + this.password;
 
         return jefe;
     }
