@@ -9,12 +9,12 @@ public class Empleado extends Trabajadores {
     @Override
     public String toString() {
 
-        String empleado  = " --- Empleado --- ";
-               empleado += " \n -Nombre:" + this.nombre;
-               empleado += " \n -Apellido:" + this.apellidos;
-               empleado += " \n -Edad:" + this.edad;
-               empleado += " \n -Salario:" + this.salario;
-               empleado += " \n -DNI:" + this.dni;
+        String empleado  = " \n\t-- Empleado -- ";
+               empleado += " \n\t -Nombre:" + this.nombre;
+               empleado += " \n\t -Apellido:" + this.apellidos;
+               empleado += " \n\t -Edad:" + this.edad;
+               empleado += " \n\t -Salario:" + this.salario;
+               empleado += " \n\t -DNI:" + this.dni;
 
         return empleado;
     }

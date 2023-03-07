@@ -19,7 +19,6 @@ public class FrioMijas {
 
         Empleado empleado1 = new Empleado("Daniel", "ape1", 35, 1000, "88000008W" );
         Empleado empleado2 = new Empleado("Juan", "ape2", 35, 1200, "21000008E" );
-
         Empleado empleado3 = new Empleado("Maria", "ape3", 55, 1700, "99000008R" );
         Empleado empleado4 = new Empleado("Pepe", "ape4", 45, 900, "66000008Y" );
         Empleado empleado5 = new Empleado("Pedro", "ape5", 30, 2000, "54000008T" );
@@ -104,6 +103,11 @@ public class FrioMijas {
         
     }
 
+    /**
+     * Comprueba si el password que se le ha pasado es fuerte o no
+     * @param password
+     * @return
+     */
     public static boolean esFuerte(String password){
         boolean resultado;
         int mayusculas = 0;

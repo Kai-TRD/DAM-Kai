@@ -65,13 +65,13 @@ public class Jefe extends Trabajadores {
     @Override
     public String toString() {
 
-        String jefe  = " ----- Jefe ----- ";
-               jefe += " \n -Nombre:" + this.nombre;
-               jefe += " \n -Apellido:" + this.apellidos;
-               jefe += " \n -Edad:" + this.edad;
-               jefe += " \n -Salario:" + this.salario;
-               jefe += " \n -DNI:" + this.dni;
-               jefe += " \n -PassWord:" + this.password;
+        String jefe  = " \n\t----- Jefe ----- ";
+               jefe += " \n\t -Nombre:" + this.nombre;
+               jefe += " \n\t -Apellido:" + this.apellidos;
+               jefe += " \n\t -Edad:" + this.edad;
+               jefe += " \n\t -Salario:" + this.salario;
+               jefe += " \n\t -DNI:" + this.dni;
+               jefe += " \n\t -PassWord:" + this.password;
 
         return jefe;
     }

@@ -8,6 +8,7 @@ public class Sede {
     private String direccion;
     private int codigoSede;
     public Empleado[] empleado;
+    private Jefe jefe;
 
     public Sede(String ciudad, String direccion, int codigoSede){
         this.ciudad = ciudad;
@@ -16,21 +17,27 @@ public class Sede {
         this.empleado = new Empleado[0];
         }
 
-    public Sede(String ciudad, String direccion, int codigoSede, Jefe jefeDeSede){
+    public Sede(String ciudad, String direccion, int codigoSede, Jefe jefe){
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.codigoSede = codigoSede;
+        this.jefe = jefe;
         this.empleado = new Empleado[0];
     }
 
-    public Sede(String ciudad, String direccion, int codigoSede, Jefe jefeDeSede, Empleado[] empleado){
+    public Sede(String ciudad, String direccion, int codigoSede, Jefe jefe, Empleado[] empleado){
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.codigoSede = codigoSede;
-        this.empleado = empleado;
+        this.jefe = jefe;
+        // this.empleado = empleado;
         this.empleado = new Empleado[0];
     }
-    public void setJefe(Jefe jefe2) {
+
+    
+
+    public void setJefe(Jefe jefe) {
+        this.jefe = jefe;
     }
 
     public void addEmpleado(Empleado elemento) {
@@ -42,12 +49,15 @@ public class Sede {
     @Override
     public String toString() {
 
-        String jefe  = " ----- Sede ----- ";
+        String jefe  = " \n----- Sede ----- ";
                jefe += " \n -Coudad:" + this.ciudad;
                jefe += " \n -Direccion:" + this.direccion;
                jefe += " \n -Cod.Sede:" + this.codigoSede;
-            //    jefe += " \n -Jefe de sede:" + this.jefe;
-               jefe += " \n -Nº Empleados:" + this.empleado.toString();
+               jefe += " \n -Jefe de sede:" + this.jefe;
+               jefe += " \n -Empleados:";
+               for (int i = 0; i < empleado.length; i++) {
+                    jefe += empleado[i];
+               }
         return jefe;
     }
 }
