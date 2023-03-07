@@ -43,6 +43,10 @@ public class FrioMijas {
         System.out.println("Nueva contraseña para jefe1");
         System.out.println(jefe1);
 
+
+        // Prueba de longuitud de password
+        // jefe2.setPassword("1234567890");        
+        
         System.out.println(jefe2);
         jefe2.generaPassword();
         System.out.println("Nueva contraseña para jefe2");
@@ -58,7 +62,7 @@ public class FrioMijas {
          * Mostrar si la contraseña de los jefes es no Fuerte
          */
         System.out.println("*****************************************************************");
-        System.out.println("Los jefes con password fuerte son:");
+        System.out.println(" \tLos jefes con password fuerte son:");
         System.out.println("*****************************************************************");
          if(esFuerte(jefe1.getPassword())){
             System.out.println(jefe1.getNombre());

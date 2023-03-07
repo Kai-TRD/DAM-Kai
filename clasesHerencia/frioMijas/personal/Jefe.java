@@ -26,9 +26,11 @@ public class Jefe extends Trabajadores {
     // Generador de Contraseña
     public void generaPassword(){
         int longitud = 8;
-        
+
         // General password con la longitud del password anterior
-        if(this.password.length() > 0){
+        if(this.password == null){
+            longitud = 8;
+        } else {
             longitud = this.password.length();
         }
 
