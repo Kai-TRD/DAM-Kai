@@ -46,8 +46,8 @@ public class Sede {
                jefe += " \n -Coudad:" + this.ciudad;
                jefe += " \n -Direccion:" + this.direccion;
                jefe += " \n -Cod.Sede:" + this.codigoSede;
-            //    jefe += " \n -Jefe de sede:" + ;
-               jefe += " \n -Nº Empleados:" + empleado.length;
+            //    jefe += " \n -Jefe de sede:" + this.jefe;
+               jefe += " \n -Nº Empleados:" + this.empleado.toString();
         return jefe;
     }
 }

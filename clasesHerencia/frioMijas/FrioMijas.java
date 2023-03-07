@@ -58,6 +58,16 @@ public class FrioMijas {
          * HACER *
          * Mostrar si la contraseña de los jefes es no Fuerte
          */
+        System.out.println("*****************************************************************");
+        System.out.println("Los jefes con password fuerte son:");
+        System.out.println("*****************************************************************");
+         if(esFuerte(jefe1.getPassword())){
+            System.out.println(jefe1.getNombre());
+         }
+
+         if(esFuerte(jefe2.getPassword())){
+            System.out.println(jefe2.getNombre());
+         }
         
          /*
           * HACER
@@ -92,6 +102,54 @@ public class FrioMijas {
 
         
         
+    }
+
+    public static boolean esFuerte(String password){
+        boolean resultado;
+        int mayusculas = 0;
+        int minuscula = 0;
+        int numeros = 0;
+        String[] abecedarioMay = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+        String[] abecedarioMin = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+        int[] numerosArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+        
+        String[] parts = password.split("");
+        for (int i = 0; i < parts.length; i++) {
+            
+            // mayusculas
+            for (int j = 0; j < abecedarioMay.length; j++) {
+                if (parts[i].equals(abecedarioMay[j])) {
+                    mayusculas++;
+                }
+            }
+
+            // minusculas
+            for (int j = 0; j < abecedarioMin.length; j++) {
+                if (parts[i].equals(abecedarioMin[j])) {
+                    minuscula++;
+                }
+            }
+
+            // numeros
+            for (int j = 0; j < numerosArray.length; j++) {
+                if (parts[i].equals(Integer.toString(numerosArray[j]))) {
+                    numeros++;
+                }
+            }
+
+        }
+        
+        // System.out.println("Minusculas: " + minuscula);
+        // System.out.println("Mayusculas: " + mayusculas);
+        // System.out.println("Numeros:" + numeros);
+
+        if(mayusculas >= 2 && minuscula >= 1 && numeros >= 5){
+            resultado = true;
+        } else {
+            resultado = false;
+        }
+        
+        return resultado;
     }
     
 }

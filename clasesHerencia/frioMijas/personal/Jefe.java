@@ -15,6 +15,14 @@ public class Jefe extends Trabajadores {
 
 
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     // Generador de Contraseña
     public void generaPassword(){
         generaPassword(8);
