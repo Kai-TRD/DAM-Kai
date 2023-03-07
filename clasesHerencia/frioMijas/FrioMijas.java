@@ -1,5 +1,9 @@
 package clasesHerencia.frioMijas;
 
+import clasesHerencia.frioMijas.equipos.Arcon;
+import clasesHerencia.frioMijas.equipos.Camara;
+import clasesHerencia.frioMijas.equipos.Frigorifico;
+import clasesHerencia.frioMijas.equipos.Minibar;
 import clasesHerencia.frioMijas.personal.Empleado;
 import clasesHerencia.frioMijas.personal.Jefe;
 import clasesHerencia.frioMijas.personal.Sede;
@@ -30,7 +34,6 @@ public class FrioMijas {
 
         sede1.addEmpleado(empleado1);
         sede1.addEmpleado(empleado2);
-
         sede2.addEmpleado(empleado3);
         sede2.addEmpleado(empleado4);
         sede2.addEmpleado(empleado5);
@@ -66,16 +69,39 @@ public class FrioMijas {
         System.out.println("*****************************************************************");
          if(esFuerte(jefe1.getPassword())){
             System.out.println(jefe1.getNombre());
+         } else {
+            System.out.println("-------");
          }
 
          if(esFuerte(jefe2.getPassword())){
             System.out.println(jefe2.getNombre());
+         } else {
+            System.out.println("-------");
          }
         
          /*
           * HACER
           * Generar contraseña de 10 elementos que sea fuerte para cada uno de los jefes
           */
+        
+          System.out.println("*****************************************************************");
+          System.out.println(" \tPassword de 10 elementos que sea fuerte para cada jefe");
+          System.out.println("*****************************************************************");
+        
+          String passwordGenerated = "";
+        do {
+            jefe1.generaPassword(10);
+            passwordGenerated = jefe1.getPassword();
+          } while (!esFuerte(passwordGenerated));
+        System.out.println("Password de Jefe1 es: " + jefe1.getPassword());
+
+            passwordGenerated = "";
+        do {
+            jefe2.generaPassword(10);
+            passwordGenerated = jefe2.getPassword();
+          } while (!esFuerte(passwordGenerated));
+        System.out.println("Password de Jefe2 es: " + jefe2.getPassword());
+
 
          /*
          * HACER *
@@ -96,14 +122,22 @@ public class FrioMijas {
          * HACER *
          * Crea 5 equipos frigorificos diferentes y asignalos a la 2º sede y muéstralos a continuación   
          */
+        System.out.println("*****************************************************************");
+        System.out.println(" \tCrear y añadir electrodomesticos a una sede");
+        System.out.println("*****************************************************************");
 
-         
+        Minibar minibar1 = new Minibar(45, 45, 52, 5, "Lacor", 3);
+        Frigorifico frigorifico1 = new Frigorifico(180, 90, 80, 1500, "LG");
+        Arcon arcon1 = new Arcon(54, 70, 84, 2000, "Wonder");
+        Camara camara1 = new Camara(180, 200, 200, 3000, "Coreco", -5,12);
 
+        sede2.addElectrodomesticos(minibar1);
+        sede2.addElectrodomesticos(frigorifico1);
+        sede2.addElectrodomesticos(arcon1);
+        sede2.addElectrodomesticos(camara1);
 
+        System.out.println(sede2);
 
-
-
-        
         
     }
 

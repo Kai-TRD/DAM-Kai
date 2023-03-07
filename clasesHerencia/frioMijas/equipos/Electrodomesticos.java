@@ -2,13 +2,13 @@ package clasesHerencia.frioMijas.equipos;
 
 public class Electrodomesticos {
 
-    protected double alto;
-    protected double ancho;
-    protected double profundidad;
+    protected int alto;
+    protected int ancho;
+    protected int profundidad;
     protected int frigorias;
     protected String marca;
     
-    public Electrodomesticos(double alto, double ancho, double profundidad, int frigorias, String marca){
+    public Electrodomesticos(int alto, int ancho, int profundidad, int frigorias, String marca){
         this.alto = alto;
         this.ancho = ancho;
         this.profundidad = profundidad;

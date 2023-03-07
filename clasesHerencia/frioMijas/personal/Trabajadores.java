@@ -25,6 +25,12 @@ public class Trabajadores {
         return nombre;
     }
 
+    public String getDni() {
+        return dni;
+    }
+
+    
+
     
 
 }
