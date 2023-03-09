@@ -1,5 +1,6 @@
 package PRUEBAS;
-    import java.util.Arrays;
+
+import java.util.Arrays;
 public class prueba1 {
 
         public static void main(String[] args) {
