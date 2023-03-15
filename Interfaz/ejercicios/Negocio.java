@@ -9,6 +9,7 @@ public class Negocio {
         this.cif = cif;
     }
 
+    
 
 
 }
