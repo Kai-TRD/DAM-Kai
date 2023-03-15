@@ -16,7 +16,13 @@ public class usoNegocio {
 
         ferreteriaGonzalez.cobrar(); //cobramos a c1
 
+        // ordenacion por el mayor dinero gastado a menor con un Comparator
 
+            for (int i = 0; i <  ; i++) {
+                
+            }
+
+        // int[] arrayNumero = {4, 6 ,2, 9, 1, 5}
 
     }
 }
