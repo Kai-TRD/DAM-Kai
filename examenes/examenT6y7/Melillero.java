@@ -1,8 +1,8 @@
-package examenT6y7;
+package examenes.examenT6y7;
 
-import examenT6y7.barco.Barco;
-import examenT6y7.pasajero.Pasajero;
-import examenT6y7.vehiculos.*;
+import examenes.examenT6y7.barco.Barco;
+import examenes.examenT6y7.pasajero.Pasajero;
+import examenes.examenT6y7.vehiculos.*;
 
 public class Melillero {
 

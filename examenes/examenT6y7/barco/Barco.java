@@ -1,10 +1,10 @@
-package examenT6y7.barco;
+package examenes.examenT6y7.barco;
 
-import examenT6y7.vehiculos.Vehiculo;
+import examenes.examenT6y7.vehiculos.Vehiculo;
 
 import java.util.Arrays;
 
-import examenT6y7.pasajero.Pasajero;
+import examenes.examenT6y7.pasajero.Pasajero;
 
 public class Barco {
 

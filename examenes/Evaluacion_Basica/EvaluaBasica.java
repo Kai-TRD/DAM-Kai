@@ -1,4 +1,4 @@
-package Evaluacion_Basica;
+package examenes.Evaluacion_Basica;
 import java.util.Scanner;
 
 public class EvaluaBasica {

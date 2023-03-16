@@ -1,6 +1,6 @@
-package examenT6y7.vehiculos;
+package examenes.examenT6y7.vehiculos;
 
-import examenT6y7.pasajero.Pasajero;
+import examenes.examenT6y7.pasajero.Pasajero;
 
 public class Camion extends Vehiculo {
     

@@ -1,4 +1,4 @@
-package examenT5;
+package examenes.examenT5;
 
 public class Ejercicio3_KailuoWang {
     public static void main(String[] args) {

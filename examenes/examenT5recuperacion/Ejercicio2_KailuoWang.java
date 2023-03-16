@@ -1,4 +1,4 @@
-package examenT5recuperacion;
+package examenes.examenT5recuperacion;
 
 import java.util.Arrays;
 import java.util.Scanner;

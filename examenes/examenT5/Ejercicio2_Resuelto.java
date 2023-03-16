@@ -1,4 +1,4 @@
-package examenT5;
+package examenes.examenT5;
 
 import java.util.Scanner;
 

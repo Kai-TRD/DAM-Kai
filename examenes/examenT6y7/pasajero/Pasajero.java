@@ -1,4 +1,4 @@
-package examenT6y7.pasajero;
+package examenes.examenT6y7.pasajero;
 
 public class Pasajero {
     private String nombre;
