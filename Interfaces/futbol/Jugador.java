@@ -11,7 +11,6 @@ public class Jugador implements Jugar_I {
 
     private int numeroGoles;
     private int numeroFaltas;
-    // String toString(); //“NombreCompleto (apodo)- Goles x - Faltas y”
     // equals(obj): Se comparan por número de licencia
 
     // Constructor
@@ -43,6 +42,9 @@ public class Jugador implements Jugar_I {
         return "\t- " + this.nombreCompleto + "(" + this.apodo + ")- Goles " + this.numeroGoles + " - Faltas " + this.numeroFaltas;
     }
 
+
+    
+
     @Override
     public void HacerGol() {
         System.out.println("-----------------------------------");
@@ -51,7 +53,6 @@ public class Jugador implements Jugar_I {
 
         this.numeroGoles++;
     }
-
 
     @Override
     public void cometerFalta() {
