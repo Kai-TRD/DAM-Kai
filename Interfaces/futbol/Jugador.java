@@ -3,10 +3,11 @@ package Interfaces.futbol;
 public class Jugador implements Jugar_I {
 
     // Atributos
-    private String NombreCompleto;
-    private String Apodo;
+    private String nombreCompleto;
+    private String apodo;
 
     private int numLicencia = 1000; // (Número único y auto-generado para todos los jugadores, las licencias empiezan a partir de 1000)
+    private static int contador;
 
     private int numeroGoles;
     private int numeroFaltas;
@@ -15,8 +16,8 @@ public class Jugador implements Jugar_I {
 
     // Constructor
     public Jugador(String NombreCompleto, String Apodo, int numeroGoles, int numeroFaltas){
-        this.NombreCompleto = NombreCompleto;
-        this.Apodo = Apodo;
+        this.nombreCompleto = NombreCompleto;
+        this.apodo = Apodo;
         this.numLicencia = generarNumLicencia();
         this.numeroGoles = numeroGoles;
         this.numeroFaltas = numeroFaltas;
@@ -29,35 +30,34 @@ public class Jugador implements Jugar_I {
 
 
     public int generarNumLicencia(){
-        numLicencia = numLicencia+1;
-        setNumLicencia(numLicencia);
-        return this.numLicencia;
+        contador++;
+        return numLicencia + contador;
+
+
     }
 
 
 
     @Override
     public String toString(){
-        String algo = "----------Jugador---------" ;
-               algo += "\nNombre:" + this.NombreCompleto;
-               algo += "\nApodo:" + this.Apodo;
-               algo += "\nNº Licencia:" + this.numLicencia;
-               algo += "\nNº Goles:" + this.numeroGoles;
-               algo += "\nNº Faltas" + this.numeroFaltas;
-        
-        return algo;
+        return "\t- " + this.nombreCompleto + "(" + this.apodo + ")- Goles " + this.numeroGoles + " - Faltas " + this.numeroFaltas;
     }
 
     @Override
     public void HacerGol() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'HacerGol'");
+        System.out.println("-----------------------------------");
+        System.out.println("| GOOOOOLLLLL!!! de " + this.nombreCompleto);
+        System.out.println("-----------------------------------");
+
+        this.numeroGoles++;
     }
 
 
     @Override
     public void cometerFalta() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cometerFalta'");
+        System.out.println("-----------------------------------");
+        System.out.println("| Falta de " + this.nombreCompleto);
+        System.out.println("-----------------------------------");
+        this.numeroFaltas++;
     }
 }
