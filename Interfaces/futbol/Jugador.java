@@ -37,9 +37,14 @@ public class Jugador implements Jugar_I {
 
 
 
+    public int getNumLicencia() {
+        return numLicencia;
+    }
+
+
     @Override
     public String toString(){
-        return "\t- " + this.nombreCompleto + "(" + this.apodo + ")- Goles " + this.numeroGoles + " - Faltas " + this.numeroFaltas;
+        return "- " + this.nombreCompleto + "(" + this.apodo + ")- Goles " + this.numeroGoles + " - Faltas " + this.numeroFaltas + "-Nº" + this.numLicencia;
     }
 
 

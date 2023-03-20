@@ -1,0 +1,12 @@
+        Jugador jugador1 = new Jugador("Emilia Brown", "Gema brillante", 6, 1);
+        Jugador jugador2 = new Jugador("Jhonathan Joestar", "El noble", 5, 0);
+        Jugador jugador3 = new Jugador("Robert Furigan", "El loco", 2, 2);
+        Jugador jugador4 = new Jugador("Artorias Pendragon", "El caballero", 2, 4);
+        Jugador jugador5 = new Jugador("Dario Brando", "El vampiro", 12, 15);
+        Jugador jugador6 = new Jugador("Ruby Rose", "The Rose", 0, 0);
+        Jugador jugador7 = new Jugador("Weish Schnee", "Ice Queen", 0, 0);
+        Jugador jugador8 = new Jugador("Blake Belladona", "Shadow Cat", 0, 0);
+        Jugador jugador9 = new Jugador("Yang Xiao Long", "Yellow Dragon", 0, 0);
+        Jugador jugador10 = new Jugador("Aeria Windswift", "Wind dancer", 0, 0);
+        Jugador jugador11 = new Jugador("Gerald Leonheart", "The Sword", 0, 0);
+        
