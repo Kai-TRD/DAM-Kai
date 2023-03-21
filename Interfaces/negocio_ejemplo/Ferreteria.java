@@ -1,4 +1,4 @@
-package Interfaces.negocio_ejemplo;
+package interfaces.negocio_ejemplo;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;

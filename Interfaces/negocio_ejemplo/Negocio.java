@@ -1,4 +1,4 @@
-package Interfaces.negocio_ejemplo;
+package interfaces.negocio_ejemplo;
 
 public abstract class Negocio {
 

@@ -1,4 +1,4 @@
-package Interfaces;
+package interfaces;
 
 public class Perro implements Animal_I, Marcota_I 
 {
