@@ -44,15 +44,10 @@ Ejercicios de java de clases :P
 ⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⣿
 ```
 
-## Contributing
+## Gente
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+Solo yo :v
 
-Please make sure to update tests as appropriate.
+## Licencia
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-=======
-
+No hay
