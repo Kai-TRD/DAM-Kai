@@ -3,9 +3,6 @@ package contenedores;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import javax.annotation.processing.SupportedOptions;
-import javax.swing.event.ListDataEvent;
-
 public class prueba {
     public static void main(String[] args) {
         
