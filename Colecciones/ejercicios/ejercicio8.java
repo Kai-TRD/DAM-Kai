@@ -10,13 +10,7 @@ public class ejercicio8 {
     // almacenarlas y asegúrate de que no se repite ninguna.
 
     
-        HashMap<String, Integer> carta = new HashMap<>();
-
         ArrayList<HashMap<String, String>> baraja = new ArrayList<>();
-
-
-        baraja.add(carta.put("oros", 1), null);
-
 
     }
 }
