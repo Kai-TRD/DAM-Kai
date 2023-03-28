@@ -1,7 +1,6 @@
 package Colecciones.ejercicios;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class ejercicio2 {
     public static void main(String[] args) {
