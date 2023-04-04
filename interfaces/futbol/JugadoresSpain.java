@@ -1,4 +1,8 @@
-package Interfaces.futbol;
+package interfaces.futbol;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class JugadoresSpain {
     public static void main(String[] args) {
@@ -15,17 +19,25 @@ public class JugadoresSpain {
         Jugador jugador10 = new Jugador("Courtney Monroe", "La Gacela", 7, 5);
         Jugador jugador11 = new Jugador("Norberto Beck", "Burrito", 3, 1);
 
-
-
-        
         Jugador[] equipo = {jugador1, jugador2, jugador3, jugador4, jugador5, jugador6, jugador7, jugador8, jugador9, jugador10, jugador11 };
        
+        List<Jugador> jugadores = Arrays.asList(equipo);
 
-        System.out.println("--------------Jugadores--------------");
+        System.out.println("\n--------------Jugadores(Ordenados por Licencia)--------------");
+        Collections.sort(jugadores, Jugador.comparadorPorLicencia);
         imprimir(equipo);
 
+        System.out.println("\n--------------Jugadores(Ordenados por Apodo)--------------");
+        Collections.sort(jugadores, Jugador.comparadorPorApodo);
+        imprimir(equipo);
 
-        
+        System.out.println("\n--------------Jugadores(Ordenados por Goles)--------------");
+        Collections.sort(jugadores, Jugador.comparadorPorGoles);
+        imprimir(equipo);
+
+        System.out.println("\n--------------Jugadores(Ordenados por Faltas)--------------");
+        Collections.sort(jugadores, Jugador.comparadorPorFaltas);
+        imprimir(equipo);
     }
 
     /**
@@ -34,6 +46,7 @@ public class JugadoresSpain {
      */
     static void imprimir(Jugador[] array){
         for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i].getNumLicencia() + " -");
             System.out.println(array[i]);
         }
     }

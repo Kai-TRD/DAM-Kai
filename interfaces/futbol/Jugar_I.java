@@ -1,4 +1,4 @@
-package Interfaces.futbol;
+package interfaces.futbol;
 
 public interface Jugar_I {
     
