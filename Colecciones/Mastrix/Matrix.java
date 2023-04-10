@@ -5,6 +5,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.crypto.AEADBadTagException;
+
+import Arrays.arrayBidimensional;
+import Colecciones.Mastrix.Personajes.Personajes;
 import Colecciones.Mastrix.Personajes.PersonasGenericas;
 
 
@@ -16,11 +20,10 @@ public class Matrix {
         // Creamos las 200 personas
         ArrayList<PersonasGenericas> listadoPGenericas = new ArrayList<>();
         listadoPGenericas.addAll(factoriaPersonas(cantidad));
-
         // System.out.println(listadoPGenericas);
 
-
-
+        ArrayList<Personajes> mundo = new ArrayList<>();
+        mundo.add();
 
 
 
@@ -29,19 +32,6 @@ public class Matrix {
 
         
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
