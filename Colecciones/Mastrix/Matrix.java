@@ -61,6 +61,7 @@ public class Matrix {
 
 
                         // pendiente de hacer oooooooooooooooooooooooooooooooooooooooooooooooooo
+                        // utiliza el instanceof para imprimir persona generica como O, smith como S y neo como N
 
 
 
