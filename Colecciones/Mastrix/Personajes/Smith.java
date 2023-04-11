@@ -26,4 +26,12 @@ public class Smith extends Personajes {
         return salida;
     }
 
+    public int getPoderInfeccion() {
+        return poderInfeccion;
+    }
+
+    public void setPoderInfeccion(int poderInfeccion) {
+        this.poderInfeccion = poderInfeccion;
+    }
+
 }

@@ -11,7 +11,7 @@ public class PersonasGenericas extends Personajes {
 
     @Override
     public String toString(){
-        String salida = "\n--------------------------------------------"; 
+        String salida = "--------------------------------------------"; 
             salida += "\nid: " + this.id;
             salida += "\nnombre: " + this.nombre;
             salida += "\nnombreCiudad: " + this.nombreCiudad;
@@ -25,6 +25,10 @@ public class PersonasGenericas extends Personajes {
 
     public int getProbabilidadMorir() {
         return probabilidadMorir;
+    }
+
+    public void setProbabilidadMorir(int probabilidadMorir) {
+        this.probabilidadMorir = probabilidadMorir;
     }
 
 

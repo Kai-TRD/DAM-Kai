@@ -1,16 +1,26 @@
 package Colecciones.Mastrix;
 
+import java.util.ArrayList;
+
 public class pruebas {
     public static void main(String[] args) {
         
-        String[] nombres = {"Juan", "Pedro", "María", "Ana", "Luis", "Carlos", "Sofía", "Lucía", "Elena", "Miguel"};
+        ArrayList<String> lista = new ArrayList<>(); // ArrayList de tipo String
 
-        System.out.println(nombres.length);
+// Agregar elementos a la lista
+lista.add("Elemento 1");
+lista.add("Elemento 2");
+lista.add("Elemento 3");
 
-        for (int i = 0; i < 20; i++) {
-            int randomNombre = (int)(Math.random()*10);
-            System.out.println(randomNombre + " - " + nombres[randomNombre]);
-        }
+System.out.println("Lista original: " + lista); // Imprimir lista original
+
+int index = 1; // Índice del elemento que deseamos reemplazar
+String nuevoElemento = "Elemento Nuevo"; // Nuevo elemento que deseamos insertar
+
+lista.set(index, nuevoElemento); // Reemplazar el elemento en el índice indicado
+
+System.out.println("Lista después del reemplazo: " + lista); // Imprimir lista después del reemplazo
+
     }
 
 }
