@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
 
+import javax.swing.text.StyledEditorKit.BoldAction;
+
 import Colecciones.Mastrix.Personajes.Personajes;
 import Colecciones.Mastrix.Personajes.PersonasGenericas;
 import Colecciones.Mastrix.Personajes.Smith;
@@ -23,13 +25,15 @@ public class Matrix {
         final int MUNDOSIZE = 25;
 
         final int CAPACIDADMAXINFECTAR = 5;
-        int infeccionActual = 0;
 
         // Creamos las 200 personas
         ArrayList<PersonasGenericas> listadoPGenericas = new ArrayList<>();
         listadoPGenericas.addAll(factoriaPersonas(cantidad));
         // Mostrar las 200 personas
         // System.out.println(listadoPGenericas);
+
+        // Deposito virus para Smith
+        ArrayList<Smith> depositoVirus = new ArrayList<>();
 
         // Añadimos las personas del mundo de matrix
         ArrayList<Personajes> mundo = new ArrayList<>();
@@ -80,9 +84,9 @@ public class Matrix {
 
             // Cada 2 iteraciones
             if (iteraciones % 2 == 0) {
+
                 int randomPoderIfeccion = (int) (Math.random() * CAPACIDADMAXINFECTAR) + 1;
 
-                infeccionActual = randomPoderIfeccion;
                 for (int i = 0; i < mundo.size(); i++) {
 
                     int posicionSmith = 0;
@@ -124,12 +128,29 @@ public class Matrix {
 
             // Cada 5 iteraciones
             if (iteraciones % 5 == 0) {
+                boolean esElEleguido = false;
+                if ((int) (Math.random() * 2) == 1) {
+                    esElEleguido = true;
+                }
+
+                if (esElEleguido) {
+                    // todos los smith radio de (capacidad de destruccion) todos los smith mueren y
+                    // dejan su hueco
+
+                    // guardar smith en un deposito de virus
+                }
 
             }
 
             // Cada 10 iteraciones
             if (iteraciones % 10 == 0) {
+                for (int i = 0; i < mundo.size(); i++) {
+                    if (mundo.get(i).equals(null)) {
+                        mundo.add(listadoPGenericas.get(0));
+                        listadoPGenericas.remove(0);
+                    }
 
+                }
             }
 
             // Cada 30 iteraciones
@@ -139,7 +160,6 @@ public class Matrix {
 
             // imprimir el resumen del mundo
 
-            System.out.println("Infeccion actual es de: " + infeccionActual);
             resumenMundo(mundo);
             System.out.println("Turno Nº " + iteraciones + " quedan " + listadoPGenericas.size() + " habitantes");
             String enter = sc.nextLine();
