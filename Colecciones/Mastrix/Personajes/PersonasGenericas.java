@@ -2,12 +2,11 @@ package Colecciones.Mastrix.Personajes;
 
 public class PersonasGenericas extends Personajes {
 
-    
-    
+    protected int probabilidadMorir;    
 
-    public PersonasGenericas(int id, String nombre, String nombreCiudad, String fechaCreacion, int edad,
-            int probabilidadMorir) {
-        super(id, nombre, nombreCiudad, fechaCreacion, edad, probabilidadMorir);
+    public PersonasGenericas(int id, String nombre, String nombreCiudad, String fechaCreacion, int edad, int probabilidadMorir) {
+        super(id, nombre, nombreCiudad, fechaCreacion, edad);
+        this.probabilidadMorir = probabilidadMorir;
     }
 
     @Override
@@ -22,6 +21,10 @@ public class PersonasGenericas extends Personajes {
             salida += "\n--------------------------------------------";
 
         return salida;
+    }
+
+    public int getProbabilidadMorir() {
+        return probabilidadMorir;
     }
 
 

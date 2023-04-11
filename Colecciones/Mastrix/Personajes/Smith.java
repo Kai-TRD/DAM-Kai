@@ -7,22 +7,21 @@ public class Smith extends Personajes {
 
 
     // Constructor
-    public Smith(int id, String nombre, String nombreCiudad, String fechaCreacion, int edad, int probabilidadMorir, int poderInfeccion) {
-        super(id, nombre, nombreCiudad, fechaCreacion, edad, probabilidadMorir);
+    public Smith(int id, String nombre, String nombreCiudad, String fechaCreacion, int edad, int poderInfeccion) {
+        super(id, nombre, nombreCiudad, fechaCreacion, edad);
         this.poderInfeccion = poderInfeccion;
     }
 
     @Override
     public String toString(){
-        String salida = "--------------------------------------------"; 
-            salida += "id: " + this.id;
-            salida += "nombre: " + this.nombre;
-            salida += "nombreCiudad: " + this.nombreCiudad;
-            salida += "fechaCreacion: " + this.fechaCreacion;
-            salida += "edad: " + this.edad;
-            salida += "probabilidadMorir: " + this.probabilidadMorir;
-            salida += "poderInfeccion: " + this.poderInfeccion;
-            salida += "--------------------------------------------";
+        String salida = "\n--------------------------------------------"; 
+            salida += "\nid: " + this.id;
+            salida += "\nnombre: " + this.nombre;
+            salida += "\nnombreCiudad: " + this.nombreCiudad;
+            salida += "\nfechaCreacion: " + this.fechaCreacion;
+            salida += "\nedad: " + this.edad;
+            salida += "\npoderInfeccion: " + this.poderInfeccion;
+            salida += "\n--------------------------------------------";
 
         return salida;
     }

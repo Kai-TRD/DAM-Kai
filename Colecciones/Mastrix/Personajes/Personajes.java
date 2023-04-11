@@ -8,24 +8,35 @@ public class Personajes {
     protected String nombreCiudad;
     protected String fechaCreacion;
     protected int edad;
-    protected int probabilidadMorir;
 
     // Contructor
-    public Personajes( int id, String nombre, String nombreCiudad, String fechaCreacion, int edad, int probabilidadMorir) {
+    public Personajes(int id, String nombre, String nombreCiudad, String fechaCreacion, int edad) {
         this.id = id;
         this.nombre = nombre;
         this.nombreCiudad = nombreCiudad;
         this.fechaCreacion = fechaCreacion;
         this.edad = edad;
-        this.probabilidadMorir = probabilidadMorir;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public String getNombre() {
+        return nombre;
+    }
 
+    public String getNombreCiudad() {
+        return nombreCiudad;
+    }
 
+    public String getFechaCreacion() {
+        return fechaCreacion;
+    }
 
+    public int getEdad() {
+        return edad;
+    }
 
+    
 }
-
-
-

@@ -4,10 +4,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.concurrent.PriorityBlockingQueue;
 
-import javax.crypto.AEADBadTagException;
-
-import Arrays.arrayBidimensional;
 import Colecciones.Mastrix.Personajes.Personajes;
 import Colecciones.Mastrix.Personajes.PersonasGenericas;
 import Colecciones.Mastrix.Personajes.Smith;
@@ -21,34 +19,73 @@ public class Matrix {
         // Creamos las 200 personas
         ArrayList<PersonasGenericas> listadoPGenericas = new ArrayList<>();
         listadoPGenericas.addAll(factoriaPersonas(cantidad));
+        // Mostrar las 200 personas
         // System.out.println(listadoPGenericas);
-
 
         // Añadimos las personas del mundo de matrix
         ArrayList<Personajes> mundo = new ArrayList<>();
         for (int i = 0; i < 25; i++) {
-            mundo.add(listadoPGenericas.get((int)(Math.random()*(listadoPGenericas.size()-1))));
+            mundo.add(listadoPGenericas.get((int) (Math.random() * (listadoPGenericas.size() - 1))));
         }
+
+        // Creacion de Neo
+        Neo neo = new Neo(0000, "Neo", "Nueva York", "2003-10-23 13:36:00:6969", 35, false, (int) (Math.random() * 10));
+        System.out.println(neo);
+
+        // Creacion de Smith
+        Smith smith = new Smith(0000, "Smith", "MATRIX", "ERROR", 0, (int) (Math.random() * 10));
+        System.out.println(smith);
+
+        mundo.add(neo);
+
+        // -------ITERACIONES-------
         
-        Neo neo = new Neo(cantidad, null, null, null, cantidad, cantidad, false, cantidad)
-
+        int iteraciones = 0;
         
+        // while(listadoPGenericas.size() != 0 || iteraciones == 300){
+            
+            // Cada iteracion Se evalúa el porcentaje de morir de un personaje y si es inferior a 30% es 
+            // sustituido por otro del listado de personas. En otro caso se disminuye el % en 10%
+            for (int i = 0; i < mundo.size(); i++) {
+                // Mostrar los 25
+                // System.out.println(mundo.get(i));
+
+                if(mundo.get(i) instanceof PersonasGenericas)
+                {
+                    System.out.println("Es persona generica");
+                    PersonasGenericas pg = (PersonasGenericas)mundo.get(i);
+                    int probMorir = pg.getProbabilidadMorir();
+                    if(probMorir < 30){
 
 
+
+
+                        // pendiente de hacer oooooooooooooooooooooooooooooooooooooooooooooooooo
+
+
+
+
+                        int indiceAleatorio = random.nextInt(personajesDisponibles.size());
+
+                        mundo.set(i, listadoPGenericas.get(i));
+                    }
+                }
+            }
+
+            // Cada 2 iteraciones
+
+            // Cada 5 iteraciones
+
+            // Cada 10 iteraciones
+
+            // Cada 30 iteraciones
+
+            iteraciones++;
+        // }
 
 
 
     }
-
-
-
-
-
-
-
-
-
-
 
     public static Collection<PersonasGenericas> factoriaPersonas(int cantidad) {
 
@@ -80,7 +117,7 @@ public class Matrix {
 
             // Fecha
             LocalDateTime fechaActual = LocalDateTime.now();
-            DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSSS");
             String fechaFormateada = fechaActual.format(formato);
 
             int edad = (int) ((Math.random() * 90) + 1);
