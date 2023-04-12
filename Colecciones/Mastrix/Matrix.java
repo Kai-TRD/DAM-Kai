@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 import Colecciones.Mastrix.Personajes.Personajes;
 import Colecciones.Mastrix.Personajes.PersonasGenericas;
 import Colecciones.Mastrix.Personajes.Smith;
@@ -25,6 +23,8 @@ public class Matrix {
         final int MUNDOSIZE = 25;
 
         final int CAPACIDADMAXINFECTAR = 5;
+
+        String enter;
 
         // Creamos las 200 personas
         ArrayList<PersonasGenericas> listadoPGenericas = new ArrayList<>();
@@ -135,7 +135,7 @@ public class Matrix {
 
                 if (esElEleguido) {
                     // todos los smith radio de (capacidad de destruccion) todos los smith mueren y
-                    // dejan su hueco
+                    // dejan su hueco(NULL)
 
                     // guardar smith en un deposito de virus
                 }
@@ -144,17 +144,22 @@ public class Matrix {
 
             // Cada 10 iteraciones
             if (iteraciones % 10 == 0) {
-                for (int i = 0; i < mundo.size(); i++) {
-                    if (mundo.get(i).equals(null)) {
-                        mundo.add(listadoPGenericas.get(0));
-                        listadoPGenericas.remove(0);
-                    }
+                if (listadoPGenericas.size() != 0) {
+                    for (int i = 0; i < mundo.size(); i++) {
+                        if (mundo.get(i).equals(null)) {
+                            mundo.add(listadoPGenericas.get(0));
+                            listadoPGenericas.remove(0);
+                        }
 
+                    }
                 }
+
             }
 
             // Cada 30 iteraciones
             if (iteraciones % 30 == 0) {
+
+                listadoPGenericas.addAll(factoriaPersonas(1));
 
             }
 
@@ -162,10 +167,12 @@ public class Matrix {
 
             resumenMundo(mundo);
             System.out.println("Turno Nº " + iteraciones + " quedan " + listadoPGenericas.size() + " habitantes");
-            String enter = sc.nextLine();
+            enter = sc.nextLine();
 
             iteraciones++;
         }
+
+        System.out.println(enter);
 
     }
 
