@@ -1,15 +1,9 @@
 package Colecciones.ejercicios.gestionequipoMalaga;
 
-import java.net.SocketTimeoutException;
-import java.security.DomainLoadStoreParameter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Map.Entry;
-
-import javax.sql.rowset.CachedRowSet;
-import javax.swing.JList.DropLocation;
-import javax.xml.crypto.Data;
 
 import Colecciones.ejercicios.gestionequipoMalaga.Jugador.Posicion;
 
@@ -34,7 +28,7 @@ public class equipo {
                 case 1:
                     System.out.println("Dime el dorsal: ");
                     int dorsalAdd = sc.nextInt();
-                    altaJugador(plantilla, 1);
+                    altaJugador(plantilla, dorsalAdd);
                     break;
                 case 2:
                     System.out.println("Dime el dorsal: ");

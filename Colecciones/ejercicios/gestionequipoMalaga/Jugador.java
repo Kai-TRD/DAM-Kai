@@ -1,7 +1,5 @@
 package Colecciones.ejercicios.gestionequipoMalaga;
 
-import java.security.PublicKey;
-
 public class Jugador {
 
     private String dni;
