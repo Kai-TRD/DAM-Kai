@@ -24,7 +24,7 @@ public class Matrix {
 
         final int CAPACIDADMAXINFECTAR = 5;
 
-        String enter;
+        String enter = null;
 
         // Creamos las 200 personas
         ArrayList<PersonasGenericas> listadoPGenericas = new ArrayList<>();
@@ -59,7 +59,7 @@ public class Matrix {
 
         int iteraciones = 1;
 
-        while (listadoPGenericas.size() != 0 || iteraciones >= 300) {
+        do{
 
             // Cada iteracion
             for (int i = 0; i < mundo.size(); i++) {
@@ -70,7 +70,6 @@ public class Matrix {
                     PersonasGenericas pg = (PersonasGenericas) mundo.get(i);
                     int probMorir = pg.getProbabilidadMorir();
                     if (probMorir < 30) {
-
                         mundo.set(i, listadoPGenericas.get(i));
                         listadoPGenericas.remove(i);
                         System.out.println("Ha muerto:");
@@ -85,7 +84,7 @@ public class Matrix {
             // Cada 2 iteraciones
             if (iteraciones % 2 == 0) {
 
-                int randomPoderIfeccion = (int) (Math.random() * CAPACIDADMAXINFECTAR) + 1;
+                int randomPoderInfeccion = (int) (Math.random() * CAPACIDADMAXINFECTAR) + 1;
 
                 for (int i = 0; i < mundo.size(); i++) {
 
@@ -93,33 +92,31 @@ public class Matrix {
 
                     if (mundo.get(i) instanceof Smith) {
                         posicionSmith = i;
-                        Smith s = (Smith) mundo.get(i);
 
-                        s.setPoderInfeccion(randomPoderIfeccion);
-
-                        // arriba
-                        for (int j = posicionSmith; j < posicionSmith + s.getPoderInfeccion(); j++) {
+                        // Infectar arriba de smith
+                        for (int j = 0; j < posicionSmith; j++) {
                             System.out.println("ARIBA----dddddddddddddddddddddddddddddddddddddddd");
 
                             if (posicionSmith + 1 < mundo.size()) {
                                 System.out.println("valido");
-                                PersonasGenericas temp = (PersonasGenericas) mundo.get(j + 1);
 
-                                int tempId = temp.getId();
-                                String tempNombre = temp.getNombre();
-                                String tempNombreciudad = temp.getNombreCiudad();
-                                String tempFechaCreacion = temp.getFechaCreacion();
-                                int tempEdad = temp.getEdad();
-                                int tempPoderInfeccion = randomPoderIfeccion;
+                                // Obtener el objeto Personas en la posición j del ArrayList "mundo"
+                                Personajes temp = mundo.get(j);
 
-                                Smith smithTemp = new Smith(tempId, tempNombre, tempNombreciudad, tempFechaCreacion,
-                                        tempEdad, tempPoderInfeccion);
+                                // Crear un nuevo objeto Smith con los mismos valores de propiedades
+                                Smith smithTemp = new Smith(temp.getId(), temp.getNombre(), temp.getNombreCiudad(),
+                                        temp.getFechaCreacion(), temp.getEdad(), randomPoderInfeccion);
 
+                                // Reemplazar el objeto Personas en la posición j del ArrayList "mundo" con el
+                                // nuevo objeto Smith
                                 mundo.set(j, smithTemp);
+
                             } else {
                                 System.out.println("ERROR: Supera longitud maxima del mundo");
                             }
                         }
+
+                        // Infectar abajo de Smith
 
                     }
                 }
@@ -170,7 +167,7 @@ public class Matrix {
             enter = sc.nextLine();
 
             iteraciones++;
-        }
+        }while(listadoPGenericas.size() != 0 || iteraciones >= 300);
 
         System.out.println(enter);
 
