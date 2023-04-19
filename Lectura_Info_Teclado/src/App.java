@@ -10,7 +10,9 @@ public class App {
 
         LecturaTeclado.LeerFloat();
 
+        LecturaTeclado.LeerDouble();
+
+        LecturaTeclado.FinalizarLectura();
+
     }
 }
-
-    

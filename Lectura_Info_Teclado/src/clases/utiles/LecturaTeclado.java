@@ -29,7 +29,6 @@ public class LecturaTeclado {
 
     public static float LeerFloat() {
 
-        sc.nextFloat();
         float cadena = 0;
         boolean salir = false;
         while (salir == false) {
