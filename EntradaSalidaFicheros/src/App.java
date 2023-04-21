@@ -2,10 +2,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("----------Leemos un fichero de texto----------");
+        System.out.println("--Leemos un fichero de texto------------------");
 
         FileReader fr = null;
 
@@ -30,7 +31,7 @@ public class App {
         }
 
         // Trabajamos con BufferedReader
-        System.out.println("\n----------Trabajamos con BufferedReader----------");
+        System.out.println("\n--Trabajamos con BufferedReader------------------");
 
         BufferedReader bufferReader = null;
 
@@ -57,7 +58,7 @@ public class App {
         }
 
         // ejercicio sumar numeros de lineas
-        System.out.println("\n----------Suma de numeros----------");
+        System.out.println("\n--Suma de numeros------------------");
 
         try {
             fr = new FileReader("src/recursos/ficheroNumeros.txt");
@@ -102,6 +103,41 @@ public class App {
                 bufferReader.close();
             }
         }
+
+
+        System.out.println("\n--Suma de numeros con scanner------------------");
+
+        try {
+            fr = new FileReader("src/recursos/ficheroNumerosReales.txt");
+
+            bufferReader = new BufferedReader(fr);
+
+            String lineaFichero = bufferReader.readLine();
+
+            Scanner sc = null;
+            int total = 0;
+            int numeroLinea = 1;
+
+            while (lineaFichero != null) {
+
+                sc = new Scanner(lineaFichero);
+
+                System.out.println(sc);
+
+                lineaFichero = bufferReader.readLine();
+                numeroLinea++;
+            }
+
+            System.out.println("\nHemos llegado al final del fichero");
+
+        } catch (IOException ioException) {
+            System.out.println("Fichero no encontrado");
+        } finally {
+            if (bufferReader != null) {
+                bufferReader.close();
+            }
+        }
+
 
     }
 }
