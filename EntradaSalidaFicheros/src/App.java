@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.ToolTipManager;
+
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("--Leemos un fichero de texto------------------");
@@ -76,7 +78,6 @@ public class App {
                 // crear un array, trocear por espacio y luego sumar los valores
                 String[] numeros = lineaFichero.split(" ");
 
-
                 ArrayList<String> numeros2 = new ArrayList<>();
 
                 for (int i = 0; i < numeros.length; i++) {
@@ -87,7 +88,7 @@ public class App {
                     sumaTotalLinea += Integer.parseInt(numeros2.get(i));
                 }
 
-                System.out.println("Linea " + nLineas + ": " +sumaTotalLinea);
+                System.out.println("Linea " + nLineas + ": " + sumaTotalLinea);
 
                 nLineas++;
                 sumaTotalLinea = 0;
@@ -104,7 +105,6 @@ public class App {
             }
         }
 
-
         System.out.println("\n--Suma de numeros con scanner------------------");
 
         try {
@@ -120,10 +120,21 @@ public class App {
 
             while (lineaFichero != null) {
 
-                sc = new Scanner(lineaFichero);
+                try {
+                    sc = new Scanner(lineaFichero);
 
-                System.out.println(sc);
+                    System.out.println("Linea " + numeroLinea + ": " + lineaFichero);
 
+                    while (sc.hasNextDouble()) {
+                        total += sc.nextDouble();
+                    }
+                    System.out.println("Linea " + numeroLinea + ": " + total);
+
+                } catch (Exception ex) {
+                    System.out.println("Error de lectura de linea " + numeroLinea);
+                }
+
+                // Leo siguiente linea
                 lineaFichero = bufferReader.readLine();
                 numeroLinea++;
             }
@@ -137,7 +148,6 @@ public class App {
                 bufferReader.close();
             }
         }
-
 
     }
 }
