@@ -1,11 +1,11 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Leemos un fichero de texto");
+        System.out.println("----------Leemos un fichero de texto----------");
 
         FileReader fr = null;
 
@@ -60,16 +60,36 @@ public class App {
         System.out.println("\n----------Suma de numeros----------");
 
         try {
-            fr = new FileReader("src/recursos/fichero.txt");
+            fr = new FileReader("src/recursos/ficheroNumeros.txt");
 
             bufferReader = new BufferedReader(fr);
 
             String lineaFichero = bufferReader.readLine();
 
+            int sumaTotalLinea = 0;
+
+            int nLineas = 1;
+
             while (lineaFichero != null) {
 
                 // crear un array, trocear por espacio y luego sumar los valores
+                String[] numeros = lineaFichero.split(" ");
 
+
+                ArrayList<String> numeros2 = new ArrayList<>();
+
+                for (int i = 0; i < numeros.length; i++) {
+                    numeros2.add(numeros[i]);
+                }
+
+                for (int i = 0; i < numeros2.size(); i++) {
+                    sumaTotalLinea += Integer.parseInt(numeros2.get(i));
+                }
+
+                System.out.println("Linea " + nLineas + ": " +sumaTotalLinea);
+
+                nLineas++;
+                sumaTotalLinea = 0;
                 lineaFichero = bufferReader.readLine();
             }
 
