@@ -1,0 +1,35 @@
+Municipios	Sexo	Periodo	Total
+29 Málaga	Total	2022	1.717.504
+29 Málaga	Total	2021	
+29 Málaga	Total	2020	1.685.920
+29 Málaga	Total	2019	1.661.785
+29 Málaga	Total	2018	1.641.121
+29 Málaga	Total	2017	1.630.615
+29 Málaga	Total	2016	1.629.298
+29 Málaga	Total	2015	1.628.973
+29 Málaga	Total	2014	1.621.968
+29 Málaga	Total	2013	1.652.999
+29 Málaga	Total	2012	1.641.098
+29 Málaga	Total	2011	1.625.827
+29 Málaga	Total	2010	1.609.557
+29 Málaga	Total	2009	1.593.068
+29 Málaga	Total	2008	1.563.261
+29 Málaga	Total	2007	1.517.523
+29 Málaga	Total	2006	1.491.287
+29 Málaga	Total	2005	1.453.409
+29 Málaga	Total	2004	1.397.925
+29 Málaga	Total	2003	1.374.890
+29 Málaga	Total	2002	1.330.010
+29 Málaga	Total	2001	1.302.240
+29 Málaga	Total	2000	1.278.851
+29 Málaga	Total	1999	1.258.084
+29 Málaga	Total	1998	1.240.580
+29 Málaga	Total	1997	1.249.290
+29 Málaga	Total	1996	1.249.290
+29 Málaga	Hombres	2022	840.488
+29 Málaga	Hombres	2021	829.976
+29 Málaga	Hombres	2020	825.45
+29 Málaga	Hombres	2019	814.349
+29 Málaga	Hombres	2018	804.858
+29 Málaga	Hombres	2017	800.551
+29 Málaga	Hombres	2016	800.63

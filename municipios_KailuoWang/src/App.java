@@ -1,9 +1,8 @@
+package municipios_KailuoWang.src;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import clases.Municipio;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -13,12 +12,12 @@ public class App {
 
         BufferedReader bufferReader = null;
 
-        ArrayList<Municipio> listaMunicipios = new ArrayList<>();
+        ArrayList<Alumno> listaAlumnos = new ArrayList<>();
 
         int numeroLinea = 0;
 
         try {
-            fr = new FileReader("src/fichero/PoblacionMunicipiosMalaga.txt");
+            fr = new FileReader("src/fichero/ficheroAlumnos.txt");
 
             bufferReader = new BufferedReader(fr);
 
@@ -27,24 +26,22 @@ public class App {
             String lineaFichero = bufferReader.readLine();
 
             while (lineaFichero != null) {
-                try {
-                    String[] separado = lineaFichero.split("\\t");
 
-                    String municipios = separado[0];
-                    String sexo = separado[1];
-                    int periodo = Integer.parseInt(separado[2]);
-                    String total = separado[3];
+                String[] separado = lineaFichero.split("\\s+");
 
-                    Municipio municipio = new Municipio(municipios, sexo, periodo, total);
-                    listaMunicipios.add(municipio);
+                String sexo = separado[0];
+                String edad = separado[1];
+                double estatura = Double.parseDouble(separado[2].replace(",", "."));
+                int puntuacion1 = Integer.parseInt(separado[3]);
+                int puntuacion2 = Integer.parseInt(separado[4]);
+                String calificacion = separado[5];
 
-                    System.out.println(numeroLinea + " - " + municipio);
-                } catch (Exception exception) {
-                    System.out.println(numeroLinea + " - " + exception);
-                }
-                    System.out.println("------------------------------------------------------");
+                Alumno alumno = new Alumno(sexo, edad, estatura, puntuacion1, puntuacion2, calificacion);
+                listaAlumnos.add(alumno);
 
+                System.out.println(listaAlumnos.get(numeroLinea));
 
+                System.out.println("------------------------------------------------------");
 
                 numeroLinea++;
                 lineaFichero = bufferReader.readLine();
@@ -54,9 +51,10 @@ public class App {
 
         } catch (IOException ioException) {
             System.out.println("Fichero no encontrado");
-        } catch (NumberFormatException numberFormatException) {
-            System.out.println(numberFormatException);
+        } finally {
+            if (bufferReader != null) {
+                bufferReader.close();
+            }
         }
-
     }
 }
