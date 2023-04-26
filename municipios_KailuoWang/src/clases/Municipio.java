@@ -12,4 +12,9 @@ public class Municipio {
         this.periodo = periodo;
         this.total = total;
     }
+
+    @Override
+    public String toString() {
+        return municipios + "(" + periodo + "):" + total;
+    }
 }
