@@ -2,6 +2,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
+import javax.swing.SpringLayout;
+
+import alumno.Alumno;
+import comparadores.ComparadorEdadAltura;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -45,6 +52,9 @@ public class App {
                 numeroLinea++;
                 lineaFichero = bufferReader.readLine();
             }
+
+            Collections.sort(listaAlumnos, new ComparadorEdadAltura());
+            System.out.println(listaAlumnos);
 
             System.out.println("\nHemos llegado al final del fichero");
 
