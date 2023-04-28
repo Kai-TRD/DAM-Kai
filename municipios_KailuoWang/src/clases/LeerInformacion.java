@@ -3,11 +3,8 @@ package clases;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.temporal.Temporal;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import javax.naming.ldap.HasControls;
 
 public class LeerInformacion {
 
@@ -31,22 +28,22 @@ public class LeerInformacion {
 
                 try {
                     String municipio = separado[0];
-                    String edad = separado[1];
+                    String sexo = separado[1];
                     int periodo = Integer.parseInt(separado[2]);
-                    String total = separado[3];
+                    int total = Integer.parseInt(separado[3].replace(".", ""));
 
                     if (ano == null) {
-                        Municipio municipioA = new Municipio(municipio, edad, periodo, total);
+                        Municipio municipioA = new Municipio(municipio, sexo, periodo, total);
                         municipios.add(municipioA);
                     } else {
                         if (periodo == ano) {
-                            Municipio municipioA = new Municipio(municipio, edad, periodo, total);
+                            Municipio municipioA = new Municipio(municipio, sexo, periodo, total);
                             municipios.add(municipioA);
                         }
                     }
 
                 } catch (ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException) {
-                    System.out.println("ERROR! Se ha saltdado una linea");
+                    // System.out.println("ERROR! Se ha saltdado una linea");
 
                 }
                 lineaFichero = bufferReader.readLine();
@@ -78,17 +75,17 @@ public class LeerInformacion {
 
                 try {
                     String municipio = separado[0];
-                    String edad = separado[1];
+                    String sexo = separado[1];
                     int periodo = Integer.parseInt(separado[2]);
-                    String total = separado[3];
+                    int total = Integer.parseInt(separado[3].replace(".", ""));
 
-                    String[] separarMunicipio = municipio.split(" ");
+                    // String[] separarMunicipio = municipio.split(" ");
 
                     if (municipio.equals("29 Málaga")) {
-                        System.out.println("no se añade");
+                        // System.out.println("no se añade");
                     } else {
                         if (municipio.contains(nombre) && ano == periodo) {
-                            Municipio municipio2 = new Municipio(municipio, edad, periodo, total);
+                            Municipio municipio2 = new Municipio(municipio, sexo, periodo, total);
                             municipios.add(municipio2);
                         }
                     }
@@ -105,51 +102,79 @@ public class LeerInformacion {
         return municipios;
     }
 
-    public HashMap<String, Integer> IncrementoPoblacion(ArrayList<Municipio> coleccionMunicipios, int year1, int year2) {
-        
-        FileReader fr = null;
+    public HashMap<String, Integer> IncrementoPoblacion(ArrayList<Municipio> coleccionMunicipios, int year1,
+            int year2) {
 
-        BufferedReader bufferReader = null;
+        LeerInformacion leer = new LeerInformacion();
+        ArrayList<Municipio> listaMunicipioYear1 = leer.LeerFicheroMunicipio(year1);
+
+        ArrayList<Municipio> listaMunicipioYear2 = leer.LeerFicheroMunicipio(year2);
+
+        // System.out.println(listaMunicipioYear1.size());
+        // System.out.println(listaMunicipioYear2.size());
+
         HashMap<String, Integer> municipios = new HashMap<>();
-        try {
-            fr = new FileReader("src/fichero/PoblacionMunicipiosMalaga.txt");
 
-            bufferReader = new BufferedReader(fr);
+        // for (int i = 0; i < listaMunicipioYear1.size(); i++) {
+        // String municipioTemp = listaMunicipioYear1.get(i).getMunicipios();
+        // int diferencia = listaMunicipioYear1.get(i).getTotal() -
+        // listaMunicipioYear2.get(i).getTotal();
 
-            bufferReader.readLine();
-
-            String lineaFichero = bufferReader.readLine();
-
-            while (lineaFichero != null) {
-
-                String[] separado = lineaFichero.split("\\t");
-
-                try {
-                    String municipio = separado[0];
-                    String edad = separado[1];
-                    int periodo = Integer.parseInt(separado[2]);
-                    String total = separado[3];
-                    
-                    
-                    if(periodo == year1) {
-
-                    }
-
-                    municipios.put(municipio, null);
+        // municipios.put(municipioTemp, diferencia);
+        // }
 
 
+            int j = 0;
+            int i = 0;
 
-
-                } catch (ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException) {
-
+            while (i < listaMunicipioYear1.size() && j < listaMunicipioYear2.size())
+            {
+                if (listaMunicipioYear1.get(i).getMunicipios().equals(listaMunicipioYear2.get(j).getMunicipios()) && listaMunicipioYear1.get(i).getSexo().equals(listaMunicipioYear2.get(j).getSexo()))
+                {
+                    int diferencia = (listaMunicipioYear1.get(i).getTotal()) - (listaMunicipioYear2.get(j).getTotal());
+                    municipios.put(listaMunicipioYear1.get(i).getMunicipios(), diferencia);
+                    i++;
+                    j++;
                 }
-                lineaFichero = bufferReader.readLine();
+                else
+                {
+                    if (listaMunicipioYear1.get(i).getMunicipios().compareTo(listaMunicipioYear2.get(j).getMunicipios())<0)
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        j++;
+                    }
+                }
+
             }
 
-        } catch (IOException ioException) {
-            System.out.println("Fichero no encontrado");
-        }
+        // for (int i = 0; i < listaMunicipioYear1.size(); i++) {
+        //     for (int j = 0; j < listaMunicipioYear2.size(); j++) {
+        //         if ((listaMunicipioYear1.get(i).getMunicipios().equals(listaMunicipioYear2.get(j).getMunicipios())
+        //                 && (listaMunicipioYear1.get(i).getSexo().equals(listaMunicipioYear2.get(j).getSexo())))) {
+
+        //             String municipioTemp = listaMunicipioYear1.get(i).getMunicipios();
+        //             int diferencia = (listaMunicipioYear1.get(i).getTotal()) - (listaMunicipioYear2.get(j).getTotal());
+
+        //             municipios.put(municipioTemp, diferencia);
+        //         }
+        //     }
+        // }
+
+        // int contador = 1;
+        // for (HashMap.Entry<String, Integer> entrada : municipios.entrySet()) {
+        //     String clave = entrada.getKey();
+        //     Integer valor = entrada.getValue();
+        //     System.out.println(contador + " - " + clave + " : " + valor);
+        //     contador++;
+        // }
+        // System.out.println(municipios.size());
         return municipios;
 
     }
+
+
+
 }
