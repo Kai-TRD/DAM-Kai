@@ -1,0 +1,43 @@
+[
+    {
+    "marca" : "Renault",
+    "modelo" : "Megane",
+    "anioFabricacion" : 2019,
+    "precio" : 15000.0
+    },
+
+    {
+    "marca" : "Ford",
+    "modelo" : "Fiesta",
+    "anioFabricacion" : "2020",
+    "Precio" : "13500.0"
+    },
+
+    {
+    "marca" : "Toyota",
+    "modelo" : "Corolla",
+    "anioFabricacion" : 2021,
+    "precio" : 20000.0
+    },
+
+    {
+    "marca" : "Volkswagen",
+    "modelo" : "Golf",
+    "anioFabricacion" : 2018,
+    "precio" :  12000.0
+    },
+
+    {
+    "marca" : "BMW",
+    "modelo" : "Serie",
+    "anioFabricacion" : 2019,
+    "Precio" : 25000.0
+    },
+
+    {
+    "marca" : "Honda",
+    "modelo" : "Civic",
+    "anioFabricacion" : 2022,
+    "precio" : 18000.0
+    }
+]
