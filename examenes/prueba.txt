@@ -1,0 +1,129 @@
+Por supuesto, aquí te muestro algunos ejemplos de plantillas
+para el método compareTo() que puedes utilizar al implementar
+la interfaz Comparable en objetos que se almacenan en un HashMap.
+
+Supongamos que tienes una clase llamada Persona que tiene un
+campo nombre de tipo String. Para ordenar objetos Persona por
+nombre en un HashMap, podrías utilizar alguna de las siguientes
+plantillas:
+
+
+Plantilla 1: Ordenar por nombre de forma ascendente
+
+public class Persona implements Comparable<Persona> {
+    private String nombre;
+
+    // constructor y otros métodos de la clase
+
+    @Override
+    public int compareTo(Persona otraPersona) {
+        return this.nombre.compareTo(otraPersona.nombre);
+    }
+}
+
+Plantilla 2: Ordenar por nombre de forma descendente
+
+public class Persona implements Comparable<Persona> {
+    private String nombre;
+
+    // constructor y otros métodos de la clase
+
+    @Override
+    public int compareTo(Persona otraPersona) {
+        return otraPersona.nombre.compareTo(this.nombre);
+    }
+}
+
+
+Plantilla 3: Ordenar por nombre de forma ascendente, ignorando mayúsculas y minúsculas
+
+public class Persona implements Comparable<Persona> {
+    private String nombre;
+
+    // constructor y otros métodos de la clase
+
+    @Override
+    public int compareTo(Persona otraPersona) {
+        return this.nombre.compareToIgnoreCase(otraPersona.nombre);
+    }
+}
+
+Plantilla 4: Ordenar por nombre de forma descendente, ignorando mayúsculas y minúsculas
+
+public class Persona implements Comparable<Persona> {
+    private String nombre;
+
+    // constructor y otros métodos de la clase
+
+    @Override
+    public int compareTo(Persona otraPersona) {
+        return otraPersona.nombre.compareToIgnoreCase(this.nombre);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Plantilla 1: Ordenar por clave de forma ascendente
+
+public class Elemento implements Comparable<Elemento> {
+    private int clave;
+
+    // constructor y otros métodos de la clase
+
+    @Override
+    public int compareTo(Elemento otroElemento) {
+        return Integer.compare(this.clave, otroElemento.clave);
+    }
+}
+
+
+Plantilla 2: Ordenar por clave de forma descendente
+
+public class Elemento implements Comparable<Elemento> {
+    private int clave;
+
+    // constructor y otros métodos de la clase
+
+    @Override
+    public int compareTo(Elemento otroElemento) {
+        return Integer.compare(otroElemento.clave, this.clave);
+    }
+}
+
+
+En estas plantillas, el método compareTo() compara los valores
+de clave de dos objetos Elemento y devuelve un valor negativo,
+cero o positivo según si el valor de clave del objeto actual
+es menor, igual o mayor que el valor de clave del objeto pasado
+como argumento.
+
+Ten en cuenta que estas plantillas asumen que la clase Elemento
+implementa la interfaz Comparable y que el método compareTo()
+se utiliza para comparar objetos Elemento por su campo clave.
+Puedes adaptar estas plantillas para cualquier otro campo de
+la clase que desees utilizar para ordenar objetos Elemento en
+el HashMap.
+
+
+
+
+
+
+
+
+
+
