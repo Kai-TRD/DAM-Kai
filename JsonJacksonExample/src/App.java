@@ -75,5 +75,19 @@ public class App {
         // Guardamos ese MAP en un json
         jsonUtils.GuardarFicheroGruposConHashMap(mapPersonas);
 
+
+        Map<String, Persona> diccionarioPersonas2 =
+            jsonUtils.leerFicheroDiccionarioPersona("src/recursos/diccionarioPersonas.json");
+
+            Persona yoMismo = new Persona();
+            yoMismo.setFirstName("Kai");
+            yoMismo.setLastName("Wang");
+            yoMismo.setGender("Hombre");
+        diccionarioPersonas2.put("11111111K", yoMismo);
+
+        jsonUtils.crearFicheroDiccionario(diccionarioPersonas2);
+
+        // Calcula la media de la edad de las personas en diccionaroiopersona 2
+
     }
 }

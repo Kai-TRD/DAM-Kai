@@ -273,4 +273,22 @@ public class jsonUtils {
 		}
 	}
 
+	public static Map<String, Persona> leerFicheroDiccionarioPersona(String path) {
+		
+		Map<String, Persona> diccionario = null;
+
+		try {
+			File fichero = new File(path);
+
+			ObjectMapper mapper = new ObjectMapper();
+			diccionario = mapper.readValue(fichero, new TypeReference<Map<String, Persona>> () {});
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		return diccionario;
+		
+	}
+
 }
