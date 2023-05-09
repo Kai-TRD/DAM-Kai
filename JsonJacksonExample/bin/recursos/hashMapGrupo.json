@@ -1,0 +1,37 @@
+{
+  "45678912A" : {
+    "firstName" : "Juan",
+    "lastName" : "García",
+    "gender" : "male",
+    "age" : 28,
+    "number" : "45678912A"
+  },
+  "12345678D" : {
+    "firstName" : "Ana",
+    "lastName" : "Fernández",
+    "gender" : "female",
+    "age" : 19,
+    "number" : "12345678D"
+  },
+  "34567764X" : {
+    "firstName" : "Emily",
+    "lastName" : "Brawn",
+    "gender" : "female",
+    "age" : 23,
+    "number" : "34567764X"
+  },
+  "34567890C" : {
+    "firstName" : "Carlos",
+    "lastName" : "Ruiz",
+    "gender" : "male",
+    "age" : 42,
+    "number" : "34567890C"
+  },
+  "23456789B" : {
+    "firstName" : "María",
+    "lastName" : "López",
+    "gender" : "female",
+    "age" : 35,
+    "number" : "23456789B"
+  }
+}

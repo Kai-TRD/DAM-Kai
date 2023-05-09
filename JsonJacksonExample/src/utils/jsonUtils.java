@@ -10,15 +10,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.script.ScriptContext;
+
 import com.fasterxml.jackson.core.StreamWriteCapability;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.cfg.MapperConfig;
+import com.fasterxml.jackson.databind.ser.std.StaticListSerializerBase;
 
 import modelo.Address;
 import modelo.Coche;
 import modelo.Employee;
+import modelo.Grupo;
+import modelo.Persona;
 
 public class jsonUtils {
 
@@ -179,7 +185,92 @@ public class jsonUtils {
 		}
 
 		return coche;
+	}
 
+	public static Persona leerJsonPersona(String path) {
+	Persona persona = null;
+
+	try {
+
+	File ficheroPersona = new File(path);
+
+	ObjectMapper mapper = new ObjectMapper();
+
+	try {
+
+	persona = mapper.readValue(ficheroPersona, Persona.class);
+
+	} catch (StreamReadException streamReadException) {
+	System.out.println(streamReadException);
+	}
+
+	} catch (IOException ioException) {
+	System.out.println(ioException);
+
+	}
+
+	return persona;
+	}
+
+	public static Grupo LeerFicheroPersonas() {
+		Grupo grupo = null;
+		try {
+			File fichero = new File("src/recursos/personas.json");
+
+			ObjectMapper mapper = new ObjectMapper();
+
+			grupo = mapper.readValue(fichero, Grupo.class);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		return grupo;
+	}
+
+	public static void GuardarFicheroGrupos(Grupo grupoDe24) {
+		try {
+			File fichero = new File("src/recursos/GrupoDe24.json");
+
+			ObjectMapper mapper = new ObjectMapper();
+
+			mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+
+			mapper.writeValue(fichero, grupoDe24);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	public static void GuardarFicheroGruposConHashMap(Map<String, Persona> grupo) {
+		try {
+			File fichero = new File("src/recursos/hashMapGrupo.json");
+
+			ObjectMapper mapper = new ObjectMapper();
+
+			mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+
+			mapper.writeValue(fichero, grupo);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+
+	public static void crearFicheroDiccionario(Map<String, Persona> diccionarioPersona) {
+		try {
+			File fichero = new File("src/recursos/diccionarioPersonas,json");
+
+			ObjectMapper mapper = new ObjectMapper();
+
+			mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+
+			mapper.writeValue(fichero, diccionarioPersona );
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 
 }
