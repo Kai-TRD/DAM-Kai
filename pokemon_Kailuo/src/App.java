@@ -3,5 +3,6 @@ public class App {
         System.out.println(" + ======== POKEDEX ======== + ");
 
         System.out.println("prueba");
+        System.out.println("Hola");
     }
 }
