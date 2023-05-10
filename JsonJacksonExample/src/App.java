@@ -11,27 +11,46 @@ public class App {
         System.out.println("Hello, JSon!");
 
         // Leer Json que contiene 1 objeto y convertirlo en objeto
-        // jsonUtils.LeerEmpleadoFromJsonFile("src/recursos/employee.txt");
+        jsonUtils.LeerEmpleadoFromJsonFile("src/recursos/employee.txt");
 
-        // System.out.println("==============================================");
+        System.out.println("==============================================");
 
-        // //Leer Json que contiene 1 array de objetos y convertirlo en un list<objeto>
-        // List<Employee> listaEmpleados =
-        // jsonUtils.LeerListEmpleadoFromJsonFile("src/recursos/employeeArray.txt");
-        // System.out.println("====== ARRAY EMPLEADOS =======================");
+        //Leer Json que contiene 1 array de objetos y convertirlo en un list<objeto>
+        List<Employee> listaEmpleados =
+        jsonUtils.LeerListEmpleadoFromJsonFile("src/recursos/employeeArray.txt");
+        System.out.println("====== ARRAY EMPLEADOS =======================");
 
-        // for (Employee employee : listaEmpleados) {
-        // System.out.println(employee);
-        // }
+        for (Employee employee : listaEmpleados) {
+        System.out.println(employee);
+        }
 
-        // System.out.println("==============================================");
+        System.out.println("==============================================");
 
-        // //Convertir objeto a Json
-        // jsonUtils.convertToJson();
+        //Convertir objeto a Json
+        jsonUtils.convertToJson();
 
-        // Coche coche = jsonUtils.leerJsonCoche("src/recursos/coche.json");
+        Coche coche = jsonUtils.leerJsonCoche("src/recursos/coche.json");
 
-        // System.out.println(coche);
+        System.out.println(coche);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         System.out.println("==== Grupo de 24 ==================================");
 
