@@ -29,17 +29,76 @@ public class Pokemon {
 
     // public Pokemon() {}
 
-
-
-    
-    @Override
-    public String toString() {
-        String array = this.name;
-        return array;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNum() {
+        return num;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public List<String> getType() {
+        return type;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public String getCandy() {
+        return candy;
+    }
+
+    public int getCandy_count() {
+        return candy_count;
+    }
+
+    public String getEgg() {
+        return egg;
+    }
+
+    public double getSpawn_chance() {
+        return spawn_chance;
+    }
+
+    public int getAvg_spawns() {
+        return avg_spawns;
+    }
+
+    public String getSpawn_time() {
+        return spawn_time;
+    }
+
+    public List<Double> getMultipliers() {
+        return multipliers;
+    }
+
+    public List<String> getWeaknesses() {
+        return weaknesses;
+    }
+
+    public Next_evolution[] getNext_evolution() {
+        return next_evolution;
+    }
+
+    public Prev_evolution[] getPrev_evolution() {
+        return prev_evolution;
     }
 
     public void setNum(String num) {
@@ -105,4 +164,22 @@ public class Pokemon {
     public void setType(List<String> type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        String array = this.name + " - " + this.weaknesses + "\n";
+        return array;
+    }
+
+    public String showWeaknesses() {
+        String array = this.name + " - " + this.weaknesses;
+        return array;
+    }
+
+    public String showHeight() {
+        String array = this.name + " - " + this.height;
+        return array;
+    }
+
+
 }

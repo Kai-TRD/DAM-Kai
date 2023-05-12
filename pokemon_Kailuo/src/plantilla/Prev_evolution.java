@@ -20,4 +20,10 @@ public class Prev_evolution {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        String lista = this.num + " - " + this.name;
+        return lista;
+    }
+
 }

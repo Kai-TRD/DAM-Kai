@@ -1,5 +1,5 @@
-import java.util.List;
-
+import java.util.ArrayList;
+import java.util.HashSet;
 import plantilla.Pokedex;
 import plantilla.Pokemon;
 import utils.jsonUtils;
@@ -18,45 +18,86 @@ public class App {
          * lectura de un json y obtener la siguiente información
          * 
          * 
-         * -Los 5 ultimos pokemons según el listado
+         * -[X] Los 5 ultimos pokemons según el listado
          * 
-         * -Datos de Pikachu (mediante un método de búsqueda por nombre en la clase
-         * pokedex)
+         * -[X] Datos de Pikachu (mediante un método de búsqueda por nombre en la clase
+         *  pokedex)
          * 
-         * -Evolución de Charmander (debemos buscar el pokemon con el método buscar por
-         * nombre de la clase pokedex)
+         * -[X] Evolución de Charmander (debemos buscar el pokemon con el método buscar por
+         *  nombre de la clase pokedex)
          * 
-         * -Pokemons de tipo fire (Crear método en la clase pokedex que permita buscar
-         * por diferentes tipos)
+         * -[X] Pokemons de tipo fire (Crear método en la clase pokedex que permita
+         *  buscar
+         *  por diferentes tipos)
          * 
-         * -Pokemons con debilidad water o electric (debilidad es la propiedad:
-         * weaknesses) (Crear método en la clase pokedex que permita buscar por
-         * diferentes debilidades)
+         * -[X] Pokemons con debilidad water o electric (debilidad es la propiedad:
+         *  weaknesses) (Crear método en la clase pokedex que permita buscar por
+         *  diferentes debilidades)
          * 
-         * -Pokemon con mas debilidades
+         * -[X] Pokemon con mas debilidades
          * 
-         * -Pokemon más alto
+         * -[X] Pokemon más alto
          *
          * Toda esta información la debes guardar en un fichero llamado
          * consultasPokemon.txt
          */
 
-        System.out.println(" + ======== POKEDEX ======== + ");
+        System.out.println(" + ======== POKEDEX ======== + \n");
 
-        //Pokedex pokedex = new Pokedex();
-
+        
+        System.out.println(" ======== Los 5 ultimos pokemon ========");
 
         Pokedex pokedex = jsonUtils.leerFicheroDiccionarioPokemon("src/ficheros/Pokemon.json");
 
-        //pokedex.setPokemon(array);
+        ArrayList<Pokemon> los5Ultimos = new ArrayList<>();
+        int position = 4;
 
-        System.out.println(pokedex);
+        for (int i = 0; i < pokedex.getPokemon().size(); i++) {
+            if ((pokedex.getPokemon().size() - position) == pokedex.getPokemon().get(i).getId()) {
+                // System.out.println(pokedex.getPokemon().get(i));
+                los5Ultimos.add(pokedex.getPokemon().get(i));
+                position--;
+            }
+        }
+        System.out.println(los5Ultimos);
 
-        // List<Pokemon> listaPokemons = jsonUtils.LeerListPokemonFromJsonFile("src/recursos/employeeArray.txt");
 
-        // for (Pokemon pokemon : listaPokemons) {
-        //     System.out.println(pokemon);
-        // }
+        System.out.println("\n ======== Muestro el pokemon que quiero ========");
+        pokedex.mostrarInfoDe("pIkAcHu");
+
+
+        System.out.println("\n ======== Muestro la evo de un pokemon ========");
+        pokedex.mostrarInfoEvoDe("charmander");
+
+
+        System.out.println("\n ======== Muestro los pokemons de un tipo ========");
+        ArrayList<Pokemon> listaDeUnType = pokedex.mostrarPokeType("fiRe");
+        System.out.println(listaDeUnType);
+
+
+        System.out.println("\n ======== Muestro los pokemons con debilidad ========");
+        String[] weaknesses = { "Fire", "Electric" };
+
+        System.out.print("·· Pokemons con debilidades ");
+        for (int i = 0; i < weaknesses.length; i++) {
+            System.out.print(weaknesses[i]);
+            System.out.print(", ");
+        }
+        System.out.println("··");
+
+        HashSet<Pokemon> listaPokemonDebilidades = pokedex.mostrarPokeConWeakness(weaknesses);
+        System.out.println(listaPokemonDebilidades);
+
+
+        System.out.println("\n ======== Muestro el pokemon con mas debilidad ========");
+        pokedex.mostrarPokeConMasWeakness();
+
+
+        System.out.println("\n ======== Muestro el pokemon mas alto ========");
+        pokedex.mostrarPokeMasAlto();
+
+
+
 
     }
 }

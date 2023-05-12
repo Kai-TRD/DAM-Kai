@@ -33,7 +33,7 @@ public class jsonUtils {
 
     public static Pokedex leerFicheroDiccionarioPokemon(String path) {
 		
-		List<Pokemon> diccionario = null;
+		// List<Pokemon> diccionario = null;
 
         Pokedex poke = null;
 

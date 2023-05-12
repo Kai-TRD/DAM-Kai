@@ -23,4 +23,10 @@ public class Next_evolution {
         return name;
     }
 
+    @Override
+    public String toString() {
+        String lista = this.num + " - " + this.name;
+        return lista;
+    }
+
 }
