@@ -5,7 +5,7 @@ public class Corredor extends Ciclista {
     // Atributos
     private int dorsal;
     private int tiempo;
-    private Ciclista c;
+    // private Ciclista c;
 
     // Constructor
 
