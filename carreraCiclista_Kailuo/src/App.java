@@ -1,0 +1,46 @@
+public class App {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Hello, World!");ç
+
+        FileReader fr = null;
+
+        BufferedReader bufferReader = null;
+
+        ArrayList<Alumno> listaAlumnos = new ArrayList<>();
+
+        int numeroLinea = 0;
+
+        try {
+            fr = new FileReader("src/fichero/ficheroAlumnos.txt");
+
+            bufferReader = new BufferedReader(fr);
+
+            bufferReader.readLine();
+
+            String lineaFichero = bufferReader.readLine();
+
+            while (lineaFichero != null) {
+
+                String[] separado = lineaFichero.split("\\s+");
+
+                String sexo = separado[0];
+                String edad = separado[1];
+                double estatura = Double.parseDouble(separado[2].replace(",", "."));
+                int puntuacion1 = Integer.parseInt(separado[3]);
+                int puntuacion2 = Integer.parseInt(separado[4]);
+                String calificacion = separado[5];
+
+                Alumno alumno = new Alumno(sexo, edad, estatura, puntuacion1, puntuacion2, calificacion);
+                listaAlumnos.add(alumno);
+
+                System.out.println(listaAlumnos.get(numeroLinea));
+
+                System.out.println("------------------------------------------------------");
+
+                numeroLinea++;
+                lineaFichero = bufferReader.readLine();
+            }
+
+
+    }
+}
