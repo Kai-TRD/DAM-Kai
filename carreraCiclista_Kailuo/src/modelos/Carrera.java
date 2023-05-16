@@ -1,6 +1,9 @@
 package modelos;
 
 import java.util.List;
+import java.util.Map;
+
+import utils.ciclistaUtils;
 
 public class Carrera {
     
@@ -38,6 +41,14 @@ public class Carrera {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public void insertarTiemposEtapa(Map<Integer, Integer> tiempos) {
+
+            
+    }
+
+
+
 
     
 }

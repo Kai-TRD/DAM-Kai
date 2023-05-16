@@ -9,14 +9,14 @@ public class Equipo {
     private int presupuesto;
 
     // Constructor
-    // public Equipo(String codigo, String nombre, String nacionalidad, int presupuesto) {
+    public Equipo(String codigo, String nombre, String nacionalidad, int presupuesto) {
 
-    //     this.codigo = codigo;
-    //     this.nombre = nombre;
-    //     this.nacionalidad = nacionalidad;
-    //     this.presupuesto = presupuesto;
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.nacionalidad = nacionalidad;
+        this.presupuesto = presupuesto;
 
-    // }
+    }
 
     // Getter y Setters
     public String getCodigo() {
@@ -49,6 +49,13 @@ public class Equipo {
 
     public void setPresupuesto(int presupuesto) {
         this.presupuesto = presupuesto;
+    }
+
+    @Override
+    public String toString() {
+        
+        return "Equipo[codigo=" + codigo + ", nombre=" + nombre + ", nacionalidad=" + nacionalidad + ", presupuesto="
+                + presupuesto + "]";
     }
 
 }
