@@ -5,6 +5,9 @@
         "lib/**/*.jar",
         "/home/kai/Escritorio/DAM-Kai/pokemon_Kailuo/lib/jackson-annotations-2.14.2.jar",
         "/home/kai/Escritorio/DAM-Kai/pokemon_Kailuo/lib/jackson-core-2.14.2.jar",
-        "/home/kai/Escritorio/DAM-Kai/pokemon_Kailuo/lib/jackson-databind-2.14.2.jar"
+        "/home/kai/Escritorio/DAM-Kai/pokemon_Kailuo/lib/jackson-databind-2.14.2.jar",
+        "/home/kai/DAM-Kai/pokemon_Kailuo/lib/jackson-annotations-2.14.2.jar",
+        "/home/kai/DAM-Kai/pokemon_Kailuo/lib/jackson-core-2.14.2.jar",
+        "/home/kai/DAM-Kai/pokemon_Kailuo/lib/jackson-databind-2.14.2.jar"
     ]
 }
