@@ -1,11 +1,9 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import utils.ciclistaUtils;
 import modelos.Carrera;
 import modelos.Ciclista;
-import modelos.Corredor;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -28,7 +26,7 @@ public class App {
 
         List<Ciclista> listaCiclistas = ciclistaUtils.LeerListCiclistaFromJsonFile("src/recursos/ciclistas.json");
 
-        List<Corredor> listaCorredores = new ArrayList();
+        // List<Corredor> listaCorredores = new ArrayList();
 
         Carrera carrera = new Carrera(listaCiclistas, "Vuelta a Málaga");
         System.out.println("\n+========= " + carrera.getNombre() + " etapa1 =========+");
@@ -62,7 +60,18 @@ public class App {
         System.out.println("\n-----------------------------------------------");
         System.out.println("posicionCorredor: " + carrera.posiciónCorredor(carrera.buscarCorredorPorDorsal(22)));
 
+        System.out.println("\n-----------------------------------------------");
+        String algo = carrera.clasificacionCompleta();
+        System.out.println(algo);
 
+        System.out.println("\n-----------------------------------------------");
+        String clasEquipo = carrera.clasificacionPorEquipos();            
+        System.out.println(clasEquipo);
+
+        System.out.println("\n-----------------------------------------------");
+
+
+        System.out.println("\n-----------------------------------------------");
 
 
     }

@@ -1,12 +1,13 @@
 package modelos;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.event.ListDataEvent;
+import utils.ciclistaUtils;
 
 public class Carrera {
 
@@ -150,11 +151,33 @@ public class Carrera {
      */
     public String clasificacionCompleta() {
 
-        List<Corredor> listaFormatAndSort = new ArrayList<>(corredores);
+        List<Corredor> listaFormatAndSort = ciclistaUtils.ordenar(corredores) ;
 
-        listaFormatAndSort.ordenarCorredoresPorTiempo();
+        String lista = "dorsal - NombreCiclista (codEquipo) : tiempo";
+        for (int i = 0; i < listaFormatAndSort.size(); i++) {
+            lista += "\n" + listaFormatAndSort.get(i).getDorsal() + " – " + listaFormatAndSort.get(i).getNombre() + " ("
+                    + listaFormatAndSort.get(i).getCodigoEquipo() + ") : " + listaFormatAndSort.get(i).getTiempo();
+        }
 
-        return null;
+        // System.out.println(listaFormatAndSort);
 
+        return lista;
     }
+
+    /**
+     * Para calcular la clasificación por equipos se toman los 3 mejores
+     * corredores de cada equipo y se suman sus tiempo.
+     * (Puede haber equipos que no tienen corredores en alguna carrera
+     * en tal caso no deben aparecer en el resultado.
+     * @return
+     * @throws IOException
+     */
+    public String clasificacionPorEquipos() throws IOException {
+
+
+        List<Equipo> equipos = ciclistaUtils.leerEquipo("src/recursos/equipos.csv");
+        
+        return null;
+    }
+
 }

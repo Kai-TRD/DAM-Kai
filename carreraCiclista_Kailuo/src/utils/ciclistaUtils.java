@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +15,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import modelos.Ciclista;
+import modelos.Corredor;
 import modelos.Equipo;
 
 public class ciclistaUtils {
@@ -122,6 +125,17 @@ public class ciclistaUtils {
 	}
 
 
+
+	public static List<Corredor> ordenar(List<Corredor> lista) {
+		List<Corredor> sortedList = new ArrayList<>(lista);
+        Collections.sort(sortedList, new Comparator<Corredor>() {
+            @Override
+            public int compare(Corredor corredor1, Corredor corredor2) {
+                return Integer.compare(corredor1.getTiempo(), corredor2.getTiempo());
+            }
+        });
+		return sortedList;
+	}
 
 
 
