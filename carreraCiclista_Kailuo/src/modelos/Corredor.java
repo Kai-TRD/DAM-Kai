@@ -3,12 +3,14 @@ package modelos;
 public class Corredor extends Ciclista {
 
     // Atributos
-    private int dorsal;
-    private int tiempo;
+
+    // Siendo Integer tengo que definir a 0 ya que es una clase si fuera int entonces
+    // es un primirtivo y no hace falta inicializarlo y automaticamente le pone 0
+    private Integer dorsal;
+    private Integer tiempo;
     // private Ciclista c;
 
     // Constructor
-
     public Corredor(Ciclista c, Integer dorsal) {
         super(c.getNombre(), c.getCodigoEquipo(), c.getPeso(), c.getPais());
         this.dorsal = dorsal;
@@ -31,6 +33,11 @@ public class Corredor extends Ciclista {
 
     public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
+    }
+
+    @Override
+    public String toString() {
+        return "Corredor [dorsal=" + dorsal + ", tiempo=" + tiempo + "]";
     }
 
 }

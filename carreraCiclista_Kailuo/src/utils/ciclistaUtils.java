@@ -6,25 +6,24 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import modelos.Corredor;
+import modelos.Ciclista;
 import modelos.Equipo;
 
 public class ciclistaUtils {
 
-	public static void leerEquipo(String archivo) throws IOException {
+	public static List<Equipo> leerEquipo(String archivo) throws IOException {
 
 		FileReader fr = null;
 
 		BufferedReader bufferReader = null;
 
 		ArrayList<Equipo> listaEquipos = new ArrayList<>();
-
-		int numeroLinea = 0;
 
 		try {
 			fr = new FileReader(archivo);
@@ -48,10 +47,6 @@ public class ciclistaUtils {
 
 				listaEquipos.add(equipo);
 
-				System.out.println(listaEquipos.get(numeroLinea));
-
-
-				numeroLinea++;
 				lineaFichero = bufferReader.readLine();
 			}
 
@@ -66,7 +61,36 @@ public class ciclistaUtils {
 				bufferReader.close();
 			}
 		}
+
+		return listaEquipos;
 	}
+
+
+
+
+
+
+
+
+	public static List<Ciclista> LeerListCiclistaFromJsonFile(String relativePathFile) {
+		File ficheroEmpleado = new File(relativePathFile);
+
+		ObjectMapper objectMapper = new ObjectMapper();
+
+		List<Ciclista> listaEmpleados = null;
+		try {
+			listaEmpleados = objectMapper.readValue(ficheroEmpleado, new TypeReference<List<Ciclista>>() {
+			});
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
+		return listaEmpleados;
+	}
+
+
+	
 
 
 	public static Map<Integer, Integer> leerTiemposDeEtapa(String relativePathFile) {
@@ -81,7 +105,6 @@ public class ciclistaUtils {
 		Map<Integer, Integer> diccionario = new HashMap<>();
 
 		// convert json string to object
-		Corredor cor = null;
 		try {
 			// TypeReference typeRef = new TypeReference<Map<Integer, Integer>>() {
 				
@@ -94,7 +117,6 @@ public class ciclistaUtils {
 			e.printStackTrace();
 		}
 
-		System.out.println("Employee Object\n" + cor);
 		return diccionario;
 
 	}

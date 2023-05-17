@@ -9,6 +9,8 @@ public class Ciclista {
     private String pais;
 
     // Constructor
+    public Ciclista() {};
+
     public Ciclista(String nombre, String codigoEquipo, int peso, String pais) {
          this.nombre = nombre;
          this.codigoEquipo = codigoEquipo;
@@ -47,5 +49,11 @@ public class Ciclista {
 
     public void setPais(String pais) {
         this.pais = pais;
+    }
+
+    @Override
+    public String toString() {
+        return "\nCiclista [nombre=" + nombre + ", codigoEquipo=" + codigoEquipo + ", peso=" + peso + ", pais=" + pais
+                + "]";
     }
 }
