@@ -3,6 +3,7 @@ package utils;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -80,16 +81,16 @@ public class ciclistaUtils {
 
 		ObjectMapper objectMapper = new ObjectMapper();
 
-		List<Ciclista> listaEmpleados = null;
+		List<Ciclista> listaCiclista = null;
 		try {
-			listaEmpleados = objectMapper.readValue(ficheroEmpleado, new TypeReference<List<Ciclista>>() {
+			listaCiclista = objectMapper.readValue(ficheroEmpleado, new TypeReference<List<Ciclista>>() {
 			});
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
 
-		return listaEmpleados;
+		return listaCiclista;
 	}
 
 
@@ -137,6 +138,32 @@ public class ciclistaUtils {
 		return sortedList;
 	}
 
+
+
+	public static void crearArchivoTexto(String ruta, String contenido) {
+
+        try {
+            // Crear un objeto File con la ruta y el nombre del archivo
+            File archivo = new File(ruta);
+
+            // Crear el archivo si no existe
+            if (archivo.createNewFile()) {
+                System.out.println("El archivo se ha creado correctamente.");
+            } else {
+                System.out.println("El archivo ya existe.");
+            }
+
+            // Escribir el contenido en el archivo
+            FileWriter escritor = new FileWriter(archivo);
+            escritor.write(contenido);
+            escritor.close();
+
+            System.out.println("Se ha escrito el contenido en el archivo.");
+
+        } catch (IOException e) {
+            System.out.println("Error al crear o escribir en el archivo: " + e.getMessage());
+        }
+    }
 
 
 }
