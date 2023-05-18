@@ -55,7 +55,7 @@ public class jsonUtils {
 		File ficheroEmpleado = new File(relativePathFile);
 
 		ObjectMapper objectMapper = new ObjectMapper();
-\
+
 		List<Employee> listaEmpleados = null;
 		try {
 				listaEmpleados = objectMapper.readValue(ficheroEmpleado, new TypeReference<List<Employee>>() {
