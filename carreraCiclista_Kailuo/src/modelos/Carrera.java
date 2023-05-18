@@ -1,6 +1,7 @@
 package modelos;
 
 import java.io.IOException;
+import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -174,9 +175,24 @@ public class Carrera {
      */
     public String clasificacionPorEquipos() throws IOException {
 
-
         List<Equipo> equipos = ciclistaUtils.leerEquipo("src/recursos/equipos.csv");
-        
+
+        List<Corredor> corredoresOrdenados = ciclistaUtils.ordenar(corredores);
+
+        // Recorres fori de equipos, luego dentro otro fori donde esten corredores
+        // si coincide con equipo.get(i) entonces añades a la lista de equipos ordenados
+
+        for (int i = 0; i < equipos.size(); i++) {
+            for (int j = 0; j < corredoresOrdenados.size(); j++) {
+                
+            }
+        }
+
+
+
+
+
+
         return null;
     }
 

@@ -53,18 +53,18 @@ public class App {
         for (int i = 0; i < listaCiclistas.size(); i++) {
             System.out.println(carrera.getCorredores().get(i));
         }
-        System.out.println("\n-----------------------------------------------");
+        System.out.println("\n---buscarCorredorPorDorsal---------------------");
         System.out.println("buscarPorDolsal: " + carrera.buscarCorredorPorDorsal(3));
 
 
-        System.out.println("\n-----------------------------------------------");
+        System.out.println("\n-----posiciónCorredor--------------------------");
         System.out.println("posicionCorredor: " + carrera.posiciónCorredor(carrera.buscarCorredorPorDorsal(22)));
 
-        System.out.println("\n-----------------------------------------------");
+        System.out.println("\n---clasificacionCompleta-----------------------");
         String algo = carrera.clasificacionCompleta();
         System.out.println(algo);
 
-        System.out.println("\n-----------------------------------------------");
+        System.out.println("\n---clasificacionPorEquipos---------------------");
         String clasEquipo = carrera.clasificacionPorEquipos();            
         System.out.println(clasEquipo);
 
