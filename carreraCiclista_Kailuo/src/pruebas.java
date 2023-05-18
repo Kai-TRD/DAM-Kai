@@ -5,7 +5,7 @@ import utils.ciclistaUtils;
 import modelos.Carrera;
 import modelos.Ciclista;
 
-public class App {
+public class pruebas {
     public static void main(String[] args) throws Exception {
         System.out.println("==========CARRERA!==========");
 

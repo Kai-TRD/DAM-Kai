@@ -1,7 +1,6 @@
 package modelos;
 
 import java.io.IOException;
-import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -152,11 +151,11 @@ public class Carrera {
      */
     public String clasificacionCompleta() {
 
-        List<Corredor> listaFormatAndSort = ciclistaUtils.ordenar(corredores) ;
+        List<Corredor> listaFormatAndSort = ciclistaUtils.ordenar(corredores);
 
         String lista = "dorsal - NombreCiclista (codEquipo) : tiempo";
         for (int i = 0; i < listaFormatAndSort.size(); i++) {
-            lista += "\n" + listaFormatAndSort.get(i).getDorsal() + " – " + listaFormatAndSort.get(i).getNombre() + " ("
+            lista += "\n" + listaFormatAndSort.get(i).getDorsal() + " - " + listaFormatAndSort.get(i).getNombre() + " ("
                     + listaFormatAndSort.get(i).getCodigoEquipo() + ") : " + listaFormatAndSort.get(i).getTiempo();
         }
 
@@ -170,6 +169,7 @@ public class Carrera {
      * corredores de cada equipo y se suman sus tiempo.
      * (Puede haber equipos que no tienen corredores en alguna carrera
      * en tal caso no deben aparecer en el resultado.
+     * 
      * @return
      * @throws IOException
      */
@@ -179,21 +179,60 @@ public class Carrera {
 
         List<Corredor> corredoresOrdenados = ciclistaUtils.ordenar(corredores);
 
+        List<Corredor> temp = new ArrayList<>();
+
+        String clasificacion = "--- Clasificacion de los equipos ---";
+
+        int tiempo = 0;
+
         // Recorres fori de equipos, luego dentro otro fori donde esten corredores
         // si coincide con equipo.get(i) entonces añades a la lista de equipos ordenados
 
         for (int i = 0; i < equipos.size(); i++) {
             for (int j = 0; j < corredoresOrdenados.size(); j++) {
-                
+                if (corredoresOrdenados.get(j).getCodigoEquipo().equals(equipos.get(i).getCodigo())) {
+                    temp.add(corredoresOrdenados.get(j));
+                }
+
             }
+
+            // guntar el tiempo de los 3
+            for (int j = 0; j < 3; j++) {
+                if (i < temp.size()) {
+                    tiempo += temp.get(i).getTiempo();
+                }
+            }
+
+            // Poner las cosas en el String
+            if (tiempo != 0) {
+                clasificacion += "\n" + equipos.get(i).getNombre() + "(" + equipos.get(i).getCodigo() + ") - time: " + tiempo;
+            }
+
+            // Reiniciamos valores
+            temp.clear();
+            tiempo = 0;
         }
 
+        for (int i = 0; i < temp.size(); i++) {
+            System.out.println(temp.get(i));
+        }
+
+        return clasificacion;
+    }
 
 
+    public String podium() {
 
+        String podium = "=========== PODIUM ====================";
+        List<Corredor> corredoresOrdenados = ciclistaUtils.ordenar(corredores);
 
+        for (int i = 0; i < 3; i++) {
+            podium += "\nPuesto " + (i+1) + ": " + corredoresOrdenados.get(i).getDorsal() + " - " + corredoresOrdenados.get(i).getNombre() + " ("
+                    + corredoresOrdenados.get(i).getCodigoEquipo() + ") : " + corredoresOrdenados.get(i).getTiempo();
 
-        return null;
+        }
+
+        return podium;
     }
 
 }
