@@ -1,8 +1,9 @@
+package tests;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class algo {
+public class exampleCreateFile {
 
     public static void main(String[] args) {
         String contenido = "Este es el contenido del archivo.";

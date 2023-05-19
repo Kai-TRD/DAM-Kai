@@ -92,11 +92,11 @@ Puesto 3: 35 - Rigoberto Uran (EFED) : 53
 
 ==== CLASIFICACIÓN POR EQUIPOS====
 
-Team Ineos(TEIN) - time: 150
-Deceuninck - Quick-Step(DEQU) - time: 180
-Bora - Hansgrohe(BOHA) - time: 198
-AG2R La Mondiale(AGLA) - time: 231
-Lotto Soudal(LOSO) - time: 231
+Team Ineos(TEIN) - time: 170
+Deceuninck - Quick-Step(DEQU) - time: 176
+Bora - Hansgrohe(BOHA) - time: 191
+AG2R La Mondiale(AGLA) - time: 202
+Lotto Soudal(LOSO) - time: 213
 
 ==== POSICIÓN DEL CORREDOR: Wilco Kelderman(BOHA) Dorsal: 22 ====
 Posicion del jugador: 23

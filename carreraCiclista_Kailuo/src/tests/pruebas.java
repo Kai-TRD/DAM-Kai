@@ -1,3 +1,4 @@
+package tests;
 import java.util.List;
 import java.util.Map;
 
@@ -58,7 +59,7 @@ public class pruebas {
 
 
         System.out.println("\n-----posiciónCorredor--------------------------");
-        System.out.println("posicionCorredor: " + carrera.posiciónCorredor(carrera.buscarCorredorPorDorsal(22)));
+        System.out.println("posicionCorredor: " + carrera.posicionCorredor(carrera.buscarCorredorPorDorsal(22)));
 
         System.out.println("\n---clasificacionCompleta-----------------------");
         String algo = carrera.clasificacionCompleta();
