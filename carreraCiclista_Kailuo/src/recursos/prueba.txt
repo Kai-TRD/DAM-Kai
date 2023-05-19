@@ -1,2 +1,41 @@
 ====NOMBRE DE LA CARRERA ====
 ====CICLISTAS PARTICIPANTES EN LA CARRERA ====
+1 - Chris Froome(TEIN) : 0
+2 - Egan Bernal(TEIN) : 0
+3 - Geraint Thomas(TEIN) : 0
+4 - Richard Carapaz(TEIN) : 0
+5 - Michal Kwiatkowski(TEIN) : 0
+6 - Gianni Moscon(TEIN) : 0
+7 - Luke Rowe(TEIN) : 0
+8 - Tao Geoghegan Hart(TEIN) : 0
+9 - Julian Alaphilippe(DEQU) : 0
+10 - Mark Cavendish(DEQU) : 0
+11 - Remco Evenepoel(DEQU) : 0
+12 - Zdenek Stybar(DEQU) : 0
+13 - Kasper Asgreen(DEQU) : 0
+14 - Fabio Jakobsen(DEQU) : 0
+15 - Yves Lampaert(DEQU) : 0
+16 - Bob Jungels(DEQU) : 0
+17 - Peter Sagan(BOHA) : 0
+18 - Emmanuel Buchmann(BOHA) : 0
+19 - Lennard Kämna(BOHA) : 0
+20 - Emanuel Buchmann(BOHA) : 0
+21 - Felix Großschartner(BOHA) : 0
+22 - Wilco Kelderman(BOHA) : 0
+23 - Giovanni Aleotti(BOHA) : 0
+24 - Maximilian Schachmann(BOHA) : 0
+25 - Ben O'Connor(AGLA) : 0
+26 - Aurélien Paret-Peintre(AGLA) : 0
+27 - Bob Jungels(AGLA) : 0
+28 - Clement Champoussin(AGLA) : 0
+29 - Stan Dewulf(AGLA) : 0
+30 - Caleb Ewan(LOSO) : 0
+31 - John Degenkolb(LOSO) : 0
+32 - Philippe Gilbert(LOSO) : 0
+33 - Thomas De Gendt(LOSO) : 0
+34 - Tim Wellens(LOSO) : 0
+35 - Rigoberto Uran(EFED) : 0
+36 - Michael Woods(EFED) : 0
+37 - Magnus Cort(EFED) : 0
+38 - Sergio Higuita(EFED) : 0
+39 - Lachlan Morton(EFED) : 0

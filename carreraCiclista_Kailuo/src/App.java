@@ -26,7 +26,7 @@ public class App {
         String contenido = "====NOMBRE DE LA CARRERA ====";
         contenido += "\n====CICLISTAS PARTICIPANTES EN LA CARRERA ====";
         for (int i = 0; i < listaCiclistas.size(); i++) {
-            System.out.println(listaCiclistas.get(i).toString());
+            contenido += "\n" + carrera.getCorredores().get(i).getDorsal() + " - " + carrera.getCorredores().get(i).getNombre() + "(" + carrera.getCorredores().get(i).getCodigoEquipo() + ") : " + carrera.getCorredores().get(i).getTiempo();
         }
 
         ciclistaUtils.crearArchivoTexto("src/recursos/prueba.txt", contenido);
