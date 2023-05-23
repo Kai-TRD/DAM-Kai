@@ -10,15 +10,27 @@ public class Area {
 
     @JsonProperty("@id")
     private String id;
+
+    private String locality;
+
     @JsonProperty("postal-code")
     private int postal_code;
     @JsonProperty("street-address")
     private String street_address;
+
+
+    // getter and setter
     public String getId() {
         return id;
     }
     public void setId(String id) {
         this.id = id;
+    }
+    public String getLocality() {
+        return locality;
+    }
+    public void setLocality(String locality) {
+        this.locality = locality;
     }
     public int getPostal_code() {
         return postal_code;
@@ -32,6 +44,9 @@ public class Area {
     public void setStreet_address(String street_address) {
         this.street_address = street_address;
     }
+
+
+
 
     
 }
