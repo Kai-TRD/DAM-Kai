@@ -1,276 +1,159 @@
 package plantilla;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Evento {
-    
-    private String idEvento;
-    private String titulo;
-    private String precio;
-    private String gratuito;
-    private String largaDuracion;
-    private String diasSemana;
-    private String diasExcluidos;
-    private String fecha;
-    private String fechaFin;
-    private String hora;
-    private String descripcion;
-    private String contentUrl;
-    private String tituloActividad;
-    private String urlActividad;
-    private String urlInstalacion;
-    private String nombreInstalacion;
-    private String accesibilidadInstalacion;
-    private String claseVialInstalacion;
-    private String nombreViaInstalacion;
-    private String numInstalacion;
-    private String distritoInstalacion;
-    private String barrioInstalacion;
-    private String codigoPostalInstalacion;
-    private String coordenadaX;
-    private String coordenadaY;
-    private String latitud;
-    private String longitud;
-    private String tipo;
-    private String audiencia;
 
-    public Evento() {
-
-    }
-
-    public String getIdEvento() {
-        return idEvento;
-    }
-
-    public void setIdEvento(String idEvento) {
-        this.idEvento = idEvento;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(String precio) {
-        this.precio = precio;
-    }
-
-    public String getGratuito() {
-        return gratuito;
-    }
-
-    public void setGratuito(String gratuito) {
-        this.gratuito = gratuito;
-    }
-
-    public String getLargaDuracion() {
-        return largaDuracion;
-    }
-
-    public void setLargaDuracion(String largaDuracion) {
-        this.largaDuracion = largaDuracion;
-    }
-
-    public String getDiasSemana() {
-        return diasSemana;
-    }
-
-    public void setDiasSemana(String diasSemana) {
-        this.diasSemana = diasSemana;
-    }
-
-    public String getDiasExcluidos() {
-        return diasExcluidos;
-    }
-
-    public void setDiasExcluidos(String diasExcluidos) {
-        this.diasExcluidos = diasExcluidos;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(String fechaFin) {
-        this.fechaFin = fechaFin;
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getContentUrl() {
-        return contentUrl;
-    }
-
-    public void setContentUrl(String contentUrl) {
-        this.contentUrl = contentUrl;
-    }
-
-    public String getTituloActividad() {
-        return tituloActividad;
-    }
-
-    public void setTituloActividad(String tituloActividad) {
-        this.tituloActividad = tituloActividad;
-    }
-
-    public String getUrlActividad() {
-        return urlActividad;
-    }
-
-    public void setUrlActividad(String urlActividad) {
-        this.urlActividad = urlActividad;
-    }
-
-    public String getUrlInstalacion() {
-        return urlInstalacion;
-    }
-
-    public void setUrlInstalacion(String urlInstalacion) {
-        this.urlInstalacion = urlInstalacion;
-    }
-
-    public String getNombreInstalacion() {
-        return nombreInstalacion;
-    }
-
-    public void setNombreInstalacion(String nombreInstalacion) {
-        this.nombreInstalacion = nombreInstalacion;
-    }
-
-    public String getAccesibilidadInstalacion() {
-        return accesibilidadInstalacion;
-    }
-
-    public void setAccesibilidadInstalacion(String accesibilidadInstalacion) {
-        this.accesibilidadInstalacion = accesibilidadInstalacion;
-    }
-
-    public String getClaseVialInstalacion() {
-        return claseVialInstalacion;
-    }
-
-    public void setClaseVialInstalacion(String claseVialInstalacion) {
-        this.claseVialInstalacion = claseVialInstalacion;
-    }
-
-    public String getNombreViaInstalacion() {
-        return nombreViaInstalacion;
-    }
-
-    public void setNombreViaInstalacion(String nombreViaInstalacion) {
-        this.nombreViaInstalacion = nombreViaInstalacion;
-    }
-
-    public String getNumInstalacion() {
-        return numInstalacion;
-    }
-
-    public void setNumInstalacion(String numInstalacion) {
-        this.numInstalacion = numInstalacion;
-    }
-
-    public String getDistritoInstalacion() {
-        return distritoInstalacion;
-    }
-
-    public void setDistritoInstalacion(String distritoInstalacion) {
-        this.distritoInstalacion = distritoInstalacion;
-    }
-
-    public String getBarrioInstalacion() {
-        return barrioInstalacion;
-    }
-
-    public void setBarrioInstalacion(String barrioInstalacion) {
-        this.barrioInstalacion = barrioInstalacion;
-    }
-
-    public String getCodigoPostalInstalacion() {
-        return codigoPostalInstalacion;
-    }
-
-    public void setCodigoPostalInstalacion(String codigoPostalInstalacion) {
-        this.codigoPostalInstalacion = codigoPostalInstalacion;
-    }
-
-    public String getCoordenadaX() {
-        return coordenadaX;
-    }
-
-    public void setCoordenadaX(String coordenadaX) {
-        this.coordenadaX = coordenadaX;
-    }
-
-    public String getCoordenadaY() {
-        return coordenadaY;
-    }
-
-    public void setCoordenadaY(String coordenadaY) {
-        this.coordenadaY = coordenadaY;
-    }
-
-    public String getLatitud() {
-        return latitud;
-    }
-
-    public void setLatitud(String latitud) {
-        this.latitud = latitud;
-    }
-
-    public String getLongitud() {
-        return longitud;
-    }
-
-    public void setLongitud(String longitud) {
-        this.longitud = longitud;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getAudiencia() {
-        return audiencia;
-    }
-
-    public void setAudiencia(String audiencia) {
-        this.audiencia = audiencia;
-    }
-
-
-
-    
-
+	// Atributos
+    @JsonProperty("@id")
+    private String urlId;
+    @JsonProperty("@type")
+    private String utlType;
+	private String id;
+	private String title;
+	private String description;
+	private String free;
+	private String price;
+	private String dtstart;
+	private String dtend;
+	private String time;
+	@JsonProperty("excluded-days")
+	private String excluded_days;
+	private String uid;
+	private String link;
+	@JsonProperty("event-location")
+	private String event_location;
+	private References references;
+	private Relation relation;
+	private Address address;
+	private Location location;
+	private Organization organization;
+
+
+	// Constructor
+	// public Evento () {
+
+	// }
+
+
+	// Getter and setter
+	public String getUrlId() {
+		return urlId;
+	}
+	public void setUrlId(String urlId) {
+		this.urlId = urlId;
+	}
+	public String getUtlType() {
+		return utlType;
+	}
+	public void setUtlType(String utlType) {
+		this.utlType = utlType;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getFree() {
+		return free;
+	}
+	public void setFree(String free) {
+		this.free = free;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getDtstart() {
+		return dtstart;
+	}
+	public void setDtstart(String dtstart) {
+		this.dtstart = dtstart;
+	}
+	public String getDtend() {
+		return dtend;
+	}
+	public void setDtend(String dtend) {
+		this.dtend = dtend;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
+	}
+	public String getExcluded_days() {
+		return excluded_days;
+	}
+	public void setExcluded_days(String excluded_days) {
+		this.excluded_days = excluded_days;
+	}
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
+	public String getEvent_location() {
+		return event_location;
+	}
+	public void setEvent_location(String event_location) {
+		this.event_location = event_location;
+	}
+	public References getReferences() {
+		return references;
+	}
+	public void setReferences(References references) {
+		this.references = references;
+	}
+	public Relation getRelation() {
+		return relation;
+	}
+	public void setRelation(Relation relation) {
+		this.relation = relation;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public Location getLocation() {
+		return location;
+	}
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	public Organization getOrganization() {
+		return organization;
+	}
+	public void setOrganization(Organization organization) {
+		this.organization = organization;
+	}
+
+
+
+	
 
 }
