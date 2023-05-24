@@ -1,6 +1,7 @@
 import java.util.List;
 
 import plantilla.Evento;
+import plantilla.csvEvento;
 import plantilla.jsonEvento;
 import utils.madridUtils;
 
@@ -9,9 +10,12 @@ public class App {
         System.out.println("Hello, Eventos de Madrid!");
 
 
-        // List<csvEvento> listaEventos = madridUtils.LeerFicheroEventos("src/fichero/206974-0-agenda-eventos-culturales-100.csv");
+        List<csvEvento> listaEventos = madridUtils.LeerFicheroEventos("src/fichero/206974-0-agenda-eventos-culturales-100.csv");
 
-        // List<Evento> lisaJsonEventos = madridUtils.leerListaEventoFromJSON("src/fichero/206974-0-agenda-eventos-culturales-100.json");
+        for (int i = 0; i < listaEventos.size(); i++) {
+            System.out.println(i + " - " +listaEventos.get(i));
+        }
+        List<Evento> lisaJsonEventos = madridUtils.leerListaEventoFromJSON("src/fichero/206974-0-agenda-eventos-culturales-100.json");
 
         jsonEvento prueba = madridUtils.leerFicheroDiccionarioEvento("src/fichero/206974-0-agenda-eventos-culturales-100.json");
 

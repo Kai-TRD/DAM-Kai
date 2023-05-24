@@ -34,6 +34,8 @@ public class madridUtils {
 
             String lineaFichero = bufferReader.readLine();
 
+            // int suma = 1;
+
             while (lineaFichero != null) {
 
                 // La separacion en este caso es un punto y coma (";")
@@ -43,41 +45,14 @@ public class madridUtils {
 
                     String idEvento = separado[0];
                     String titulo = separado[1];
-                    String precio = separado[2];
                     String gratuito = separado[3];
-                    String largaDuracion = separado[4];
-                    String diasSemana = separado[5];
-                    String diasExcluidos = separado[6];
-                    String fecha = separado[7];
-                    String fechaFin = separado[8];
-                    String hora = separado[9];
-                    String descripcion = separado[10];
-                    String contentUrl = separado[11];
-                    String tituloActividad = separado[12];
-                    String urlActividad = separado[13];
-                    String urlInstalacion = separado[14];
-                    String nombreInstalacion = separado[15];
-                    String accesibilidadInstalacion = separado[16];
-                    String claseVialInstalacion = separado[17];
-                    String nombreViaInstalacion = separado[18];
-                    String numInstalacion = separado[19];
-                    String distritoInstalacion = separado[20];
-                    String barrioInstalacion = separado[21];
-                    String codigoPostalInstalacion = separado[22];
-                    String coordenadaX = separado[23];
-                    String coordenadaY = separado[24];
-                    String latitud = separado[25];
-                    String longitud = separado[26];
-                    String tipo = separado[27];
-                    String audiencia = separado[28];
+                    String codigoPostalInstalacion = separado[separado.length-7];
 
-                    
-                    csvEvento EventoTemp = new csvEvento(idEvento, titulo, precio, gratuito, largaDuracion, diasSemana, diasExcluidos, fecha, fechaFin, hora, descripcion, contentUrl, tituloActividad, urlActividad, urlInstalacion, nombreInstalacion, accesibilidadInstalacion, claseVialInstalacion, nombreViaInstalacion, numInstalacion, distritoInstalacion, barrioInstalacion, codigoPostalInstalacion, coordenadaX, coordenadaY, latitud, longitud, tipo, audiencia);
-                    
-                    Eventos.add(EventoTemp);
-                    
-                        
+                    csvEvento eventoTemp = new csvEvento(idEvento, titulo, gratuito, codigoPostalInstalacion);
 
+                    Eventos.add(eventoTemp);
+                    // System.out.println(suma + " - " + eventoTemp);
+                    // suma++;
                 } catch (NumberFormatException e) {
                     System.out.println("Formato añadido no valido");
                 }
@@ -89,6 +64,58 @@ public class madridUtils {
         }
         return Eventos;
     }
+
+
+
+
+
+
+/*
+
+    1   idEvento                    11768385;
+    2   titulo                      "�a Marche. Los figurantes. Un retrato poli�drico de la imagen de la infancia";
+    3   precio                      "12 euros";
+    4   gratuito                    "0";
+    5   largaDuracion               "0";
+    6   diasSemana                  "";
+    7   diasExcluidos               "";
+    8   fecha                       "2023-05-06 00:00:00.0";
+    9   fechaFin                    "2023-05-06 23:59:00.0";
+    10  hora                        "20:00";
+    11  descripcion                 "";
+    12  contentUrl                  "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=7ad0afbfa0423810VgnVCM1000001d4a900aRCRD";
+    13  tituloActividad             "�a Marche. Los figurantes. Un retrato poli�drico de la imagen de la infancia.";
+    14  urlActividad                "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2fd0afbfa0423810VgnVCM1000001d4a900aRCRD";
+    15  urlInstalacion              "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=bfa48ab43d6bb410VgnVCM100000171f5a0aRCRD&vgnextoid=64463d0b5e71c010VgnVCM1000000b205a0aRCRD";
+    16  nombreInstalacion           "Centro de Cultura Contempor�nea Conde Duque";
+    17  accesibilidadInstalacion    "1";
+    18  claseVialInstalacion        "CALLE";
+    19  nombreViaInstalacion        "CONDE DUQUE";
+    20  numInstalacion              "9";
+    21  distritoInstalacion         "CENTRO";
+    22  barrioInstalacion           "UNIVERSIDAD";
+    23  codigoPostalInstalacion     "28015";
+    24  coordenadaX                 "439759";
+    25  coordenadaY                 "4475508";
+    26  latitud                     "40.42802889001877";
+    27  longitud                    "-3.710182353581842";
+    28  tipo                        "/contenido/actividades/ProgramacionDestacadaAgendaCultura";
+    29  audiencia                   "";
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -111,24 +138,23 @@ public class madridUtils {
         return listaEvento;
     }
 
-
     public static jsonEvento leerFicheroDiccionarioEvento(String path) {
-		
-		// List<Pokemon> diccionario = null;
+
+        // List<Pokemon> diccionario = null;
 
         jsonEvento poke = null;
 
-		try {
-			File fichero = new File(path);
+        try {
+            File fichero = new File(path);
 
-			ObjectMapper mapper = new ObjectMapper();
-			poke = mapper.readValue(fichero, jsonEvento.class);
+            ObjectMapper mapper = new ObjectMapper();
+            poke = mapper.readValue(fichero, jsonEvento.class);
 
-		} catch (Exception e) {
-			System.out.println(e);
-		}
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
-		return poke;
-		
-	}
+        return poke;
+
+    }
 }

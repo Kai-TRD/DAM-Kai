@@ -1,7 +1,7 @@
 package plantilla;
 
 public class csvEvento {
-    
+
     private String idEvento;
     private String titulo;
     private String precio;
@@ -31,6 +31,17 @@ public class csvEvento {
     private String longitud;
     private String tipo;
     private String audiencia;
+
+    public csvEvento(String idEvento) {
+        this.idEvento = idEvento;
+    }
+
+    public csvEvento(String idEvento, String titulo, String gratuito, String codigoPostalInstalacion) {
+        this.idEvento = idEvento;
+        this.titulo = titulo;
+        this.gratuito = gratuito;
+        this.codigoPostalInstalacion = codigoPostalInstalacion;
+    }
 
     public csvEvento(String idEvento, String titulo, String precio, String gratuito, String largaDuracion,
             String diasSemana, String diasExcluidos, String fecha, String fechaFin, String hora, String descripcion,
@@ -302,9 +313,12 @@ public class csvEvento {
         this.audiencia = audiencia;
     }
 
+    @Override
+    public String toString() {
+        return "[id: " + this.idEvento + ", titulo: " + this.titulo + ", gratuito: " + this.gratuito
+                + ", codigoPostal: " + this.codigoPostalInstalacion + "]";
+    }
 
-
-    
 
 
 }
