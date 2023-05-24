@@ -207,10 +207,7 @@ public class Evento {
 		this.organization = organization;
 	}
 
-	@Override
-	public String toString() {
-		return this.id + " - " + this.title;
-	}
+
 
 
 	

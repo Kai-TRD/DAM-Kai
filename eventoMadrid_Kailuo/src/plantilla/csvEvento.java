@@ -2,7 +2,7 @@ package plantilla;
 
 public class csvEvento {
 
-    private String idEvento;
+    private int idEvento;
     private String titulo;
     private String precio;
     private String gratuito;
@@ -32,18 +32,18 @@ public class csvEvento {
     private String tipo;
     private String audiencia;
 
-    public csvEvento(String idEvento) {
+    public csvEvento(int idEvento) {
         this.idEvento = idEvento;
     }
 
-    public csvEvento(String idEvento, String titulo, String gratuito, String codigoPostalInstalacion) {
+    public csvEvento(int idEvento, String titulo, String gratuito, String codigoPostalInstalacion) {
         this.idEvento = idEvento;
         this.titulo = titulo;
         this.gratuito = gratuito;
         this.codigoPostalInstalacion = codigoPostalInstalacion;
     }
 
-    public csvEvento(String idEvento, String titulo, String precio, String gratuito, String largaDuracion,
+    public csvEvento(int idEvento, String titulo, String precio, String gratuito, String largaDuracion,
             String diasSemana, String diasExcluidos, String fecha, String fechaFin, String hora, String descripcion,
             String contentUrl, String tituloActividad, String urlActividad, String urlInstalacion,
             String nombreInstalacion, String accesibilidadInstalacion, String claseVialInstalacion,
@@ -81,11 +81,11 @@ public class csvEvento {
         this.audiencia = audiencia;
     }
 
-    public String getIdEvento() {
+    public int getIdEvento() {
         return idEvento;
     }
 
-    public void setIdEvento(String idEvento) {
+    public void setIdEvento(int idEvento) {
         this.idEvento = idEvento;
     }
 
@@ -313,12 +313,17 @@ public class csvEvento {
         this.audiencia = audiencia;
     }
 
+    // @Override
+    // public String toString() {
+        // return "[id: " + idEvento + "gratis: " + gratuito + "]";
+    // }
+
     @Override
     public String toString() {
         return "[id: " + this.idEvento + ", titulo: " + this.titulo + ", gratuito: " + this.gratuito
                 + ", codigoPostal: " + this.codigoPostalInstalacion + "]";
     }
 
-
+        
 
 }
