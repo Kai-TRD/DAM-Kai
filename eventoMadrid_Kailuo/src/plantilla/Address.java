@@ -1,13 +1,13 @@
 package plantilla;
 
 public class Address {
-    private District dristrict;
+    private District district;
     private Area area;
-    public District getDristrict() {
-        return dristrict;
+    public District getDistrict() {
+        return district;
     }
-    public void setDristrict(District dristrict) {
-        this.dristrict = dristrict;
+    public void setDistrict(District district) {
+        this.district = district;
     }
     public Area getArea() {
         return area;

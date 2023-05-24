@@ -7,13 +7,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.w3c.dom.events.Event;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import plantilla.Evento;
 import plantilla.csvEvento;
+import plantilla.jsonEvento;
 
 public class madridUtils {
 
@@ -111,4 +110,25 @@ public class madridUtils {
 
         return listaEvento;
     }
+
+
+    public static jsonEvento leerFicheroDiccionarioEvento(String path) {
+		
+		// List<Pokemon> diccionario = null;
+
+        jsonEvento poke = null;
+
+		try {
+			File fichero = new File(path);
+
+			ObjectMapper mapper = new ObjectMapper();
+			poke = mapper.readValue(fichero, jsonEvento.class);
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		return poke;
+		
+	}
 }
