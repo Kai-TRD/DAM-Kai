@@ -35,11 +35,21 @@ public class App {
  
         jsonEvento listadoJson = madridUtils.leerFicheroDiccionarioEvento("src/fichero/206974-0-agenda-eventos-culturales-100.json");
 
-        madridUtils.crearArchivoTextoJSON("src/fichero/eventosGratuitosJSON.txt", listadoJson);
         System.out.println("--------GRATUITO - CSV------------------------------");        
         List<csvEvento> eventosGratuitosCSV = madridUtils.ListadoEventoGratuitoCSV(eventosCSV);
         madridUtils.crearArchivoTextoCSV("src/fichero/eventosGratuitos.txt", eventosGratuitosCSV);
 
 
+        // Buscar por codigo postar y gratuito
+        List<csvEvento> eventosGratuitosCSVmasDirec = madridUtils.ListadoEventoGratuitoPostalConcreto(eventosCSV, "28026");
+        madridUtils.crearArchivoTextoCSV("src/fichero/eventosGratuitosmasDirec.txt", eventosGratuitosCSVmasDirec);
+
+        
+        System.out.println("--------Diccionario cantidfad evento por Cod.Postal----------------------");        
+        Map<String, Integer> diccionrioEvento = madridUtils.contarEventosPorCodPostal(eventosCSV);
+        // System.out.println(diccionrioEvento);
+        for (Map.Entry<String, Integer> entry : diccionrioEvento.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
     }
 }

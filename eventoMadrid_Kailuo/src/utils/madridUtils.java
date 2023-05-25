@@ -128,6 +128,22 @@ public class madridUtils {
         return listaEventosGratis;
     }
 
+
+    public static List<csvEvento> ListadoEventoGratuitoPostalConcreto(List<csvEvento> listado, String codPostal) {
+
+        List<csvEvento> listaFinal = new ArrayList<>();
+
+        List<csvEvento> temp = ListadoEventoGratuitoCSV(listado);
+
+        for (int i = 0; i < temp.size(); i++) {
+            if(temp.get(i).getCodigoPostalInstalacion().replace("\"", "").equals(codPostal)) {
+                listaFinal.add(temp.get(i));
+            }
+        }
+
+        return listaFinal;
+    }
+
     // public static List<Evento> ListadoEventoGratuitoJSON(List<Evento> listado) {
     // List<Evento> listaEventosGratis = new ArrayList<>();
 
@@ -166,30 +182,41 @@ public class madridUtils {
         }
     }
 
-    public static void crearArchivoTextoJSON(String ruta, jsonEvento jsonEvento) {
-        try {
 
-            File archivo = new File(ruta);
 
-            FileWriter writer = new FileWriter(archivo, false); // Indicamos que reescriba el archivo
 
-            for (Evento evento : jsonEvento.getEventos()) {
-                writer.write(evento.toString());
-                writer.write(System.lineSeparator());
-            }
 
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+    // public static void crearArchivoTextoJSON(String ruta, jsonEvento jsonEvento) {
+    //     try {
+
+    //         File archivo = new File(ruta);
+
+    //         FileWriter writer = new FileWriter(archivo, false); // Indicamos que reescriba el archivo
+
+    //         for (Evento evento : jsonEvento.getEventos()) {
+    //             writer.write(evento.toString());
+    //             writer.write(System.lineSeparator());
+    //         }
+
+    //         writer.close();
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+
+
+
+
+    public static Map<String, Integer> contarEventosPorCodPostal(List<csvEvento> lista) {
+        Map<String, Integer> contador = new HashMap<>();
+
+        for (csvEvento evento : lista) {
+            String codPostal = evento.getCodigoPostalInstalacion();
+            contador.put(codPostal, contador.getOrDefault(codPostal, 0) + 1);
         }
+
+        return contador;
     }
-
-    public static Map<String, Integer> convertirAMap(List<csvEvento> eventos) {
-        
-        return null;
-    }
-
-
     /*
      * 
      * 
